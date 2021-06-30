@@ -1,25 +1,49 @@
 #pragma once
 
 #include "glad/glad.h"
+#include "GLFW/glfw3.h"
+#include "GL/gl.h"
+
+#include "Shader.h"
 
 #include <string>
 #include <map>
 #include <memory>
 
-class GraphicsManager
-{
-public:
-	static std::unique_ptr<GraphicsManager> instance;
-	static void init();
+namespace ResWolf {
 
-	std::map<std::string, GLuint> vertices;
+	enum class GraphicsError {
+		OK,
+		GLFW_WINDOW_FAILED,
+		GL_FAILED,
+		GLAD_FAILED,
+		SHADERS_FAILED
+	};
 
-	GraphicsManager();
-	~GraphicsManager();
+	std::string GraphicsErrorMessage(GraphicsError error);
 
-private:
-	void initGLFW();
-	void initGL();
+	class GraphicsManager
+	{
+	public:
+		static std::unique_ptr<GraphicsManager> instance;
+		static GraphicsError init();
 
-};
+		std::map<std::string, GLuint> vertices;
+		std::map<std::string, std::unique_ptr<Shader>> shaders;
+		
+		GraphicsError status;
+		
+		GLFWwindow* window;
+		int width;
+		int height;
 
+		GraphicsManager();
+		~GraphicsManager();
+
+	private:
+		GraphicsError initGLFW();
+		GraphicsError initGL();
+		GraphicsError initGLAD();
+		GraphicsError initShaders();
+	};
+}
