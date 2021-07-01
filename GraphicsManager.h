@@ -29,7 +29,7 @@ namespace ResWolf {
 		static GraphicsError init();
 
 		std::map<std::string, GLuint> vertices;
-		std::map<std::string, std::unique_ptr<Shader>> shaders;
+		std::map<std::string, Shader*> shaders;
 		
 		GraphicsError status;
 		

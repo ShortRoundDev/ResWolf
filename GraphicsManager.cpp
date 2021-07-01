@@ -132,9 +132,28 @@ GraphicsError GraphicsManager::initGLAD()
 
 GraphicsError GraphicsManager::initShaders()
 {
-	shaders["Wall"] = std::make_unique<Shader>("WallsVertexShader.glsl", "WallsFragmentShader.glsl");
-	shaders["UI"] = std::make_unique<Shader>("UIVertexShader.glsl", "UIFragmentShader.glsl");
-	shaders["Entity"] = std::make_unique<Shader>("EntityVertexShader.glsl", "EntityFragmentShader.glsl");
+	Shader* wallShader = new Shader("WallsVertexShader.glsl", "WallsFragmentShader.glsl");
+	if (wallShader->status != ShaderStatus::OK)
+	{
+		return GameErr(GraphicsError::SHADERS_FAILED);
+	}
+	shaders["wall"] = wallShader;
+	
+	Shader* uiShader = new Shader("UIVertexShader.glsl", "UIFragmentShader.glsl");
+	if (uiShader->status != ShaderStatus::OK)
+	{
+		return GameErr(GraphicsError::SHADERS_FAILED);
+	}
+	shaders["UI"] = uiShader;
+
+	Shader* entityShader = new Shader("EntityVertexShader.glsl", "EntityFragmentShader.glsl");
+	if (entityShader->status != ShaderStatus::OK)
+	{
+		return GameErr(GraphicsError::SHADERS_FAILED);
+	}
+	shaders["entity"] = entityShader;
+
+	return GameErr(GraphicsError::OK);
 }
 
 #pragma endregion

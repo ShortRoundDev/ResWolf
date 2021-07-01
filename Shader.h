@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "glad/glad.h"
+
 namespace ResWolf
 {
 	enum class ShaderStatus
@@ -9,8 +11,10 @@ namespace ResWolf
 		OK,
 		FILE_OPEN_FAILED,
 		VS_COMPILATION_FAILED,
-		FS_COMPILATION_FAILED
+		FS_COMPILATION_FAILED,
+		PROGRAM_LINK_FAILED
 	};
+
 	class Shader
 	{
 	public:
@@ -18,5 +22,12 @@ namespace ResWolf
 		~Shader();
 
 		ShaderStatus status;
+
+	private:
+		GLuint program;
+		GLuint buildShader(std::string path, GLenum type);
+		void buildProgram(GLuint vertex, GLuint fragment);
+		bool checkShaderCompilationError(GLuint shader);
+		bool checkProgramLinkError(GLuint program);
 	};
 }

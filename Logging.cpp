@@ -1,4 +1,3 @@
-#define LOGGIN_IMP
 #include "Logging.h"
 
 int errLine;
@@ -24,5 +23,15 @@ void ShowError(std::string error, std::string errorCode)
 	#endif
 	#ifdef WIN_LOG
 	MessageBoxA(NULL, (error + "\n" + errorCode + "\nAt " + std::string(errFile) + "#" + std::to_string(errLine)).c_str(), NULL, MB_OK);
+	#endif
+}
+
+void SimpleError(std::string error)
+{
+	#ifdef CONSOLE_LOG
+	std::cerr << "ERROR: " << error << std::endl;
+	#endif
+	#ifdef WIN_LOG
+	MessageBoxA(NULL, error.c_str(), NULL, MB_OK);
 	#endif
 }
