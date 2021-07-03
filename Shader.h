@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "windows.h"
 #include "glad/glad.h"
 
 namespace ResWolf

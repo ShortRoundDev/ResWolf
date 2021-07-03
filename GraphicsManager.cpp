@@ -1,6 +1,4 @@
 #include "GraphicsManager.h"
-#include "Windows.h"
-
 #include "WindowEvents.h"
 #include "Logging.h"
 

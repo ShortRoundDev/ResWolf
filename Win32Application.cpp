@@ -17,7 +17,7 @@ LONG ResWolfUnhandledExceptionFilter(_In_ PEXCEPTION_POINTERS ExceptionInfo)
 
 	char errAddressHex[128];
 	ZeroMemory(errAddressHex, 128);
-	sprintf_s(errAddressHex, 128, "%lX", (UINT64)ExceptionInfo->ExceptionRecord->ExceptionAddress);
+	sprintf_s(errAddressHex, 128, "%I64x", (UINT64)ExceptionInfo->ExceptionRecord->ExceptionAddress);
 
 	errFile = "Main.cpp";
 	errLine = -1;
