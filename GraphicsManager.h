@@ -6,10 +6,14 @@
 #include "GL/gl.h"
 
 #include "Shader.h"
+#include "Camera.h"
 
 #include <string>
 #include <map>
 #include <memory>
+
+//shortcut to the singleton
+#define GRAPHICS (GraphicsManager::instance)
 
 namespace ResWolf {
 
@@ -27,7 +31,13 @@ namespace ResWolf {
 	{
 	public:
 		static std::unique_ptr<GraphicsManager> instance;
-		static GraphicsError init();
+		static GraphicsError init(
+			_In_ uint16_t width,
+			_In_ uint16_t height,
+			_In_ float fov
+		);
+
+		Camera* camera;
 
 		std::map<std::string, GLuint> vertices;
 		std::map<std::string, Shader*> shaders;
@@ -38,9 +48,15 @@ namespace ResWolf {
 		int width;
 		int height;
 
-		GraphicsManager();
+		GraphicsManager(
+			_In_ uint16_t width,
+			_In_ uint16_t height,
+			_In_ float fov
+		);
 		~GraphicsManager();
 
+		GLuint uploadVertices(_In_ const float* data, _In_ size_t size);
+		GLuint assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size);
 	private:
 		GraphicsError initGLFW();
 		GraphicsError initGL();

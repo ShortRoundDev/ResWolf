@@ -1,7 +1,7 @@
 #include "Logging.h"
 
-int errLine;
-std::string errFile;
+thread_local int errLine;
+thread_local std::string errFile;
 
 #ifdef CONSOLE_LOG
 #include <iostream>
@@ -33,5 +33,18 @@ void SimpleError(std::string error)
 	#endif
 	#ifdef WIN_LOG
 	MessageBoxA(NULL, error.c_str(), NULL, MB_OK);
+	#endif
+}
+
+void Warn(std::string warning)
+{
+	#ifndef _DEBUG
+	return;
+	#endif
+	#ifdef CONSOLE_LOG
+	std::cerr << "WARNING: " << warning << std::endl;
+	#endif
+	#ifdef WIN_LOG
+	MessageBoxA(NULL, warning.c_str(), "Warning", MB_OK);
 	#endif
 }

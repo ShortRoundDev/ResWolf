@@ -24,11 +24,11 @@ int ReadTextFile(_In_ std::string path, _Out_ char** file, _In_opt_ size_t* size
 		{
 			status |= FILE_NOT_FOUND;
 		}
-		SimpleError("Got File Error " + std::string(errMsg) + " at\n" + path);
+		SimpleError("Got File Error '" + std::string(errMsg) + "' at\n" + path);
 		return status;
 	}
 
-	fseek(fp, SEEK_END, 0);
+	fseek(fp, 0, SEEK_END);
 	size_t _size = ftell(fp);
 	if (_size == 0)
 	{
@@ -36,7 +36,7 @@ int ReadTextFile(_In_ std::string path, _Out_ char** file, _In_opt_ size_t* size
 		fclose(fp);
 		return FILE_FAILED | FILE_SIZE_ERROR;
 	}
-	fseek(fp, SEEK_SET, 0);
+	fseek(fp, 0, SEEK_SET);
 	*file = (char*)calloc(_size, sizeof(char));
 	if (*file == NULL)
 	{
@@ -71,11 +71,11 @@ int ReadBinaryFile(_In_ std::string path, _Out_ char** file, _In_opt_ size_t* si
 		{
 			status |= FILE_NOT_FOUND;
 		}
-		SimpleError("Got File Error " + std::string(errMsg) + " at\n" + path);
+		SimpleError("Got File Error '" + std::string(errMsg) + "' at\n" + path);
 		return status;
 	}
 
-	fseek(fp, SEEK_END, 0);
+	fseek(fp, 0, SEEK_END);
 	size_t _size = ftell(fp);
 	if (_size == 0)
 	{
@@ -83,7 +83,7 @@ int ReadBinaryFile(_In_ std::string path, _Out_ char** file, _In_opt_ size_t* si
 		fclose(fp);
 		return FILE_FAILED | FILE_SIZE_ERROR;
 	}
-	fseek(fp, SEEK_SET, 0);
+	fseek(fp, 0, SEEK_SET);
 	*file = (char*)calloc(_size, sizeof(char));
 	if (*file == NULL)
 	{

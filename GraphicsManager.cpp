@@ -11,7 +11,7 @@ std::string ResWolf::GraphicsErrorMessage(GraphicsError error)
 	switch (error)
 	{
 	case GraphicsError::OK:
-		code = "OK";
+		code = "OK)";
 		break;
 	case GraphicsError::GLFW_WINDOW_FAILED:
 		code = "GLFW_WINDOW_FAILED)\nFailed to initialize window!";
@@ -34,9 +34,13 @@ std::string ResWolf::GraphicsErrorMessage(GraphicsError error)
 
 std::unique_ptr<GraphicsManager> GraphicsManager::instance;
 
-GraphicsError GraphicsManager::init()
+GraphicsError GraphicsManager::init(
+	_In_ uint16_t width,
+	_In_ uint16_t height,
+	_In_ float fov
+)
 {
-	instance = std::make_unique<GraphicsManager>();
+	instance = std::make_unique<GraphicsManager>(width, height, fov);
 	GraphicsError code = instance->status;
 	if (code != GraphicsError::OK)
 	{
@@ -50,7 +54,12 @@ GraphicsError GraphicsManager::init()
 
 #pragma region Public
 
-GraphicsManager::GraphicsManager()
+GraphicsManager::GraphicsManager(
+	_In_ uint16_t width,
+	_In_ uint16_t height,
+	_In_ float fov
+):
+	camera(new Camera(width, height, fov))
 {
 	if ((status = initGLFW()) != GraphicsError::OK)
 	{
@@ -79,6 +88,32 @@ GraphicsManager::~GraphicsManager()
 	// clean up window?
 }
 
+GLuint GraphicsManager::uploadVertices(_In_ const float* data, _In_ size_t size)
+{
+	unsigned int vbo, vao;
+	glGenVertexArrays(1, &vao);
+	glGenBuffers(1, &vbo);
+
+	glBindVertexArray(vao);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(sizeof(float) * 3));
+	glEnableVertexAttribArray(1);
+
+	return vao;
+}
+
+GLuint GraphicsManager::assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size)
+{
+	GLuint vao = uploadVertices(data, size);
+	vertices[name] = vao;
+	return vao;
+}
+
 #pragma endregion
 
 #pragma region Private
@@ -97,7 +132,6 @@ GraphicsError GraphicsManager::initGLFW()
 		"ResWolf3D",
 		nullptr, nullptr
 	);
-	RaiseException(0, EXCEPTION_NONCONTINUABLE_EXCEPTION, 0, NULL);
 
 	if (!window)
 	{
@@ -130,21 +164,21 @@ GraphicsError GraphicsManager::initGLAD()
 
 GraphicsError GraphicsManager::initShaders()
 {
-	Shader* wallShader = new Shader("WallsVertexShader.glsl", "WallsFragmentShader.glsl");
+	Shader* wallShader = new Shader("Resources/Shaders/WallsVertexShader.glsl", "Resources/Shaders/WallsFragmentShader.glsl");
 	if (wallShader->status != ShaderStatus::OK)
 	{
 		return GameErr(GraphicsError::SHADERS_FAILED);
 	}
 	shaders["wall"] = wallShader;
 	
-	Shader* uiShader = new Shader("UIVertexShader.glsl", "UIFragmentShader.glsl");
+	Shader* uiShader = new Shader("Resources/Shaders/UIVertexShader.glsl", "Resources/Shaders/UIFragmentShader.glsl");
 	if (uiShader->status != ShaderStatus::OK)
 	{
 		return GameErr(GraphicsError::SHADERS_FAILED);
 	}
 	shaders["UI"] = uiShader;
 
-	Shader* entityShader = new Shader("EntityVertexShader.glsl", "EntityFragmentShader.glsl");
+	Shader* entityShader = new Shader("Resources/Shaders/EntityVertexShader.glsl", "Resources/Shaders/EntityFragmentShader.glsl");
 	if (entityShader->status != ShaderStatus::OK)
 	{
 		return GameErr(GraphicsError::SHADERS_FAILED);

@@ -42,6 +42,12 @@
     <ClCompile Include="FileHandling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -65,5 +71,43 @@
     <ClInclude Include="FileHandling.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shaders\BrushSpriteFragmentShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\BrushSpriteVertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\EntityFragmentShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\EntityVertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\FontFragmentShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\FontVertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\UIFragmentShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\UIVertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\WallsFragmentShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\WallsVertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -28,6 +28,46 @@ Shader::~Shader()
 
 }
 
+void Shader::use()
+{
+	glUseProgram(program);
+}
+
+void Shader::setTex(_In_ GLuint texture)
+{
+	glBindTexture(GL_TEXTURE_2D, texture);
+}
+
+void Shader::setInt(_In_ const std::string& name, _In_ int value)
+{
+	glUniform1i(getUniformLocation(name.c_str()), value);
+}
+
+void Shader::setFloat(_In_ const std::string& name, _In_ float value)
+{
+	glUniform1f(getUniformLocation(name.c_str()), value);
+}
+
+void Shader::setVec2(_In_ const std::string& name, _In_ const glm::vec2& vec)
+{
+	glUniform2f(getUniformLocation(name.c_str()), vec.x, vec.y);
+}
+
+void Shader::setVec3(_In_ const std::string& name, _In_ const glm::vec3& vec)
+{
+	glUniform3f(getUniformLocation(name.c_str()), vec.x, vec.y, vec.z);
+}
+
+void Shader::setVec4(_In_ const std::string& name, _In_ const glm::vec4& vec)
+{
+	glUniform4f(getUniformLocation(name.c_str()), vec.x, vec.y, vec.z, vec.w);
+}
+
+void Shader::setMat4(_In_ const std::string& name, _In_ const glm::mat4& matrix)
+{
+	glUniformMatrix4fv(getUniformLocation(name.c_str()), 1, GL_FALSE, &matrix[0][0]);
+}
+
 GLuint Shader::buildShader(std::string path, GLenum type)
 {
 	char* text = NULL;
@@ -41,8 +81,8 @@ GLuint Shader::buildShader(std::string path, GLenum type)
 	glShaderSource(shader, 1, &text, NULL);
 	glCompileShader(shader);
 
-	int error = checkShaderCompilationError(shader);
-	if (error)
+	int success = checkShaderCompilationError(path, shader);
+	if (!success)
 	{
 		free(text);
 		status = (type == GL_VERTEX_SHADER
@@ -68,10 +108,10 @@ void Shader::buildProgram(GLuint vertex, GLuint fragment)
 	{
 		status = ShaderStatus::PROGRAM_LINK_FAILED;
 	}
-	return ;
+	return;
 }
 
-bool Shader::checkShaderCompilationError(GLuint shader)
+bool Shader::checkShaderCompilationError(std::string path, GLuint shader)
 {
 	GLint success = 0;
 	GLchar log[1024];
@@ -79,7 +119,7 @@ bool Shader::checkShaderCompilationError(GLuint shader)
 	if (!success)
 	{
 		glGetShaderInfoLog(shader, 1024, NULL, log);
-		SimpleError(std::string(log));
+		SimpleError(std::string(log) + "\nat " + path);
 		return false;
 	}
 	return true;
@@ -97,4 +137,9 @@ bool Shader::checkProgramLinkError(GLuint program)
 		return false;
 	}
 	return true;
+}
+
+GLint Shader::getUniformLocation(_In_ const GLchar* name)
+{
+	return glGetUniformLocation(program, name);
 }

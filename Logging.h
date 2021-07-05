@@ -2,11 +2,13 @@
 
 #include <string>
 
-extern int errLine;
-extern std::string errFile;
+extern thread_local int errLine;
+extern thread_local std::string errFile;
 
 void ShowError(std::string error, std::string errorCode);
 void SimpleError(std::string error);
+
+void Warn(std::string warning);
 
 template <typename T>
 T _GameErr(T err, const char* file, int line)
