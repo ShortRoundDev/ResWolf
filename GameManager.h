@@ -14,12 +14,13 @@ namespace ResWolf
 		OPTIONS_MENU
 	};
 
-	std::string GameErrorMessage(GameError error);
-
 	enum class GameError
 	{
 		OK
 	};
+
+	std::string GameErrorMessage(GameError error);
+
 	class GameManager
 	{
 	public:

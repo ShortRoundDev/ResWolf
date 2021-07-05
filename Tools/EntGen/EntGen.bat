@@ -1,0 +1,1 @@
+.\EntGen.exe Entities.conf EntityDef

@@ -1,0 +1,16 @@
+﻿#include <stdint.h>
+
+#include "Entity.h"
+
+{{#each errors}}
+#error {{this}}
+{{/each}}
+
+{{#each pairs}}
+#define {{Up this.Item1}} {{this.Item2}}
+{{/each}}
+
+namespace ResWolf
+{
+    Entity* createEntity(int id, uint16_t x,uint16_t y);
+}

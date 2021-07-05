@@ -1,0 +1,1 @@
+.\bin\Debug\net5.0\EntGen.exe Entities.conf EntityDef

@@ -3,6 +3,8 @@
 #include <string>
 #include <stdint.h>
 
+#include "LevelTokens.h"
+
 namespace ResWolf
 {
 	typedef struct _LevelHeader
@@ -15,6 +17,8 @@ namespace ResWolf
 	public:
 		Level(std::string path);
 		~Level();
-		ResWolf::LevelHeader* header;
+	private:
+		bool fixPointers(LevelToken* levelToken);
+		LevelToken* levelToken;
 	};
 }

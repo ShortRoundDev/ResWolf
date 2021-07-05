@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EntGen": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\colli\\source\\repos\\ResWolf\\Tools\\EntGen\\EntGen\\Entities.conf\" \"C:\\Users\\colli\\source\\repos\\ResWolf\\Tools\\EntGen\\EntGen\\EntityDef\""
+    }
+  }
+}

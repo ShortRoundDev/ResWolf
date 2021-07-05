@@ -1,0 +1,18 @@
+﻿{{#each pairs}}
+#include "{{this.Item1}}.h"
+{{/each}}
+
+using namespace ResWolf;
+
+Entity* ResWolf::createEntity(int id, uint16_t x, uint16_t y)
+{
+    switch(id)
+    {
+    {{#each pairs}}
+    case {{this.Item2}}:
+    {
+        return new {{this.Item1}}(x, y);
+    }
+    {{/each}}
+    }
+}

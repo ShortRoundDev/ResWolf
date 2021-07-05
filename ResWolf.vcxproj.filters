@@ -48,6 +48,12 @@
     <ClCompile Include="ApplicationSettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EntityDef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -75,6 +81,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ApplicationSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelTokens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,6 +122,15 @@
       <Filter>Source Files</Filter>
     </None>
     <None Include="Resources\Shaders\WallsVertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Entities.conf">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="EntityDef.cpp.hbs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="EntityDef.h.hbs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

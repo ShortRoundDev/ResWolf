@@ -126,6 +126,9 @@
       <AdditionalDependencies>dbghelp.lib;libvorbis_static.lib;libvorbisfile_static.lib;libogg.lib;OpenAL32.lib;glfw3.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Program Files %28x86%29\OpenAL 1.1 SDK\libs\Win64;Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PreBuildEvent>
+      <Command>rem $(ProjectDir)Tools/EntGen/EntGen.exe Entities.conf EntityDef</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -150,10 +153,12 @@
   <ItemGroup>
     <ClCompile Include="ApplicationSettings.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="EntityDef.cpp" />
     <ClCompile Include="FileHandling.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="GraphicsManager.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="Logging.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -163,15 +168,21 @@
   <ItemGroup>
     <ClInclude Include="ApplicationSettings.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="EntityDef.h" />
     <ClInclude Include="FileHandling.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GraphicsManager.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelTokens.h" />
     <ClInclude Include="Logging.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Win32Application.h" />
     <ClInclude Include="WindowEvents.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Entities.conf" />
+    <None Include="EntityDef.cpp.hbs" />
+    <None Include="EntityDef.h.hbs" />
     <None Include="Resources\Shaders\BrushSpriteFragmentShader.glsl" />
     <None Include="Resources\Shaders\BrushSpriteVertexShader.glsl" />
     <None Include="Resources\Shaders\EntityFragmentShader.glsl" />
