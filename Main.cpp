@@ -9,6 +9,9 @@
 #include "GraphicsManager.h"
 #include "GameManager.h"
 
+// Level
+#include "Level.h"
+
 using namespace ResWolf;
 
 int main(int argc, char** argv)
@@ -36,4 +39,6 @@ int main(int argc, char** argv)
 	{
 		ShowError("Couldn't Initialize Game!", GameErrorMessage(gameStatus));
 	}
+
+	Level* level = new Level("Resources/Maps/Level.ham");
 }

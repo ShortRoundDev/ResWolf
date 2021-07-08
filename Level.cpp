@@ -3,11 +3,14 @@
 #include "FileHandling.h"
 #include "Logging.h"
 
+#include <iostream>
+
 using namespace ResWolf;
 
 #pragma region Public
 
-Level::Level(std::string path)
+Level::Level(std::string path) :
+	levelToken(NULL)
 {
 	char* data = NULL;
 	size_t levelSize = 0;
@@ -18,6 +21,9 @@ Level::Level(std::string path)
 		SimpleError("Couldn't load level '" + path + "'.\nGot " + std::to_string(err));
 		return;
 	}
+
+	levelToken = (LevelToken*)data;
+	fixPointers(levelToken);
 }
 
 Level::~Level()
@@ -42,14 +48,17 @@ bool Level::fixPointers(LevelToken* levelToken)
 	}
 	uint64_t offset = (uint64_t)levelToken;
 
-	levelToken->walls += offset;
+	levelToken->walls = (WallToken*)(((uint8_t*)levelToken->walls) + offset);
 	for (int y = 0; y < levelToken->height; y++)
 	{
 		for (int x = 0; x < levelToken->width; x++)
 		{
 			int idx = x + (y * levelToken->width);
 			if (levelToken->walls[idx].message != NULL)
+			{
 				levelToken->walls[idx].message += offset;
+				std::cout << levelToken->walls[idx].message << std::endl;
+			}
 		}
 	}
 
@@ -59,12 +68,13 @@ bool Level::fixPointers(LevelToken* levelToken)
 		return true;
 	}
 
-	levelToken->entities += offset;
+	levelToken->entities = (EntityToken*)(((uint8_t*)levelToken->entities) + offset);
 	for (int i = 0; i < levelToken->totalEntities; i++)
 	{
 		if (levelToken->entities[i].config != NULL)
 		{
 			levelToken->entities[i].config += offset;
+			std::cout << levelToken->entities[i].config << std::endl;
 		}
 	}
 

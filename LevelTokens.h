@@ -14,7 +14,7 @@ namespace ResWolf
 		// --- Word 1, 2 ---
 		uint8_t reserved[12];	// 4 - 15	// Reserved for future use
 		// --- Word 3 ---
-		char* message;			// 15 - 23
+		char* message;			// 16 - 22
 	} WallToken;
 
 	// 3 Words
@@ -36,7 +36,7 @@ namespace ResWolf
 	typedef struct _LevelToken
 	{
 		// --- Word 1 ---
-		char waterMark[3];		// 0, 1, 2
+		char waterMark[3];		// 0, 1, 2	// FUK
 		uint8_t version;		// 3
 		uint16_t width;			// 4, 5
 		uint16_t height;		// 6, 7
