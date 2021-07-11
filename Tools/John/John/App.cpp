@@ -1,7 +1,16 @@
 #include "App.h"
 
 #include "UINode.h"
+
+#include "Grid.h"
+
 #include "UIButton.h"
+#include "SaveButton.h"
+#include "LoadButton.h"
+
+#include "SectionHeader.h"
+#include "Tile.h"
+#include "TileArea.h"
 
 std::unique_ptr<App> App::instance = nullptr;
 
@@ -28,6 +37,11 @@ App::App(std::string title)
 	);
 	SDL_SetWindowTitle(window, title.c_str());
 
+	auto mouse = IMG_Load("Resources/mouse.png");
+	auto cursor = SDL_CreateColorCursor(mouse, 0, 0);
+	SDL_SetCursor(cursor);
+	// todo: set mouse
+
 }
 
 App::~App()
@@ -44,24 +58,54 @@ void App::createDom()
 	rootDom = new UINode(
 		{
 			0, 0,
-			PCT(100), PCT(100)
+			UINode::PCT(100), UINode::PCT(100)
 		},
-		1,
+		3,
+		new Grid(),
 		new UINode(
 			{
 				0, 0,
-				PCT(100), 32
+				256, UINode::PCT(100),
+				"",
+				CGA_LT_BLUE,
+				StyleDirection::TOP,
+				StyleDirection::RIGHT,
 			},
-			{ 85, 85, 255, 255 },
-			2,
-			new UIButton(
-				{ 0, 0 },
-				"Resources/Save"
+			4,
+			new SectionHeader(
+				64, 48,
+				"Resources/Tiles"
 			),
-			new UIButton(
-				{ 128, 0 },
-				"Resources/Load"
+			new TileArea(),
+			new SectionHeader(
+				64, 256 + 80,
+				"Resources/Entities"
+			),
+			new UINode(
+				{
+					16, 256 + 112,
+					224, 256,
+					"",
+					CGA_BLUE,
+					StyleDirection::TOP,
+					StyleDirection::LEFT,
+					CGA_CYAN
+				}
 			)
+		),
+		new UINode(
+			{
+				0, 0,
+				UINode::PCT(100), 32,
+				"",
+				CGA_LT_BLUE,
+				StyleDirection::TOP,
+				StyleDirection::LEFT,
+				CGA_CYAN
+			},
+			2,
+			new SaveButton(),
+			new LoadButton()
 		)
 	);
 }
@@ -93,13 +137,34 @@ void App::events()
 			shouldQuit = true;
 			return;
 		}
+		case SDL_MOUSEBUTTONDOWN:
+		{
+			rootDom->handleMouseDown({ 0, 0 }, e);
+			break;
+		}
+		case SDL_MOUSEBUTTONUP:
+		{
+			rootDom->handleMouseUp({ 0, 0 }, e);
+			break;
+		}
+		case SDL_MOUSEWHEEL:
+		{
+			rootDom->handleMouseScroll({ 0, 0 }, e);
+			break;
+		}
 		case SDL_KEYDOWN:
 		{
+			rootDom->handleKeyDown(e);
 			if (e.key.keysym.scancode == SDL_SCANCODE_F11)
 			{
 				auto current = SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
 				SDL_SetWindowFullscreen(window, current ^ SDL_WINDOW_FULLSCREEN_DESKTOP);
 			}
+			break;
+		}
+		case SDL_KEYUP:
+		{
+			rootDom->handleKeyUp(e);
 			break;
 		}
 		case SDL_WINDOWEVENT:
@@ -124,16 +189,17 @@ void App::windowResizeEvent(const SDL_Event& e)
 }
 
 _Success_(return)
-bool App::tryLoadTexture(_In_ std::string path, _In_ std::string alias, _Out_ SDL_Texture** texture)
+bool App::tryLoadTexture(_In_ std::string path, _In_ std::string alias, _Out_ Texture** texture)
 {
-	auto tex = IMG_LoadTexture(this->renderer, path.c_str());
-	if (tex == NULL)
+	Texture* t = NULL;
+	if (!Texture::tryLoad(path, &t))
 	{
+		*texture = NULL;
 		return false;
 	}
 
-	textures[alias] = tex;
+	textures[alias] = t;
 
-	*texture = tex;
+	*texture = t;
 	return true;
 }

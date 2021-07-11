@@ -114,7 +114,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);WIN32_LEAN_AND_MEAN</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SDL2_PATH)/include</AdditionalIncludeDirectories>
     </ClCompile>
@@ -131,7 +131,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);WIN32_LEAN_AND_MEAN</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SDL2_PATH)/include</AdditionalIncludeDirectories>
     </ClCompile>
@@ -146,12 +146,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="LoadButton.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MapTile.cpp" />
+    <ClCompile Include="SaveButton.cpp" />
+    <ClCompile Include="SectionHeader.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileArea.cpp" />
     <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UINode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="LoadButton.h" />
+    <ClInclude Include="MapTile.h" />
+    <ClInclude Include="SaveButton.h" />
+    <ClInclude Include="SectionHeader.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileArea.h" />
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UINode.h" />
   </ItemGroup>

@@ -7,6 +7,8 @@
 #include "SDL.h"
 #include "SDL_image.h"
 
+#include "Texture.h"
+
 #define APP (App::instance)
 
 /* Forward declaration */
@@ -28,7 +30,7 @@ public:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
-	std::map<std::string, SDL_Texture*> textures;
+	std::map<std::string, Texture*> textures;
 	
 	bool shouldQuit = false;
 
@@ -41,9 +43,13 @@ public:
 	void windowResizeEvent(const SDL_Event& e);
 
 	_Success_(return)
-	bool tryLoadTexture(_In_ std::string path, _In_ std::string alias, _Out_ SDL_Texture** texture);
+	bool tryLoadTexture(_In_ std::string path, _In_ std::string alias, _Out_ Texture** texture);
 
 	int width;
 	int height;
+
+	// ----- Editor stuff -----
+	int selectedTile = 0;
+	Texture* selectedTileTexture = nullptr;
 };
 

@@ -6,10 +6,13 @@
 class UIButton : public UINode
 {
 public:
-	UIButton(SDL_FPoint pos, std::string texture);
+	UIButton(Style style);
 	~UIButton();
 
-	SDL_Texture* pressed;
+	Texture* pressed;
+	Texture* depressed;
 
+	bool onMouseDown(const SDL_Event& e);
+	bool onMouseUp(const SDL_Event& e);
 };
 

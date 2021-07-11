@@ -1,46 +1,102 @@
 #pragma once
 
+#include <string>
 #include <map>
 #include <vector>
 #include <SDL.h>
 
-#define PCT(x) (-(x))
+#include "Texture.h"
 
-#define CALC_X(x) ((int)((x) < 0		\
-	? (APP->width  * (-(x)/100.0f))		\
-	: (x)))
+//Dark
+constexpr SDL_Color CGA_BLACK	   = { 0x00, 0x00, 0x00, 0xff };
+constexpr SDL_Color CGA_BLUE	   = { 0x00, 0x00, 0xaa, 0xff };
+constexpr SDL_Color CGA_GREEN	   = { 0x00, 0xaa, 0x00, 0xff };
+constexpr SDL_Color CGA_CYAN	   = { 0x00, 0xaa, 0xaa, 0xff };
+constexpr SDL_Color CGA_RED		   = { 0xaa, 0x00, 0x00, 0xff };
+constexpr SDL_Color CGA_MAGENTA    = { 0xaa, 0x00, 0xaa, 0xff };
+constexpr SDL_Color CGA_BROWN	   = { 0xaa, 0x55, 0x00, 0xff };
+constexpr SDL_Color CGA_LT_GRAY    = { 0xaa, 0xaa, 0xaa, 0xff };
+// Light
 
-#define CALC_Y(y) ((int)((y) < 0		\
-	? (APP->height * (-(y)/100.0f))		\
-	: (y)))
+constexpr SDL_Color CGA_DK_GRAY    = { 0x55, 0x55, 0x55, 0xff };
+constexpr SDL_Color CGA_LT_BLUE    = { 0x55, 0x55, 0xff, 0xff };
+constexpr SDL_Color CGA_LT_GREEN   = { 0x55, 0xff, 0x55, 0xff };
+constexpr SDL_Color CGA_LT_CYAN	   = { 0x55, 0xff, 0xff, 0xff };
+constexpr SDL_Color CGA_LT_RED	   = { 0xff, 0x55, 0x55, 0xff };
+constexpr SDL_Color CGA_LT_MAGENTA = { 0xff, 0x55, 0xff, 0xff };
+constexpr SDL_Color CGA_YELLOW	   = { 0xff, 0xff, 0x55, 0xff };
+constexpr SDL_Color CGA_WHITE	   = { 0xff, 0xff, 0xff, 0xff };
+
+constexpr SDL_Color CGA_TRANSPARENT = { 0xff, 0xff, 0xff, 0xff };
+
+constexpr uint16_t PCT_BIT = 0x8000;
+
+enum class StyleDirection
+{
+	TOP,
+	RIGHT,
+	BOTTOM,
+	LEFT
+};
+
+typedef struct _Style
+{
+	uint16_t x = 0;
+	uint16_t y = 0;
+	
+	uint16_t width = 100 & PCT_BIT;
+	uint16_t height = 32;
+	
+	std::string texturePath;
+	SDL_Color color = { 0, 0, 0, 0 };
+
+	StyleDirection yAnchor = StyleDirection::TOP;
+	StyleDirection xAnchor = StyleDirection::LEFT;
+
+	SDL_Color border = { 0, 0, 0, 0 };
+
+	bool overflow = true;
+	bool scrollable = false;
+} Style;
 
 class UINode
 {
 public:
-	UINode(SDL_FRect dimensions);
-	UINode(SDL_FRect dimensions, SDL_Color color);
-	UINode(SDL_FRect dimensions, int totalChildren, ...);
-	UINode(SDL_FRect dimensions, SDL_Color color, int totalChildren, ...);
+	static uint16_t PCT(uint16_t x);
+	static uint16_t calcX(uint16_t x);
+	static uint16_t calcY(uint16_t y);
+
+	UINode(Style style);
+	UINode(Style style, int totalChildren, ...);
 
 	virtual ~UINode();
 	
-	virtual void draw(SDL_FPoint offset);
+	virtual void draw(const SDL_Rect& container);
 	virtual void update();
-
-	bool click(const SDL_Event& e);
 	
-	virtual bool mouseDown(const SDL_Event& e);
-	virtual bool mouseUp(const SDL_Event& e);
+	bool handleMouseDown(SDL_Rect container, const SDL_Event& e);
+	virtual bool onMouseDown(const SDL_Event& e);
+	
+	bool handleMouseUp(SDL_Rect container, const SDL_Event& e);
+	virtual bool onMouseUp(const SDL_Event& e);
 
-	virtual bool keyDown(const SDL_Event& e);
-	virtual bool keyUp(const SDL_Event& e);
+	bool handleMouseScroll(SDL_Rect container, const SDL_Event& e);
+
+	bool handleKeyDown(const SDL_Event& e);
+	virtual bool onKeyDown(const SDL_Event& e);
+
+	bool handleKeyUp(const SDL_Event& e);
+	virtual bool onKeyUp(const SDL_Event& e);
 
 	std::vector<UINode*> children;
+	
+	Style style;
+
+	int16_t scroll = 0;
 
 protected:
-	SDL_Texture* image;
-	SDL_Color color;
-	SDL_FRect dimensions;
-	SDL_Rect src;
+	Texture* image;
+
+	SDL_Point getDrawOffset(const SDL_Rect& container);
 };
 

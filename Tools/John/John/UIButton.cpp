@@ -1,28 +1,32 @@
 #include "UIButton.h"
 #include "App.h"
 
-#define WIN32_LEAN_AND_MEAN
 #include "Windows.h"
 
-UIButton::UIButton(SDL_FPoint pos, std::string texture) :
-	UINode(
-		{
-			pos.x, pos.y,
-			128, 32
-		}
-	)
+UIButton::UIButton(Style style) :
+	UINode(style)
 {
-	if (!APP->tryLoadTexture(texture + ".png", texture, &image))
+	if (!APP->tryLoadTexture(style.texturePath + "Pressed.png", style.texturePath + "Pressed", &pressed))
 	{
-		MessageBoxA(NULL, ("Failed to load " + texture).c_str(), NULL, MB_OK);
+		MessageBoxA(NULL, ("Failed to load [" + style.texturePath + "Pressed.png]").c_str(), NULL, MB_OK);
 	}
-	if (!APP->tryLoadTexture(texture + "Pressed.png", texture + "Pressed", &pressed))
-	{
-		MessageBoxA(NULL, ("Failed to load pressed " + texture).c_str(), NULL, MB_OK);
-	}
+
+	depressed = image;
 }
 
 UIButton::~UIButton()
 {
 
+}
+
+bool UIButton::onMouseDown(const SDL_Event& e)
+{
+	image = pressed;
+	return true;
+}
+
+bool UIButton::onMouseUp(const SDL_Event& e)
+{
+	image = depressed;
+	return true;
 }

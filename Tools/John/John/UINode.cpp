@@ -1,34 +1,44 @@
 #include "UINode.h"
 #include "App.h"
 
-UINode::UINode(SDL_FRect dimensions) : UINode(dimensions, { 0, 0, 0, 0 })
+#include "Windows.h"
+
+uint16_t UINode::PCT(uint16_t x)
 {
+	return x | PCT_BIT;
 }
 
-UINode::UINode(SDL_FRect dimensions, SDL_Color color)
+uint16_t UINode::calcX(uint16_t x)
+{
+	return (x & PCT_BIT)
+		? (uint16_t)(APP->width * ((float)(x & ~PCT_BIT) / 100.0f))
+		: x;
+}
+
+uint16_t UINode::calcY(uint16_t y)
+{
+	return (y & PCT_BIT)
+		? (uint16_t)(APP->height * ((float)(y & ~PCT_BIT) / 100.0f))
+		: y;
+}
+
+
+UINode::UINode(Style style)
 {
 	image = NULL;
-	this->dimensions = dimensions;
-	this->color = color;
-	this->src = {
-		0, 0,
-		(int)dimensions.w, (int)dimensions.h
-	};
-}
+	this->style = style;
 
-UINode::UINode(SDL_FRect dimensions, int totalChildren, ...) : UINode(dimensions, { 0, 0, 0, 0 })
-{
-	va_list args;
-	UINode* children = NULL;
-	va_start(args, totalChildren);
-	for (int i = 0; i < totalChildren; i++)
+	if (!style.texturePath.empty())
 	{
-		auto child = va_arg(args, UINode*);
-		this->children.push_back(child);
+		if (!APP->tryLoadTexture(style.texturePath + ".png", style.texturePath, &image))
+		{
+			MessageBoxA(NULL, ("Failed to load image [" + style.texturePath + "]").c_str(), NULL, MB_OK);
+		}
 	}
+
 }
 
-UINode::UINode(SDL_FRect dimensions, SDL_Color color, int totalChildren, ...) : UINode(dimensions, color)
+UINode::UINode(Style style, int totalChildren, ...) : UINode(style)
 {
 	va_list args;
 	UINode* children = NULL;
@@ -45,50 +55,68 @@ UINode::~UINode()
 
 }
 
-void UINode::draw(SDL_FPoint offset)
+void UINode::draw(const SDL_Rect& container)
 {
+	SDL_Point offset = getDrawOffset(container);
 
-	SDL_FPoint _offset = {
-		offset.x + dimensions.x,
-		offset.y + dimensions.y
-	};
-
-	if (image != NULL)
+	SDL_Rect _dimensions
 	{
-		SDL_FRect _dimensions
-		{
-			_offset.x,
-			_offset.y,
-			CALC_X(dimensions.w),
-			CALC_Y(dimensions.h)
-		};
+		offset.x,
+		offset.y,
+		calcX(style.width),
+		calcY(style.height),
+	};
+	
+	if (style.border.a != 0)
+	{
+		SDL_RenderSetScale(APP->renderer, 2.0f, 2.0f);
 
-		SDL_RenderCopyF(
+		SDL_SetRenderDrawColor(APP->renderer, style.border.r, style.border.g, style.border.b, style.border.a);
+
+		SDL_Rect borderDimensions = {
+			_dimensions.x/2 - 1, _dimensions.y/2 - 1,
+			_dimensions.w/2 + 2, _dimensions.h/2 + 2
+		};
+		SDL_RenderDrawRect(APP->renderer, &borderDimensions);
+		SDL_RenderSetScale(APP->renderer, 1.0f, 1.0f);
+	}
+
+	if (!style.overflow)
+	{
+		SDL_RenderSetClipRect(APP->renderer, &_dimensions);
+	}
+
+	if (style.color.a != 0)
+	{
+		SDL_SetRenderDrawColor(APP->renderer, style.color.r, style.color.g, style.color.b, style.color.a);
+		SDL_RenderFillRect(
 			APP->renderer,
-			image,
-			&src,
 			&_dimensions
 		);
 	}
 
-	if (color.a != 0)
+	if (style.scrollable)
 	{
-		SDL_FRect _dimension{
-			_offset.x,
-			_offset.y,
-			CALC_X(dimensions.w),
-			CALC_Y(dimensions.h)
-		};
-		SDL_SetRenderDrawColor(APP->renderer, color.r, color.g, color.b, color.a);
-		SDL_RenderFillRectF(
+		_dimensions.y -= scroll;
+	}
+
+	if (image != NULL)
+	{
+		SDL_RenderCopy(
 			APP->renderer,
-			&_dimension
+			image->texture,
+			&(image->src),
+			&_dimensions
 		);
 	}
 
 	for (const auto& c : children)
 	{
-		c->draw(_offset);
+		c->draw(_dimensions);
+	}
+	if (!style.overflow)
+	{
+		SDL_RenderSetClipRect(APP->renderer, NULL);
 	}
 }
 
@@ -97,36 +125,193 @@ void UINode::update()
 
 }
 
-bool UINode::click(const SDL_Event& e)
+bool UINode::handleMouseDown(SDL_Rect container, const SDL_Event& e)
 {
-	SDL_Point pos = { e.button.x, e.button.y };
-	//if(SDL_PointInRect()
-	for (auto c : children)
+	auto offset = getDrawOffset(container);
+
+	SDL_Rect transformedDim = {
+		offset.x,
+		offset.y,
+		calcX(style.width),
+		calcY(style.height)
+	};
+
+	SDL_Point mouse = {
+		e.button.x,
+		e.button.y
+	};
+
+	if (SDL_PointInRect(&mouse, &transformedDim))
 	{
-		//sif()
+		bool bubble = true;
+		for (const auto& c : children)
+		{
+			bubble &= c->handleMouseDown({ transformedDim.x, transformedDim.y - scroll, transformedDim.w, transformedDim.h }, e);
+		}
+
+		if (bubble)
+		{
+			bubble &= onMouseDown(e);
+		}
+
+		return bubble;
 	}
 	return true;
 }
 
-bool UINode::mouseDown(const SDL_Event& e)
+bool UINode::onMouseDown(const SDL_Event& e)
 {
-
 	return true;
 }
 
-bool UINode::mouseUp(const SDL_Event& e)
+bool UINode::handleMouseUp(SDL_Rect container, const SDL_Event& e)
 {
+	auto offset = getDrawOffset(container);
 
+	SDL_Rect transformedDim = {
+		offset.x,
+		offset.y,
+		calcX(style.width),
+		calcY(style.height)
+	};
+
+	SDL_Point mouse = {
+		e.button.x,
+		e.button.y
+	};
+
+	if (SDL_PointInRect(&mouse, &transformedDim))
+	{
+		bool bubble = true;
+		for (const auto& c : children)
+		{
+			bubble &= c->handleMouseUp({ transformedDim.x, transformedDim.y - scroll, transformedDim.w, transformedDim.h }, e);
+		}
+
+		if (bubble)
+		{
+			bubble &= onMouseUp(e);
+		}
+
+		return bubble;
+	}
 	return true;
 }
 
-bool UINode::keyDown(const SDL_Event& e)
+bool UINode::onMouseUp(const SDL_Event& e)
 {
-
 	return true;
 }
 
-bool UINode::keyUp(const SDL_Event& e)
+bool UINode::handleMouseScroll(SDL_Rect container, const SDL_Event& e)
+{
+	auto offset = getDrawOffset(container);
+
+	SDL_Rect transformedDim = {
+		offset.x,
+		offset.y,
+		calcX(style.width),
+		calcY(style.height)
+	};
+
+	int x, y;
+	SDL_GetMouseState(&x, &y);
+
+	SDL_Point mouse = {
+		x,
+		y
+	};
+
+	if (SDL_PointInRect(&mouse, &transformedDim))
+	{
+		bool bubble = true;
+		for (const auto& c : children)
+		{
+			bubble &= c->handleMouseScroll(transformedDim, e);
+		}
+
+		if (bubble && style.scrollable)
+		{
+			if (e.wheel.y > 0 && scroll > 0)
+			{
+				scroll -= 10;
+				if (scroll < 0)
+					scroll = 0;
+			}
+			else if(e.wheel.y < 0 && scroll < calcY(style.height))
+			{
+				scroll += 10;
+			}
+			return false;
+		}
+		return bubble;
+	}
+	return true;
+}
+
+bool UINode::handleKeyDown(const SDL_Event& e)
+{
+	bool bubble = true;
+	for (const auto& c : children)
+	{
+		bubble &= c->handleKeyDown(e);
+	}
+
+	if (bubble)
+	{
+		bubble &= onKeyDown(e);
+	}
+
+	return bubble;
+}
+
+bool UINode::onKeyDown(const SDL_Event& e)
 {
 	return true;
+}
+
+bool UINode::handleKeyUp(const SDL_Event& e)
+{
+	bool bubble = true;
+	for (const auto& c : children)
+	{
+		bubble &= c->handleKeyUp(e);
+	}
+
+	if (bubble)
+	{
+		bubble &= onKeyUp(e);
+	}
+
+	return bubble;
+}
+
+bool UINode::onKeyUp(const SDL_Event& e)
+{
+	return true;
+}
+
+SDL_Point UINode::getDrawOffset(const SDL_Rect& container)
+{
+	SDL_Point offset = { 0 };
+	// x
+	if (style.xAnchor == StyleDirection::RIGHT)
+	{
+		offset.x = container.x + (container.w - (calcX(style.width) + style.x));
+	}
+	else
+	{
+		offset.x = container.x + style.x;
+	}
+
+	// y
+	if (style.yAnchor == StyleDirection::BOTTOM)
+	{
+		offset.y = container.y + (container.h - (calcX(style.height) + style.y));
+	}
+	else
+	{
+		offset.y = container.y + style.y;
+	}
+	return offset;
 }
