@@ -164,6 +164,45 @@ bool UINode::onMouseDown(const SDL_Event& e)
 	return true;
 }
 
+bool UINode::handleDrag(SDL_Rect container, const SDL_Event& e)
+{
+	auto offset = getDrawOffset(container);
+
+	SDL_Rect transformedDim = {
+		offset.x,
+		offset.y,
+		calcX(style.width),
+		calcY(style.height)
+	};
+
+	SDL_Point mouse = {
+		e.button.x,
+		e.button.y
+	};
+
+	if (SDL_PointInRect(&mouse, &transformedDim))
+	{
+		bool bubble = true;
+		for (const auto& c : children)
+		{
+			bubble &= c->handleDrag({ transformedDim.x, transformedDim.y - scroll, transformedDim.w, transformedDim.h }, e);
+		}
+
+		if (bubble)
+		{
+			bubble &= onDrag(e);
+		}
+
+		return bubble;
+	}
+	return true;
+}
+
+bool UINode::onDrag(const SDL_Event& e)
+{
+	return true;
+}
+
 bool UINode::handleMouseUp(SDL_Rect container, const SDL_Event& e)
 {
 	auto offset = getDrawOffset(container);
@@ -234,13 +273,13 @@ bool UINode::handleMouseScroll(SDL_Rect container, const SDL_Event& e)
 		{
 			if (e.wheel.y > 0 && scroll > 0)
 			{
-				scroll -= 10;
+				scroll -= 20;
 				if (scroll < 0)
 					scroll = 0;
 			}
-			else if(e.wheel.y < 0 && scroll < calcY(style.height))
+			else if(e.wheel.y < 0)
 			{
-				scroll += 10;
+				scroll += 20;
 			}
 			return false;
 		}

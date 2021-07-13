@@ -6,6 +6,7 @@
 #include "SDL.h"
 
 #include "App.h"
+#include "LayerEditor.h"
 
 Grid::Grid() : UINode(
 	{
@@ -19,9 +20,10 @@ Grid::Grid() : UINode(
 	{
 		for (int j = 0; j < 512; j++)
 		{
-			this->map[j][i] = nullptr;
+			this->map[j][i] = MapTile();
 		}
 	}
+	children.push_back(new LayerEditor(this));
 }
 
 Grid::~Grid()
@@ -37,28 +39,67 @@ void Grid::draw(const SDL_Rect& container)
 	};
 
 	// draw tiles
+
 	for (int y = position.y / 64; y < (position.y + APP->height) / 64 && y < 256; y++)
 	{
 		for (int x = position.x / 64; x < (position.x + APP->width) / 64 && x < 256; x++)
 		{
-			auto tile = this->map[x][y];
-			if (tile != nullptr)
+			for (int l = 0; l <= getCurrentLayer(); l++)
 			{
-				int _x = (x * 64) - position.x;
-				int _y = (y * 64) - position.y + 34;
+				auto tile = this->map[x][y];
+				if (!(l == 2 && getCurrentLayer() == 3) && tile.texture[l] != nullptr && l != 3)
+				{
+					int l2 = l;
+					if (getCurrentLayer() == 3)
+						l2++;
+					int opacity = (int)(((float)(4 - (getCurrentLayer() - l2))) / 4.0f * 255);
+					auto tex = tile.texture[l]->texture;
+					SDL_SetTextureBlendMode(tex, SDL_BLENDMODE_BLEND);
+					SDL_SetTextureAlphaMod(tex, opacity);
+					int _x = (x * 64) - position.x;
+					int _y = (y * 64) - position.y + 34;
 
-				SDL_Rect dst = {
-					_x, _y,
-					64, 64
-				};
+					SDL_Rect dst = {
+						_x, _y,
+						64, 64
+					};
 
-				SDL_RenderCopy(APP->renderer, tile->texture->texture, &tile->texture->src, &dst);
+					SDL_RenderCopy(APP->renderer, tex, &tile.texture[l]->src, &dst);
+					SDL_SetTextureAlphaMod(tex, 255);
+				}
+				else if (l == 3 && tile.token.zone > 0)
+				{
+					
+					int _x = (x * 64) - position.x;
+					int _y = (y * 64) - position.y + 34;
+
+					SDL_Rect dst = {
+						_x + 4, _y + 4,
+						64 - 8, 64 - 8
+					};
+					auto col = ZONE_COLORS[tile.token.zone];
+					SDL_SetRenderDrawColor(APP->renderer, col.r, col.g, col.b, col.a);
+					SDL_RenderFillRect(APP->renderer, &dst);
+
+					SDL_Rect src = {
+						tile.token.zone * 14, 0,
+						14, 18
+					};
+
+					dst = {
+						_x + 10, _y + 10,
+						14, 18
+					};
+
+					SDL_RenderCopy(APP->renderer, APP->numbers->texture, &src, &dst);
+
+				}
 			}
 		}
 	}
 
 	// draw cursor
-	if (APP->selectedTile != 0 && APP->selectedTileTexture != nullptr)
+	if (getCurrentLayer() != 3 && APP->selectedTile != 0 && APP->selectedTileTexture != nullptr)
 	{
 		int x, y;
 
@@ -71,7 +112,30 @@ void Grid::draw(const SDL_Rect& container)
 			64, 64
 		};
 
+		SDL_SetTextureBlendMode((APP->selectedTileTexture->texture), SDL_BLENDMODE_BLEND);
+		SDL_SetTextureAlphaMod(APP->selectedTileTexture->texture, 128);
 		SDL_RenderCopy(APP->renderer, APP->selectedTileTexture->texture, &APP->selectedTileTexture->src, &dst);
+		SDL_SetTextureAlphaMod(APP->selectedTileTexture->texture, 255);
+		SDL_SetTextureBlendMode(APP->selectedTileTexture->texture, SDL_BLENDMODE_NONE);
+	}
+	else if (getCurrentLayer() == 3 && getCurrentZone() > 0)
+	{
+		int x, y;
+
+		SDL_GetMouseState(&x, &y);
+		x = ((x + position.x) / 64 * 64) - position.x;
+		y = (y - 34 + position.y) / 64 * 64 - position.y + 34;
+
+		SDL_Rect dst = {
+			x + 4, y + 4,
+			64 - 8, 64 - 8
+		};
+
+		SDL_Color col = ZONE_COLORS[getCurrentZone()];
+		SDL_SetRenderDrawBlendMode(APP->renderer, SDL_BLENDMODE_BLEND);
+		SDL_SetRenderDrawColor(APP->renderer, col.r, col.g, col.b, 128);
+		SDL_RenderFillRect(APP->renderer, &dst);
+		SDL_SetRenderDrawBlendMode(APP->renderer, SDL_BLENDMODE_NONE);
 	}
 
 	// draw grid
@@ -109,6 +173,8 @@ void Grid::draw(const SDL_Rect& container)
 			SDL_RenderFillRect(APP->renderer, &dot);
 		}
 	}
+
+	UINode::draw(container); // draw children
 }
 
 bool Grid::onKeyDown(const SDL_Event& e)
@@ -162,16 +228,107 @@ bool Grid::onMouseDown(const SDL_Event& e)
 		return true;
 	}
 
+	SDL_Point tilePos = tileFromMouse(e);
+	//MessageBoxA(NULL, (std::to_string(mouse.x) + ", " + std::to_string(mouse.y)).c_str(), NULL, MB_OK);
+
+
+	if (APP->mouseState & MOUSE_LEFT)
+		placeTile(tilePos.x, tilePos.y);
+	else if (APP->mouseState & MOUSE_MIDDLE)
+		removeTile(tilePos.x, tilePos.y, false);
+	return true;
+}
+
+bool Grid::onDrag(const SDL_Event& e)
+{
+	static int dragged = 0;
+	SDL_Point tilePos = tileFromMouse(e);
+	if ((lastTilePlaced.x == tilePos.x) && (lastTilePlaced.y == tilePos.y))
+	{
+		return true;
+	}
+
+	if (APP->mouseState & MOUSE_LEFT)
+		placeTile(tilePos.x, tilePos.y);
+	else if (APP->mouseState & MOUSE_MIDDLE)
+		removeTile(tilePos.x, tilePos.y, false);
+}
+
+SDL_Point Grid::tileFromMouse(const SDL_Event& e)
+{
+	SDL_Point mouse = {
+		e.button.x,
+		e.button.y
+	};
+
 	mouse.x = ((mouse.x + position.x) / 64);
 	mouse.y = (mouse.y - 34 + position.y) / 64;
 
-	//MessageBoxA(NULL, (std::to_string(mouse.x) + ", " + std::to_string(mouse.y)).c_str(), NULL, MB_OK);
+	return mouse;
+}
 
-	if (this->map[mouse.x][mouse.y] != nullptr)
+void Grid::changeLayer(int dir)
+{
+	this->currentLayer += dir;
+	if (this->currentLayer < 0)
+		this->currentLayer = 0;
+	else if (this->currentLayer > 3)
+		this->currentLayer = 3;
+}
+
+void Grid::changeZone(int dir)
+{
+	this->currentZone += dir;
+	if (this->currentZone < 0)
+		this->currentZone = 0;
+	else if (this->currentZone > 9)
+		this->currentZone = 9;
+}
+
+int Grid::getCurrentLayer()
+{
+	return currentLayer;
+}
+
+int Grid::getCurrentZone()
+{
+	return currentZone;
+}
+
+void Grid::placeTile(int x, int y)
+{
+	if (x < 0 || x >= 512)
+		return;
+	if (y < 0 || y >= 512)
+		return;
+	if (getCurrentLayer() != LAYER_GRID)
 	{
-		delete this->map[mouse.x][mouse.y];
+		map[x][y].set(getCurrentLayer(), APP->selectedTile, APP->selectedTileTexture);
 	}
-	this->map[mouse.x][mouse.y] = new MapTile(APP->selectedTile, APP->selectedTileTexture);
+	else
+	{
+		map[x][y].set(getCurrentLayer(), getCurrentZone(), nullptr);
+	}
+	lastTilePlaced = { x, y };
+}
 
-	return true;
+void Grid::removeTile(int x, int y, bool all)
+{
+	if (x < 0 || x >= 512)
+		return;
+	if (y < 0 || y >= 512)
+		return;
+	if (all)
+	{
+		for (int i = 0; i < 0; i++)
+		{
+			map[x][y].set(i, 0, nullptr);
+		}
+	}
+	else
+	{
+		map[x][y].set(getCurrentLayer(), 0, nullptr);
+	}
+	lastTilePlaced = { x, y };
+
 }

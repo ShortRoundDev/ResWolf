@@ -11,8 +11,12 @@
 
 #define APP (App::instance)
 
-/* Forward declaration */
+// Mouse constexpr
+constexpr uint8_t MOUSE_LEFT = 1;
+constexpr uint8_t MOUSE_MIDDLE = 2;
+constexpr uint8_t MOUSE_RIGHT = 4;
 
+/* Forward declaration */
 class UINode;
 
 class App
@@ -31,6 +35,8 @@ public:
 	SDL_Renderer* renderer;
 
 	std::map<std::string, Texture*> textures;
+
+	Texture* numbers;
 	
 	bool shouldQuit = false;
 
@@ -39,6 +45,10 @@ public:
 	void update();
 	void draw();
 	void events();
+	// event stuff
+	uint8_t mouseState; // 1 = left, 2 = middle, 4 = right
+	bool dragging = false;
+	SDL_Point lastMouseDown;
 
 	void windowResizeEvent(const SDL_Event& e);
 

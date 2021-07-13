@@ -76,6 +76,9 @@ public:
 	
 	bool handleMouseDown(SDL_Rect container, const SDL_Event& e);
 	virtual bool onMouseDown(const SDL_Event& e);
+
+	bool handleDrag(SDL_Rect container, const SDL_Event& e);
+	virtual bool onDrag(const SDL_Event& e);
 	
 	bool handleMouseUp(SDL_Rect container, const SDL_Event& e);
 	virtual bool onMouseUp(const SDL_Event& e);

@@ -11,8 +11,11 @@ namespace ResWolf
 		uint16_t wallType;		// 0, 1
 		uint8_t isDoor;			// 2
 		uint8_t lockType;		// 3
-		// --- Word 1, 2 ---
-		uint8_t reserved[12];	// 4 - 15	// Reserved for future use
+		uint16_t floor;			// 4, 5
+		uint16_t ceiling;		// 6, 7
+		// --- Word 2 ---
+		uint8_t grid;
+		uint8_t reserved[7];	// 4 - 15	// Reserved for future use
 		// --- Word 3 ---
 		char* message;			// 16 - 22
 	} WallToken;

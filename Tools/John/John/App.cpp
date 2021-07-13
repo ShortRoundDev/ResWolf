@@ -1,5 +1,7 @@
 #include "App.h"
 
+#include <Windows.h>
+
 #include "UINode.h"
 
 #include "Grid.h"
@@ -18,6 +20,11 @@ void App::init(std::string title)
 {
 	instance = std::make_unique<App>(title);
 	instance->createDom();
+
+	if (!instance->tryLoadTexture("Resources/Numbers.png", "Numbers", &instance->numbers))
+	{
+		MessageBoxA(NULL, "Failed to load numbers font file", NULL, MB_OK);
+	}
 }
 
 App::App(std::string title)
@@ -40,8 +47,6 @@ App::App(std::string title)
 	auto mouse = IMG_Load("Resources/mouse.png");
 	auto cursor = SDL_CreateColorCursor(mouse, 0, 0);
 	SDL_SetCursor(cursor);
-	// todo: set mouse
-
 }
 
 App::~App()
@@ -139,12 +144,70 @@ void App::events()
 		}
 		case SDL_MOUSEBUTTONDOWN:
 		{
+			lastMouseDown = { e.button.x, e.button.y };
+			switch(e.button.button)
+			{
+			case SDL_BUTTON_LEFT:
+			{
+				mouseState |= MOUSE_LEFT;
+				break;
+			}
+			case SDL_BUTTON_MIDDLE:
+			{
+				mouseState |= MOUSE_MIDDLE;
+				break;
+			}
+			case SDL_BUTTON_RIGHT:
+			{
+				mouseState |= MOUSE_RIGHT;
+				break;
+			}
+			}
+
 			rootDom->handleMouseDown({ 0, 0 }, e);
 			break;
 		}
 		case SDL_MOUSEBUTTONUP:
 		{
+			switch (e.button.button)
+			{
+			case SDL_BUTTON_LEFT:
+			{
+				mouseState &= ~MOUSE_LEFT;
+				break;
+			}
+			case SDL_BUTTON_MIDDLE:
+			{
+				mouseState &= ~MOUSE_MIDDLE;
+				break;
+			}
+			case SDL_BUTTON_RIGHT:
+			{
+				mouseState &= ~MOUSE_RIGHT;
+				break;
+			}
+			}
+
+			dragging = false;
 			rootDom->handleMouseUp({ 0, 0 }, e);
+			break;
+		}
+		case SDL_MOUSEMOTION:
+		{
+			if (mouseState != 0 && !dragging)
+			{
+				SDL_Point now = { e.button.x, e.button.y };
+				auto deltaX = now.x - lastMouseDown.x;
+				auto deltaY = now.y - lastMouseDown.y;
+				if (sqrt((deltaX * deltaX) + (deltaY * deltaY)) > 10)
+				{
+					dragging = true;
+				}
+			}
+			if (dragging)
+			{
+				rootDom->handleDrag({ 0, 0 }, e);
+			}
 			break;
 		}
 		case SDL_MOUSEWHEEL:
