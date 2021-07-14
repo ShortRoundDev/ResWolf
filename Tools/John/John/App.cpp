@@ -13,6 +13,7 @@
 #include "SectionHeader.h"
 #include "Tile.h"
 #include "TileArea.h"
+#include "EntityArea.h"
 
 std::unique_ptr<App> App::instance = nullptr;
 
@@ -83,20 +84,10 @@ void App::createDom()
 			),
 			new TileArea(),
 			new SectionHeader(
-				64, 256 + 80,
+				64, 256 + 112,
 				"Resources/Entities"
 			),
-			new UINode(
-				{
-					16, 256 + 112,
-					224, 256,
-					"",
-					CGA_BLUE,
-					StyleDirection::TOP,
-					StyleDirection::LEFT,
-					CGA_CYAN
-				}
-			)
+			new EntityArea
 		),
 		new UINode(
 			{
@@ -217,6 +208,7 @@ void App::events()
 		}
 		case SDL_KEYDOWN:
 		{
+			keymap[e.key.keysym.scancode] = true;
 			rootDom->handleKeyDown(e);
 			if (e.key.keysym.scancode == SDL_SCANCODE_F11)
 			{
@@ -227,6 +219,7 @@ void App::events()
 		}
 		case SDL_KEYUP:
 		{
+			keymap[e.key.keysym.scancode] = false;
 			rootDom->handleKeyUp(e);
 			break;
 		}

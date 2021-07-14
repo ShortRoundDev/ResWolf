@@ -11,6 +11,8 @@ bool Texture::tryLoad(_In_ std::string path, _Out_ Texture** texture)
 	if(sdlTexture == NULL)
 		return false;
 
+	SDL_SetTextureBlendMode(sdlTexture, SDL_BLENDMODE_BLEND);
+
 	*texture = new Texture(sdlTexture);
 	return true;
 }

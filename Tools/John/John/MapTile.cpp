@@ -32,7 +32,7 @@ void MapTile::set(int layer, int tileNum, Texture* tileTexture)
 	}
 	case LAYER_WALLS:
 	{
-		token.floor = tileNum;
+		token.wallType = tileNum;
 		break;
 	}
 	case LAYER_CEIL :

@@ -8,6 +8,8 @@
 #include "App.h"
 #include "LayerEditor.h"
 
+#include "EntityButton.h"
+
 Grid::Grid() : UINode(
 	{
 		0, 34,
@@ -33,13 +35,17 @@ Grid::~Grid()
 
 void Grid::draw(const SDL_Rect& container)
 {
-	SDL_Rect dimensions = {
-		0, 0,
-		calcX(style.width), calcY(style.height)
-	};
+	drawTiles(container);
+	drawCursor(container);
+	drawGrid(container);
+
+	UINode::draw(container); // draw children
+}
+
+void Grid::drawTiles(const SDL_Rect& container)
+{
 
 	// draw tiles
-
 	for (int y = position.y / 64; y < (position.y + APP->height) / 64 && y < 256; y++)
 	{
 		for (int x = position.x / 64; x < (position.x + APP->width) / 64 && x < 256; x++)
@@ -69,7 +75,7 @@ void Grid::draw(const SDL_Rect& container)
 				}
 				else if (l == 3 && tile.token.zone > 0)
 				{
-					
+
 					int _x = (x * 64) - position.x;
 					int _y = (y * 64) - position.y + 34;
 
@@ -97,9 +103,12 @@ void Grid::draw(const SDL_Rect& container)
 			}
 		}
 	}
+}
 
+void Grid::drawCursor(const SDL_Rect& container)
+{
 	// draw cursor
-	if (getCurrentLayer() != 3 && APP->selectedTile != 0 && APP->selectedTileTexture != nullptr)
+	if (getCurrentLayer() != 3)
 	{
 		int x, y;
 
@@ -111,12 +120,30 @@ void Grid::draw(const SDL_Rect& container)
 			x, y,
 			64, 64
 		};
+		Texture* t = nullptr;
 
-		SDL_SetTextureBlendMode((APP->selectedTileTexture->texture), SDL_BLENDMODE_BLEND);
-		SDL_SetTextureAlphaMod(APP->selectedTileTexture->texture, 128);
-		SDL_RenderCopy(APP->renderer, APP->selectedTileTexture->texture, &APP->selectedTileTexture->src, &dst);
-		SDL_SetTextureAlphaMod(APP->selectedTileTexture->texture, 255);
-		SDL_SetTextureBlendMode(APP->selectedTileTexture->texture, SDL_BLENDMODE_NONE);
+		if (APP->selectedTileTexture != nullptr)
+		{
+			t = APP->selectedTileTexture;
+		}
+		else if (APP->selectedEntity != nullptr)
+		{
+			t = APP->selectedEntity->entTexture;
+		}
+		if (t != nullptr)
+		{
+			SDL_SetTextureAlphaMod(t->texture, 128);
+
+			SDL_RenderCopy(
+				APP->renderer,
+				t->texture,
+				&t->src,
+				&dst
+			);
+
+			SDL_SetTextureAlphaMod(t->texture, 255);
+		}
+
 	}
 	else if (getCurrentLayer() == 3 && getCurrentZone() > 0)
 	{
@@ -137,6 +164,14 @@ void Grid::draw(const SDL_Rect& container)
 		SDL_RenderFillRect(APP->renderer, &dst);
 		SDL_SetRenderDrawBlendMode(APP->renderer, SDL_BLENDMODE_NONE);
 	}
+}
+
+void Grid::drawGrid(const SDL_Rect& container)
+{
+	SDL_Rect dimensions = {
+		0, 0,
+		calcX(style.width), calcY(style.height)
+	};
 
 	// draw grid
 	SDL_SetRenderDrawColor(APP->renderer, CGA_LT_GRAY.r, CGA_LT_GRAY.g, CGA_LT_GRAY.b, CGA_LT_GRAY.a);
@@ -173,8 +208,6 @@ void Grid::draw(const SDL_Rect& container)
 			SDL_RenderFillRect(APP->renderer, &dot);
 		}
 	}
-
-	UINode::draw(container); // draw children
 }
 
 bool Grid::onKeyDown(const SDL_Event& e)
@@ -233,9 +266,20 @@ bool Grid::onMouseDown(const SDL_Event& e)
 
 
 	if (APP->mouseState & MOUSE_LEFT)
-		placeTile(tilePos.x, tilePos.y);
+	{
+		if (APP->keymap[SDL_SCANCODE_LSHIFT] == true)
+		{
+			floodFill(tilePos.x, tilePos.y);
+		}
+		else
+		{
+			placeTile(tilePos.x, tilePos.y);
+		}
+	}
 	else if (APP->mouseState & MOUSE_MIDDLE)
+	{
 		removeTile(tilePos.x, tilePos.y, false);
+	}
 	return true;
 }
 
@@ -310,6 +354,76 @@ void Grid::placeTile(int x, int y)
 		map[x][y].set(getCurrentLayer(), getCurrentZone(), nullptr);
 	}
 	lastTilePlaced = { x, y };
+}
+
+void Grid::floodFill(int x, int y)
+{
+	if (x < 0 || x > 255 || y < 0 || y > 255)
+		return;
+	int floodType = -1;
+	switch (getCurrentLayer())
+	{
+	case LAYER_FLOOR:
+		floodType = map[x][y].token.floor;
+		break;
+	case LAYER_WALLS:
+		floodType = map[x][y].token.wallType;
+		break;
+	case LAYER_CEIL:
+		floodType = map[x][y].token.ceiling;
+		break;
+	case LAYER_GRID:
+		floodType = map[x][y].token.zone;
+		break;
+	}
+
+	std::vector<std::tuple<int, int>> history = std::vector<std::tuple<int, int>>();
+	std::vector<std::tuple<int, int>> permanentHistory = std::vector<std::tuple<int, int>>();
+	history.push_back(std::tuple<int, int>(x, y));
+	while (!history.empty())
+	{
+		std::tuple<int, int> top = history.back();
+		history.pop_back();
+		int x = std::get<0>(top),
+			y = std::get<1>(top);
+		if (floodable(x, y, floodType, history))
+		{
+			placeTile(x, y);
+			permanentHistory.push_back(top);
+			if (floodable(x - 1, y, floodType, permanentHistory))
+				history.push_back(std::tuple<int, int>(x - 1, y));
+			if (floodable(x + 1, y, floodType, permanentHistory))
+				history.push_back(std::tuple<int, int>(x + 1, y));
+			if (floodable(x, y - 1, floodType, permanentHistory))
+				history.push_back(std::tuple<int, int>(x, y - 1));
+			if (floodable(x, y + 1, floodType, permanentHistory))
+				history.push_back(std::tuple<int, int>(x, y + 1));
+		}
+	}
+}
+
+bool Grid::floodable(int x, int y, int floodType, const std::vector<std::tuple<int, int>>& history)
+{
+	if (x < 0 || x > 255 || y < 0 || y > 255)
+		return false;
+
+	if (std::find(history.begin(), history.end(), std::tuple<int, int>(x, y)) != history.end())
+	{
+		return false;
+	}
+
+	switch (getCurrentLayer())
+	{
+	case LAYER_FLOOR:
+		return map[x][y].token.floor == floodType;
+	case LAYER_WALLS:
+		return map[x][y].token.wallType == floodType;
+	case LAYER_CEIL:
+		return map[x][y].token.ceiling == floodType;
+	case LAYER_GRID:
+		return map[x][y].token.zone == floodType;
+	}
+	return false;
 }
 
 void Grid::removeTile(int x, int y, bool all)

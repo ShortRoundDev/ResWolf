@@ -146,6 +146,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="EntityArea.cpp" />
+    <ClCompile Include="EntityButton.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="LayerEditor.cpp" />
     <ClCompile Include="LayerIncrementorButton.cpp" />
@@ -162,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="EntityArea.h" />
+    <ClInclude Include="EntityButton.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="LayerEditor.h" />
     <ClInclude Include="LayerIncrementorButton.h" />

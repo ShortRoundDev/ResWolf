@@ -18,6 +18,7 @@ constexpr uint8_t MOUSE_RIGHT = 4;
 
 /* Forward declaration */
 class UINode;
+class EntityButton;
 
 class App
 {
@@ -35,6 +36,7 @@ public:
 	SDL_Renderer* renderer;
 
 	std::map<std::string, Texture*> textures;
+	std::map<SDL_Scancode, bool> keymap;
 
 	Texture* numbers;
 	
@@ -61,5 +63,7 @@ public:
 	// ----- Editor stuff -----
 	int selectedTile = 0;
 	Texture* selectedTileTexture = nullptr;
+
+	EntityButton* selectedEntity = nullptr;
 };
 

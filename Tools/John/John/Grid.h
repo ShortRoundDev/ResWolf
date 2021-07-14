@@ -2,6 +2,9 @@
 
 #include "UINode.h"
 
+#include <vector>
+#include <tuple>
+
 #include "MapTile.h"
 
 constexpr SDL_Color ZONE_COLORS[10] = {
@@ -24,6 +27,10 @@ public:
 	~Grid();
 
 	virtual void draw(const SDL_Rect& container);
+	void drawTiles(const SDL_Rect& container);
+	void drawCursor(const SDL_Rect& container);
+	void drawGrid(const SDL_Rect& container);
+
 	virtual bool onKeyDown(const SDL_Event& e);
 	virtual bool onMouseDown(const SDL_Event& e);
 	virtual bool onDrag(const SDL_Event& e);
@@ -49,6 +56,8 @@ private:
 	int currentZone;
 
 	void placeTile(int x, int y);
+	void floodFill(int x, int y);
+	bool floodable(int x, int y, int floodType, const std::vector<std::tuple<int, int>>& history);
 	void removeTile(int x, int y, bool all);
 };
 

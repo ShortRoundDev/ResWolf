@@ -11,7 +11,7 @@ Tile::Tile(int t, int tileNum, Texture* image) : UINode({
 		"Resources/Tile",
 		CGA_TRANSPARENT,
 		StyleDirection::TOP,
-		StyleDirection::LEFT,
+		StyleDirection::LEFT
 	})
 {
 	this->tileNum = tileNum;
@@ -49,7 +49,10 @@ bool Tile::onMouseDown(const SDL_Event& e)
 bool Tile::onMouseUp(const SDL_Event& e)
 {
 	image = depressed;
+
 	APP->selectedTile = this->tileNum;
 	APP->selectedTileTexture = this->tileImage;
+
+	APP->selectedEntity = nullptr;
 	return true;
 }
