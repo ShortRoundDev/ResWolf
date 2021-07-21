@@ -52,7 +52,12 @@ UINode::UINode(Style style, int totalChildren, ...) : UINode(style)
 
 UINode::~UINode()
 {
-
+	for (int i = 0; i < children.size(); i++)
+	{
+		delete children[i];
+		children[i] = nullptr;
+	}
+	children.clear();
 }
 
 void UINode::draw(const SDL_Rect& container)
@@ -116,7 +121,8 @@ void UINode::draw(const SDL_Rect& container)
 	}
 	if (!style.overflow)
 	{
-		SDL_RenderSetClipRect(APP->renderer, NULL);
+		SDL_Rect fullWindow = { 0, 0, APP->width, APP->height };
+		SDL_RenderSetClipRect(APP->renderer, &fullWindow);
 	}
 }
 

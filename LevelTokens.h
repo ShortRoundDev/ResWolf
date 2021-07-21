@@ -31,7 +31,7 @@ namespace ResWolf
 		// --- Word 2 ---
 		uint8_t reserved[10];	// 6, 7; 8 - 15		// Reserved for future use
 		// --- Word 3 ---
-		char* config;			// 16 - 23
+		char* config;		// 16 - 23
 	} EntityToken;
 
 	// 7 Words

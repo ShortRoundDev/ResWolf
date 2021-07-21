@@ -14,6 +14,8 @@ MapTile::MapTile()
 	texture[LAYER_FLOOR] = nullptr;
 	texture[LAYER_WALLS] = nullptr;
 	texture[LAYER_CEIL] = nullptr;
+	entityToken = nullptr;
+	entityTexture = nullptr;
 }
 
 MapTile::~MapTile()

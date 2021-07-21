@@ -1,6 +1,8 @@
 #include "SaveButton.h"
 
-#include "Windows.h"
+#include "FileHandling.h"
+#include "Grid.h"
+#include <iostream>
 
 SaveButton::SaveButton() : UIButton(
 	{
@@ -15,9 +17,12 @@ SaveButton::SaveButton() : UIButton(
 
 bool SaveButton::onMouseUp(const SDL_Event& e)
 {
+
 	UIButton::onMouseUp(e);
 
-	// Save
+	std::wstring path = getFilePath();
+	
+	GRID->save(path);
 
 	return true;
 }

@@ -7,8 +7,16 @@
 
 #include "App.h"
 #include "LayerEditor.h"
-
 #include "EntityButton.h"
+#include "PropertiesEditor.h"
+
+std::unique_ptr<Grid> Grid::instance = nullptr;
+
+Grid* Grid::init()
+{
+	instance = std::make_unique<Grid>();
+	return instance.get();
+}
 
 Grid::Grid() : UINode(
 	{
@@ -53,15 +61,13 @@ void Grid::drawTiles(const SDL_Rect& container)
 			for (int l = 0; l <= getCurrentLayer(); l++)
 			{
 				auto tile = this->map[x][y];
-				if (!(l == 2 && getCurrentLayer() == 3) && tile.texture[l] != nullptr && l != 3)
+				if (!(l == 2 && getCurrentLayer() == 3) && l != 3)
 				{
 					int l2 = l;
 					if (getCurrentLayer() == 3)
 						l2++;
 					int opacity = (int)(((float)(4 - (getCurrentLayer() - l2))) / 4.0f * 255);
-					auto tex = tile.texture[l]->texture;
-					SDL_SetTextureBlendMode(tex, SDL_BLENDMODE_BLEND);
-					SDL_SetTextureAlphaMod(tex, opacity);
+
 					int _x = (x * 64) - position.x;
 					int _y = (y * 64) - position.y + 34;
 
@@ -69,9 +75,22 @@ void Grid::drawTiles(const SDL_Rect& container)
 						_x, _y,
 						64, 64
 					};
+					if (tile.texture[l] != nullptr)
+					{
+						auto tex = tile.texture[l]->texture;
+						SDL_SetTextureBlendMode(tex, SDL_BLENDMODE_BLEND);
+						SDL_SetTextureAlphaMod(tex, opacity);
+						SDL_RenderCopy(APP->renderer, tex, &tile.texture[l]->src, &dst);
+						SDL_SetTextureAlphaMod(tex, 255);
+					}
 
-					SDL_RenderCopy(APP->renderer, tex, &tile.texture[l]->src, &dst);
-					SDL_SetTextureAlphaMod(tex, 255);
+					if (l == 1 && tile.entityTexture != nullptr)
+					{
+						SDL_SetTextureBlendMode(tile.entityTexture->texture, SDL_BLENDMODE_BLEND);
+						SDL_SetTextureAlphaMod(tile.entityTexture->texture, opacity);
+						SDL_RenderCopy(APP->renderer, tile.entityTexture->texture, &tile.entityTexture->src, &dst);
+						SDL_SetTextureAlphaMod(tile.entityTexture->texture, 255);
+					}
 				}
 				else if (l == 3 && tile.token.zone > 0)
 				{
@@ -267,21 +286,61 @@ bool Grid::onMouseDown(const SDL_Event& e)
 
 	if (APP->mouseState & MOUSE_LEFT)
 	{
-		if (APP->keymap[SDL_SCANCODE_LSHIFT] == true)
+		if (APP->selectedTile != 0)
 		{
-			floodFill(tilePos.x, tilePos.y);
+			if (APP->keymap[SDL_SCANCODE_LSHIFT] == true)
+			{
+				floodFill(tilePos.x, tilePos.y);
+			}
+			else
+			{
+				placeTile(tilePos.x, tilePos.y);
+			}
 		}
-		else
+		else if(APP->selectedEntity != nullptr)
 		{
-			placeTile(tilePos.x, tilePos.y);
+			placeEntity(tilePos.x, tilePos.y);
 		}
 	}
 	else if (APP->mouseState & MOUSE_MIDDLE)
 	{
-		removeTile(tilePos.x, tilePos.y, false);
+		if (APP->keymap[SDL_SCANCODE_LCTRL])
+			removeEntity(tilePos.x, tilePos.y);
+		else
+			removeTile(tilePos.x, tilePos.y, false);
 	}
 	return true;
 }
+
+bool Grid::onMouseUp(const SDL_Event& e)
+{
+	if (e.button.button == SDL_BUTTON_RIGHT)
+	{
+		SDL_Point tilePos = tileFromMouse(e);
+		MapTile* tile = &(map[tilePos.x][tilePos.y]);
+		if(APP->keymap[SDL_SCANCODE_LCTRL])
+		{		// edit entity
+			if (tile->entityToken == nullptr)
+			{
+				return true;
+			}
+			PROPS->clear();
+			PROPS->addText("config", &tile->entityConfig);
+		}
+		else	// edit tile
+		{
+			if (tile->token.wallType == 0)
+				return true;
+			PROPS->clear();
+			PROPS->addBoolean("isDoor", &(tile->isDoor));
+			PROPS->addNumber("lockType", &(tile->token.lockType));
+			PROPS->addText("config", &(tile->tileConfig));
+		}
+	}
+	return true;
+}
+
+
 
 bool Grid::onDrag(const SDL_Event& e)
 {
@@ -296,6 +355,7 @@ bool Grid::onDrag(const SDL_Event& e)
 		placeTile(tilePos.x, tilePos.y);
 	else if (APP->mouseState & MOUSE_MIDDLE)
 		removeTile(tilePos.x, tilePos.y, false);
+	return true;
 }
 
 SDL_Point Grid::tileFromMouse(const SDL_Event& e)
@@ -358,7 +418,7 @@ void Grid::placeTile(int x, int y)
 
 void Grid::floodFill(int x, int y)
 {
-	if (x < 0 || x > 255 || y < 0 || y > 255)
+	if (x < 0 || x >= 512 || y < 0 || y >= 512)
 		return;
 	int floodType = -1;
 	switch (getCurrentLayer())
@@ -377,8 +437,10 @@ void Grid::floodFill(int x, int y)
 		break;
 	}
 
+	floodToken++;
+
 	std::vector<std::tuple<int, int>> history = std::vector<std::tuple<int, int>>();
-	std::vector<std::tuple<int, int>> permanentHistory = std::vector<std::tuple<int, int>>();
+	std::map<std::tuple<int, int>, bool> permanentHistory = std::map<std::tuple<int, int>, bool>();
 	history.push_back(std::tuple<int, int>(x, y));
 	while (!history.empty())
 	{
@@ -386,31 +448,29 @@ void Grid::floodFill(int x, int y)
 		history.pop_back();
 		int x = std::get<0>(top),
 			y = std::get<1>(top);
-		if (floodable(x, y, floodType, history))
+		if (floodable(x, y, floodType, floodToken))
 		{
 			placeTile(x, y);
-			permanentHistory.push_back(top);
-			if (floodable(x - 1, y, floodType, permanentHistory))
+			map[x][y].floodToken = floodToken;
+			if (floodable(x - 1, y, floodType, floodToken))
 				history.push_back(std::tuple<int, int>(x - 1, y));
-			if (floodable(x + 1, y, floodType, permanentHistory))
+			if (floodable(x + 1, y, floodType, floodToken))
 				history.push_back(std::tuple<int, int>(x + 1, y));
-			if (floodable(x, y - 1, floodType, permanentHistory))
+			if (floodable(x, y - 1, floodType, floodToken))
 				history.push_back(std::tuple<int, int>(x, y - 1));
-			if (floodable(x, y + 1, floodType, permanentHistory))
+			if (floodable(x, y + 1, floodType, floodToken))
 				history.push_back(std::tuple<int, int>(x, y + 1));
 		}
 	}
 }
 
-bool Grid::floodable(int x, int y, int floodType, const std::vector<std::tuple<int, int>>& history)
+bool Grid::floodable(int x, int y, int floodType, int floodToken)
 {
-	if (x < 0 || x > 255 || y < 0 || y > 255)
+	if (x < 0 || x >= 512 || y < 0 || y >= 512)
 		return false;
 
-	if (std::find(history.begin(), history.end(), std::tuple<int, int>(x, y)) != history.end())
-	{
+	if (map[x][y].floodToken == floodToken)
 		return false;
-	}
 
 	switch (getCurrentLayer())
 	{
@@ -444,5 +504,231 @@ void Grid::removeTile(int x, int y, bool all)
 		map[x][y].set(getCurrentLayer(), 0, nullptr);
 	}
 	lastTilePlaced = { x, y };
+}
 
+void Grid::placeEntity(int x, int y)
+{
+	if (getCurrentLayer() != 1)
+		return;
+	if (x < 0 || x >= 512 || y < 0 || y >= 512)
+		return;
+	if (map[x][y].entityToken == nullptr)
+		map[x][y].entityToken = new EntityToken;
+	map[x][y].entityToken->entityId = APP->selectedEntity->entId;
+	map[x][y].entityToken->x = x;
+	map[x][y].entityToken->y = y;
+	map[x][y].entityTexture = APP->selectedEntity->entTexture;
+}
+
+void Grid::removeEntity(int x, int y)
+{
+	if (getCurrentLayer() != 1)
+		return;
+	if (x < 0 || x >= 512 || y < 0 || y >= 512)
+		return;
+	if (map[x][y].entityToken == nullptr)
+		return;
+	delete map[x][y].entityToken;		// delete all the data
+	map[x][y].entityToken = nullptr;
+	map[x][y].entityTexture = nullptr;	// lose the reference, but the texture should probably still live
+}
+
+void Grid::save(std::wstring path)
+{
+	size_t	wallSize		= 0,
+			entitySize		= 0,
+			stringPoolSize	= 0,
+			mapSize			= 0;
+
+	WallToken*		walls		= mapWallTokens(&wallSize);
+	EntityToken*	entities	= mapEntityTokens(&entitySize);
+	char*			stringPool	= mapStringPool(&stringPoolSize);
+
+	uint8_t* rawMap = concatenateMap(
+		walls,		wallSize,
+		entities,	entitySize,
+		stringPool, stringPoolSize,
+		
+		&mapSize
+	);
+
+	walls		= nullptr;
+	entities	= nullptr;
+	stringPool	= nullptr;
+
+	writeSaveFile(path, rawMap, mapSize);
+	rawMap = nullptr;
+}
+
+WallToken* Grid::mapWallTokens(_Out_ size_t* wallSize)
+{
+	int idx = 0;
+	*wallSize = maxX * maxY * sizeof(WallToken);
+	WallToken* walls = (WallToken*)calloc(maxX * maxY, sizeof(WallToken));
+	for (int y = 0; y < maxY; y++)
+	{
+		for (int x = 0; x < maxX; x++)
+		{
+			// manually convert some fields:
+			map[x][y].token.isDoor = map[x][y].isDoor ? 1 : 0;
+
+			// copy the token
+			memcpy(walls + idx, &(map[x][y].token), sizeof(WallToken));
+			idx++;
+		}
+	}
+	return walls;
+}
+
+EntityToken* Grid::mapEntityTokens(_Out_ size_t* entitySize)
+{
+	std::vector<EntityToken*> entVec = std::vector<EntityToken*>();
+	for (int y = 0; y < maxY; y++)
+	{
+		for (int x = 0; x < maxX; x++)
+		{
+			if (map[x][y].entityToken != nullptr)
+			{
+				map[x][y].entityToken->x = x;
+				map[x][y].entityToken->y = y;
+				entVec.push_back(map[x][y].entityToken);
+			}
+		}
+	}
+	EntityToken* entities = nullptr;
+	*entitySize = entVec.size() * sizeof(EntityToken);
+
+	if (entVec.size() > 0)
+	{
+		entities = (EntityToken*)calloc(entVec.size(), sizeof(EntityToken));
+		int idx = 0;
+		for (EntityToken* entTok : entVec)
+		{
+			memcpy(entities + idx, entTok, sizeof(EntityToken));
+			idx++;
+		}
+	}
+	return entities;
+}
+
+char* Grid::mapStringPool(_Out_ size_t* stringPoolSize)
+{
+	*stringPoolSize = 0;
+	for (int y = 0; y < maxY; y++)
+	{
+		for (int x = 0; x < maxX; x++)
+		{
+			std::string tileConfig = map[x][y].tileConfig;
+			if (!tileConfig.empty())
+			{
+				(*stringPoolSize) += tileConfig.length() + 1;
+			}
+
+			std::string entConfig = map[x][y].entityConfig;
+			if (!entConfig.empty())
+			{
+				(*stringPoolSize) += entConfig.length() + 1;
+			}
+		}
+	}
+
+	char* stringPool = (char*) calloc(*stringPoolSize, sizeof(char));
+	int poolCursor = 0;
+
+	for (int y = 0; y < maxY; y++)
+	{
+		for (int x = 0; x < maxX; x++)
+		{
+			std::string config = map[x][y].tileConfig;
+			if (!config.empty())
+			{
+				memcpy(stringPool + poolCursor, config.c_str(), config.length());
+				map[x][y].token.message = (char*)poolCursor; // these will have to be remapped later
+				poolCursor += config.length() + 1;
+			}
+
+			std::string entConfig = map[x][y].entityConfig;
+			if (!entConfig.empty())
+			{
+				memcpy(stringPool + poolCursor, entConfig.c_str(), entConfig.length());
+				map[x][y].entityToken->config = (char*)poolCursor; // these will have to be remapped later
+				poolCursor += config.length() + 1;
+			}
+		}
+	}
+
+	return stringPool;
+}
+
+uint8_t* Grid::concatenateMap(
+	_In_ WallToken* walls,		size_t wallSize,
+	_In_ EntityToken* entities,	size_t entSize,
+	_In_ char* stringPool,		size_t stringPoolSize,
+	
+	_Out_ size_t* mapSize
+)
+{
+	uint8_t* rawMap = (uint8_t*)calloc(sizeof(LevelToken) + wallSize + entSize + stringPoolSize, sizeof(uint8_t));
+
+	uint8_t* mapCursor = rawMap;
+
+	LevelToken* header = (LevelToken*)mapCursor;
+	
+	*header = {
+		{'H', 'A', 'M'}, // Watermark
+		1,	//version #
+		(uint16_t)maxX,	// width
+		(uint16_t)maxY,	// height
+		entSize/sizeof(EntityToken), // total Entities
+		(WallToken*)(sizeof(LevelToken)), // wall location start
+		(EntityToken*)(sizeof(LevelToken) + wallSize) // entity location start
+	};
+
+	mapCursor += sizeof(LevelToken);
+	// copy
+	memcpy(mapCursor, walls, wallSize);
+	mapCursor += wallSize;
+	// These can be null. Walls can never be null	
+	if (entSize != 0)
+	{
+		memcpy(mapCursor, entities, entSize);
+		mapCursor += entSize;
+	}
+	if (stringPoolSize != 0)
+	{
+		//remap string pol offset
+		for(int y = 0; i <)
+
+		memcpy(mapCursor, stringPool, stringPoolSize);
+		mapCursor += stringPoolSize;
+	}
+
+	// free
+	free(walls);
+	// These can be null. Walls can never be null
+	if(entities != nullptr)
+		free(entities);
+	if(stringPool != nullptr)
+		free(stringPool);
+
+	*mapSize = sizeof(LevelToken) + wallSize + entSize + stringPoolSize;
+
+	return rawMap;
+}
+
+bool Grid::writeSaveFile(std::wstring path, _In_ uint8_t* rawMap, size_t mapSize)
+{
+	FILE* wfp = _wfopen(path.c_str(), L"wb");
+	if (!wfp)
+	{
+		MessageBoxW(NULL, (L"Failed to open file [" + path + L"] for saving!").c_str(), NULL, MB_OK);
+		free(rawMap);
+		return false;
+	}
+
+	fwrite(rawMap, sizeof(uint8_t), mapSize, wfp);
+	fclose(wfp);
+
+	free(rawMap);
+	return true;
 }

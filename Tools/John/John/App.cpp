@@ -1,5 +1,6 @@
 #include "App.h"
 
+#include <iostream>
 #include <Windows.h>
 
 #include "UINode.h"
@@ -14,6 +15,9 @@
 #include "Tile.h"
 #include "TileArea.h"
 #include "EntityArea.h"
+#include "PropertiesEditor.h"
+
+#include "TextBox.h"
 
 std::unique_ptr<App> App::instance = nullptr;
 
@@ -25,6 +29,10 @@ void App::init(std::string title)
 	if (!instance->tryLoadTexture("Resources/Numbers.png", "Numbers", &instance->numbers))
 	{
 		MessageBoxA(NULL, "Failed to load numbers font file", NULL, MB_OK);
+	}
+	if (!instance->tryLoadTexture("Resources/Font.png", "Letters", &instance->letters))
+	{
+		MessageBoxA(NULL, "Failed to load letters font file", NULL, MB_OK);
 	}
 }
 
@@ -67,7 +75,7 @@ void App::createDom()
 			UINode::PCT(100), UINode::PCT(100)
 		},
 		3,
-		new Grid(),
+		Grid::init(),
 		new UINode(
 			{
 				0, 0,
@@ -77,7 +85,7 @@ void App::createDom()
 				StyleDirection::TOP,
 				StyleDirection::RIGHT,
 			},
-			4,
+			6,
 			new SectionHeader(
 				64, 48,
 				"Resources/Tiles"
@@ -87,7 +95,12 @@ void App::createDom()
 				64, 256 + 112,
 				"Resources/Entities"
 			),
-			new EntityArea
+			new EntityArea,
+			new SectionHeader(
+				64, 512 + 112 + 64,
+				"Resources/Properties"
+			),
+			PropertiesEditor::init()
 		),
 		new UINode(
 			{
@@ -116,7 +129,11 @@ void App::draw()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 170, 255);
 	SDL_RenderClear(renderer);
 
-	rootDom->draw({ 0, 0 });
+	rootDom->draw({ 0, 0, width, height});
+	if (textbox != nullptr)
+	{
+		textbox->draw({ 0, 0, width, height });
+	}
 
 	SDL_RenderPresent(renderer);
 }
@@ -155,7 +172,14 @@ void App::events()
 			}
 			}
 
-			rootDom->handleMouseDown({ 0, 0 }, e);
+			if (textbox != nullptr)
+			{
+				textbox->handleMouseDown({ 0, 0, width, height }, e);
+			}
+			else
+			{
+				rootDom->handleMouseDown({ 0, 0, width, height }, e);
+			}
 			break;
 		}
 		case SDL_MOUSEBUTTONUP:
@@ -180,7 +204,20 @@ void App::events()
 			}
 
 			dragging = false;
-			rootDom->handleMouseUp({ 0, 0 }, e);
+			if (textbox != nullptr)
+			{
+				textbox->handleMouseUp({ 0, 0, width, height }, e);
+				if (closeTextbox)
+				{
+					delete textbox;
+					textbox = nullptr;
+					closeTextbox = false;
+				}
+			}
+			else
+			{
+				rootDom->handleMouseUp({ 0, 0, width, height }, e);
+			}
 			break;
 		}
 		case SDL_MOUSEMOTION:
@@ -197,19 +234,40 @@ void App::events()
 			}
 			if (dragging)
 			{
-				rootDom->handleDrag({ 0, 0 }, e);
+				if (textbox != nullptr)
+				{
+					textbox->handleDrag({ 0, 0, width, height }, e);
+				}
+				else
+				{
+					rootDom->handleDrag({ 0, 0 }, e);
+				}
 			}
 			break;
 		}
 		case SDL_MOUSEWHEEL:
 		{
-			rootDom->handleMouseScroll({ 0, 0 }, e);
+			if (textbox != nullptr)
+			{
+				textbox->handleMouseScroll({ 0, 0, width, height }, e);
+			}
+			else
+			{
+				rootDom->handleMouseScroll({ 0, 0 }, e);
+			}
 			break;
 		}
 		case SDL_KEYDOWN:
 		{
 			keymap[e.key.keysym.scancode] = true;
-			rootDom->handleKeyDown(e);
+			if (textbox == nullptr)
+			{
+				rootDom->handleKeyDown(e);
+			}
+			else
+			{
+				textbox->handleKeyDown(e);
+			}
 			if (e.key.keysym.scancode == SDL_SCANCODE_F11)
 			{
 				auto current = SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
@@ -220,7 +278,24 @@ void App::events()
 		case SDL_KEYUP:
 		{
 			keymap[e.key.keysym.scancode] = false;
-			rootDom->handleKeyUp(e);
+			if (textbox == nullptr)
+			{
+				rootDom->handleKeyUp(e);
+			}
+			break;
+		}
+		case SDL_TEXTINPUT:
+		{
+			if (textbox != nullptr)
+			{
+				TextBox* box = ((TextBox*)textbox);
+				std::string* textPtr = box->text;
+				if (textPtr->length() >= 1023)
+					break;
+				std::cout << textPtr->length() << std::endl;				
+				*textPtr = textPtr->substr(0, box->cursorPos) + e.text.text[0] + textPtr->substr(box->cursorPos, textPtr->length());
+				box->cursorPos++;
+			}
 			break;
 		}
 		case SDL_WINDOWEVENT:
@@ -258,4 +333,92 @@ bool App::tryLoadTexture(_In_ std::string path, _In_ std::string alias, _Out_ Te
 
 	*texture = t;
 	return true;
+}
+
+void App::drawText(int x, int y, const char* text)
+{
+	int i = 0;
+	for (const char* c = text; *c != 0; c++, i++)
+	{
+		int sy = 0;
+		int sx = *c;
+		SDL_Rect src = {
+			sx * 14, sy * 18,
+			14, 20
+		};
+		SDL_Rect dst = {
+			x + (i * 15), y - 16,
+			28, 40
+		};
+		SDL_RenderCopy(renderer, letters->texture, &src, &dst);
+	}
+}
+
+void App::drawTextBox(const SDL_Rect& container, const char* text, int cursor)
+{
+	int pos = 0;
+	int i = 0;
+	int dx = 0;
+	int dy = 0;
+	int x = container.x;
+	int y = container.y;
+	for (const char* c = text; *c != 0; c++, i++, pos++)
+	{
+		x = container.x;
+		y = container.y;
+
+		dx = (i * 18);
+		if (dx > container.w - 14)
+		{
+			dx = 0;
+			i = 0;
+			dy += 22;
+		}
+
+		if (*c == '\n')
+		{
+			i = -1;
+			dx = 0;
+			dy += 22;
+			continue;
+		}
+
+		int sy = 0;
+		int sx = *c;
+
+		SDL_Rect src = {
+			sx * 14, sy * 18,
+			14, 20
+		};
+		SDL_Rect dst = {
+			x + dx - 8, y + dy - 12,
+			28, 40
+		};
+
+		if (pos == cursor)
+		{
+			SDL_SetRenderDrawColor(renderer, 0xff, 0xff, 0xff, 0xff);
+			SDL_Rect line = {
+				x + dx - 2, y + dy - 4,
+				2, 19 + 8
+			};
+			SDL_RenderFillRect(renderer, &line);
+		}
+
+		SDL_RenderCopy(renderer, letters->texture, &src, &dst);
+	}
+	if (cursor == strlen(text))
+	{
+		SDL_SetRenderDrawColor(renderer, 0xff, 0xff, 0xff, 0xff);
+		SDL_Rect line = {
+			x + dx - 2 + 14, y + dy - 4,
+			2, 19 + 8
+		};
+		SDL_RenderFillRect(renderer, &line);
+	}
+}
+
+void App::showTextBox(std::string* text)
+{
+	this->textbox = new TextBox(text);
 }

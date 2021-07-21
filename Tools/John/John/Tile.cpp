@@ -1,7 +1,7 @@
 #include "Tile.h"
 
 #include "App.h"
-
+#include "PropertiesEditor.h"
 #include "Windows.h"
 
 Tile::Tile(int t, int tileNum, Texture* image) : UINode({
@@ -41,7 +41,7 @@ void Tile::draw(const SDL_Rect& container)
 }
 
 bool Tile::onMouseDown(const SDL_Event& e)
-{
+{	
 	image = pressed;
 	return true;
 }
@@ -50,9 +50,12 @@ bool Tile::onMouseUp(const SDL_Event& e)
 {
 	image = depressed;
 
-	APP->selectedTile = this->tileNum;
-	APP->selectedTileTexture = this->tileImage;
+	if (e.button.button == SDL_BUTTON_LEFT)
+	{
+		APP->selectedTile = this->tileNum;
+		APP->selectedTileTexture = this->tileImage;
 
-	APP->selectedEntity = nullptr;
+		APP->selectedEntity = nullptr;
+	}
 	return true;
 }

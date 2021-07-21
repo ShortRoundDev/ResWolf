@@ -10,10 +10,10 @@ EntityArea::EntityArea() : UINode(
 		16, 256 + 144,
 		224, 256,
 		"",
-		CGA_BLUE,
+		CGA_LT_BLUE,
 		StyleDirection::TOP,
 		StyleDirection::LEFT,
-		CGA_DK_GRAY,
+		CGA_LT_CYAN,
 		false, true
 	}
 )

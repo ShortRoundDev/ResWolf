@@ -39,6 +39,7 @@ public:
 	std::map<SDL_Scancode, bool> keymap;
 
 	Texture* numbers;
+	Texture* letters;
 	
 	bool shouldQuit = false;
 
@@ -65,5 +66,12 @@ public:
 	Texture* selectedTileTexture = nullptr;
 
 	EntityButton* selectedEntity = nullptr;
+
+	void drawText(int x, int y, const char* text);
+	void drawTextBox(const SDL_Rect& container, const char* text, int cursor);
+
+	UINode* textbox = nullptr;
+	bool closeTextbox = false;
+	void showTextBox(std::string* text);
 };
 

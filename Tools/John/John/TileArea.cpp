@@ -11,10 +11,10 @@ TileArea::TileArea() : UINode(
 		16, 80,
 		224, 256,
 		"",
-		CGA_LT_GRAY,
+		CGA_LT_BLUE,
 		StyleDirection::TOP,
 		StyleDirection::LEFT,
-		CGA_BLUE,
+		CGA_LT_CYAN,
 		false, true
 	}
 )
