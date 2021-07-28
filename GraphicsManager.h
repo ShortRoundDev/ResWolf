@@ -17,6 +17,10 @@
 
 namespace ResWolf {
 
+	//-----forward declarations------
+	class Texture;
+	//-------------------------------
+
 	enum class GraphicsError {
 		OK,
 		GLFW_WINDOW_FAILED,
@@ -41,6 +45,7 @@ namespace ResWolf {
 
 		std::map<std::string, GLuint> vertices;
 		std::map<std::string, Shader*> shaders;
+		std::map<std::string, Texture*> textures;
 		
 		GraphicsError status;
 		
@@ -55,8 +60,14 @@ namespace ResWolf {
 		);
 		~GraphicsManager();
 
+		_Success_(return != NULL)
+		Texture* createTexture(_In_ std::string path, _In_ std::string alias);
+
 		GLuint uploadVertices(_In_ const float* data, _In_ size_t size);
 		GLuint assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size);
+
+		_Success_(return != 0)
+		GLuint uploadTexture(_In_ std::string path, _Out_ int* w, _Out_ int* h);
 	private:
 		GraphicsError initGLFW();
 		GraphicsError initGL();

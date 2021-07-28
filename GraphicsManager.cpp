@@ -2,6 +2,13 @@
 #include "WindowEvents.h"
 #include "Logging.h"
 
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/intersect.hpp>
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+#include "Texture.h"
+
 using namespace ResWolf;
 
 #pragma region Errors
@@ -47,6 +54,7 @@ GraphicsError GraphicsManager::init(
 		// TODO log error?
 		instance = nullptr;
 	}
+
 	return code;
 }
 
@@ -88,6 +96,20 @@ GraphicsManager::~GraphicsManager()
 	// clean up window?
 }
 
+_Success_(return != NULL)
+Texture* GraphicsManager::createTexture(_In_ std::string path, _In_ std::string alias)
+{
+	auto result = textures.find(alias);
+	if (result != textures.end())
+	{	// exists
+		return result->second;
+	}
+	// does not exist
+	Texture* texture = new Texture(path);
+	textures[alias] = texture;
+	return texture;
+}
+
 GLuint GraphicsManager::uploadVertices(_In_ const float* data, _In_ size_t size)
 {
 	unsigned int vbo, vao;
@@ -114,6 +136,34 @@ GLuint GraphicsManager::assignNamedVertices(_In_ std::string name, _In_ const fl
 	return vao;
 }
 
+_Success_(return != 0)
+GLuint GraphicsManager::uploadTexture(_In_ std::string path, _Out_ int* w, _Out_ int* h)
+{
+	int _w = 0, _h = 0, channels = 0;
+	UCHAR* data = stbi_load(path.c_str(), &_w, &_h, &channels, 0);
+	if (data == NULL)
+	{
+		return 0;
+	}
+	*w = _w;
+	*h = _h;
+
+	GLuint texture = 0;
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, _w, _h, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	glGenerateMipmap(texture);
+
+	stbi_image_free(data);
+
+	return texture;
+}
 #pragma endregion
 
 #pragma region Private
@@ -141,6 +191,8 @@ GraphicsError GraphicsManager::initGLFW()
 
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, frameBufferSizeCallback);
+	glfwShowWindow(window);
+
 	return GameErr(GraphicsError::OK);
 }
 

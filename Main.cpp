@@ -14,7 +14,16 @@
 
 using namespace ResWolf;
 
+int init();
+int run();
+
 int main(int argc, char** argv)
+{
+	if (init() != 1)
+		run();
+}
+
+int init()
 {
 	SetHandlers();
 
@@ -38,7 +47,18 @@ int main(int argc, char** argv)
 	if (gameStatus != GameError::OK)
 	{
 		ShowError("Couldn't Initialize Game!", GameErrorMessage(gameStatus));
+		return -2;
 	}
 
-	Level* level = new Level("Resources/Maps/Level.ham");
+	return 1;
+}
+
+int run()
+{
+	while (!glfwWindowShouldClose(GRAPHICS->window))
+	{
+		glfwPollEvents();
+		GAME->update();
+		GAME->draw();
+	}
 }

@@ -540,9 +540,9 @@ void Grid::save(std::wstring path)
 			stringPoolSize	= 0,
 			mapSize			= 0;
 
+	char*			stringPool	= mapStringPool(&stringPoolSize);
 	WallToken*		walls		= mapWallTokens(&wallSize);
 	EntityToken*	entities	= mapEntityTokens(&entitySize);
-	char*			stringPool	= mapStringPool(&stringPoolSize);
 
 	uint8_t* rawMap = concatenateMap(
 		walls,		wallSize,
@@ -633,7 +633,7 @@ char* Grid::mapStringPool(_Out_ size_t* stringPoolSize)
 	}
 
 	char* stringPool = (char*) calloc(*stringPoolSize, sizeof(char));
-	int poolCursor = 0;
+	uint64_t poolCursor = 0;
 
 	for (int y = 0; y < maxY; y++)
 	{
@@ -685,23 +685,41 @@ uint8_t* Grid::concatenateMap(
 	};
 
 	mapCursor += sizeof(LevelToken);
+	uint64_t stringOffLocal = (uint64_t)(sizeof(LevelToken) + wallSize + entSize);
 	// copy
 	memcpy(mapCursor, walls, wallSize);
+	for (WallToken* wall = (WallToken*)mapCursor; wall < (WallToken*)(mapCursor + wallSize); wall++)
+	{
+		if (wall->message != NULL)
+		{
+			wall->message += stringOffLocal;
+		}
+	}
+
 	mapCursor += wallSize;
 	// These can be null. Walls can never be null	
+
 	if (entSize != 0)
 	{
 		memcpy(mapCursor, entities, entSize);
+
+		for (EntityToken* ent = (EntityToken*)mapCursor; ent < (EntityToken*)(mapCursor + entSize); ent++)
+		{
+			if (ent->config != NULL)
+			{
+				ent->config += stringOffLocal;
+			}
+		}
+
 		mapCursor += entSize;
 	}
+
 	if (stringPoolSize != 0)
 	{
-		//remap string pol offset
-		for(int y = 0; i <)
-
 		memcpy(mapCursor, stringPool, stringPoolSize);
 		mapCursor += stringPoolSize;
 	}
+	
 
 	// free
 	free(walls);

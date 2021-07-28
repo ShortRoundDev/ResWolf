@@ -57,7 +57,6 @@ bool Level::fixPointers(LevelToken* levelToken)
 			if (levelToken->walls[idx].message != NULL)
 			{
 				levelToken->walls[idx].message += offset;
-				std::cout << levelToken->walls[idx].message << std::endl;
 			}
 		}
 	}
@@ -74,7 +73,6 @@ bool Level::fixPointers(LevelToken* levelToken)
 		if (levelToken->entities[i].config != NULL)
 		{
 			levelToken->entities[i].config += offset;
-			std::cout << levelToken->entities[i].config << std::endl;
 		}
 	}
 

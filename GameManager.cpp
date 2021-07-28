@@ -1,5 +1,7 @@
 #include "GameManager.h"
 
+#include "MainMenu.h"
+
 using namespace ResWolf;
 
 #pragma region Error
@@ -36,6 +38,24 @@ GameError GameManager::init()
 GameManager::GameManager()
 {
 	status = GameError::OK;
+
+	MainMenu::init();
+}
+
+void GameManager::draw()
+{
+	switch (state)
+	{
+	case GameState::MAIN_MENU:
+	{
+
+	}
+	}
+}
+
+void GameManager::update()
+{
+
 }
 
 #pragma endregion

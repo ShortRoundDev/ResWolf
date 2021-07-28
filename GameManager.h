@@ -4,6 +4,8 @@
 #include <memory>
 #include <map>
 
+#define GAME (GameManager::instance)
+
 namespace ResWolf
 {
 	enum class GameState
@@ -31,6 +33,7 @@ namespace ResWolf
 		~GameManager();
 
 		GameError status;
+		GameState state = GameState::MAIN_MENU;
 
 		void draw();
 		void update();
