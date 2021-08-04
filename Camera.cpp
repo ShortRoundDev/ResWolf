@@ -5,7 +5,7 @@
 using namespace ResWolf;
 
 Camera::Camera(const uint16_t width, const uint16_t height, const float fov):
-    cameraPos(0.0f, 0.0f, 0.0f),
+    cameraPos(0.0f, 0.0f, -3.0f),
     cameraFront(0.0f, 0.0f, 1.0f),  // Looking south
     cameraUp(0.0f, 1.0f, 0.0f),     // Orthogonal to XZ plane
     yaw(-90.f),

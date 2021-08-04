@@ -6,6 +6,7 @@
 #include "GL/gl.h"
 
 #include "Shader.h"
+#include "Model.h"
 #include "Camera.h"
 
 #include <string>
@@ -14,6 +15,11 @@
 
 //shortcut to the singleton
 #define GRAPHICS (GraphicsManager::instance)
+
+#define TEX_TL 0, 0
+#define TEX_TR 0, 1
+#define TEX_BL 0, 1
+#define TEX_BR 1, 1
 
 namespace ResWolf {
 
@@ -26,7 +32,8 @@ namespace ResWolf {
 		GLFW_WINDOW_FAILED,
 		GL_FAILED,
 		GLAD_FAILED,
-		SHADERS_FAILED
+		SHADERS_FAILED,
+		VERTICES_FAILED
 	};
 
 	std::string GraphicsErrorMessage(GraphicsError error);
@@ -43,7 +50,7 @@ namespace ResWolf {
 
 		Camera* camera;
 
-		std::map<std::string, GLuint> vertices;
+		std::map<std::string, Model*> vertices;
 		std::map<std::string, Shader*> shaders;
 		std::map<std::string, Texture*> textures;
 		
@@ -60,18 +67,27 @@ namespace ResWolf {
 		);
 		~GraphicsManager();
 
+		Texture* notFound = nullptr;
 		_Success_(return != NULL)
 		Texture* createTexture(_In_ std::string path, _In_ std::string alias);
 
-		GLuint uploadVertices(_In_ const float* data, _In_ size_t size);
-		GLuint assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size);
+		Model* uploadVertices(_In_ const float* data, _In_ size_t size);
+		Model* assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size);
 
 		_Success_(return != 0)
-		GLuint uploadTexture(_In_ std::string path, _Out_ int* w, _Out_ int* h);
+		GLuint uploadTexture(_In_ std::string path, _Out_opt_ int* w, _Out_opt_ int* h);
+
+		float scrnX(float x);
+		float scrnY(float y);
+		float scrnW(float w);
+		float scrnH(float h);
+
+		void draw();
 	private:
 		GraphicsError initGLFW();
 		GraphicsError initGL();
 		GraphicsError initGLAD();
 		GraphicsError initShaders();
+		GraphicsError initVertices();
 	};
 }

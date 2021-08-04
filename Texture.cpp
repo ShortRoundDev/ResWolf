@@ -9,7 +9,17 @@ Texture::Texture(std::string path):
 	w(0),
 	h(0)
 {
-	image = GRAPHICS->uploadTexture(path, &w, &h);
+	int _image = GRAPHICS->uploadTexture(path, &w, &h);
+	if (_image == 0)
+	{
+		image = GRAPHICS->notFound->image;
+		w = GRAPHICS->notFound->w;
+		h = GRAPHICS->notFound->h;
+	}
+	else
+	{
+		image = _image;
+	}
 }
 
 Texture::~Texture()

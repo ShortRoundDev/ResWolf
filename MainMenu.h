@@ -2,6 +2,7 @@
 
 #include <memory>
 
+#include "Model.h"
 #include "Shader.h"
 #include "Texture.h"
 
@@ -12,13 +13,15 @@ namespace ResWolf
 	class MainMenu
 	{
 	public:
+
 		static std::unique_ptr<MainMenu> instance;
 		static MainMenu* init();
 
-		Shader* shader;
-
 		MainMenu();
 		~MainMenu();
+
+		Shader* shader;
+		Model* box;
 
 		void toggle();
 		void draw();
@@ -26,6 +29,9 @@ namespace ResWolf
 		void update();
 
 		Texture* background;
+		Texture* arrow;
+
+		int option = 0;
 
 		bool shown;
 	};

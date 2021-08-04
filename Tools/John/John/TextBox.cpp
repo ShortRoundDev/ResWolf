@@ -74,6 +74,6 @@ bool TextBox::onKeyDown(const SDL_Event& e)
 	if (cursorPos < 0)
 		cursorPos = 0;
 	if (cursorPos > text->length())
-		cursorPos = text->length();
+		cursorPos = (int)text->length();
 	return true;
 }

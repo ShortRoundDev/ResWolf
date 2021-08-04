@@ -162,8 +162,11 @@
     <ClCompile Include="Logging.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="UIManager.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="Win32Application.cpp" />
     <ClCompile Include="WindowEvents.cpp" />
   </ItemGroup>
@@ -178,8 +181,11 @@
     <ClInclude Include="LevelTokens.h" />
     <ClInclude Include="Logging.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="UIManager.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="Win32Application.h" />
     <ClInclude Include="WindowEvents.h" />
   </ItemGroup>

@@ -8,6 +8,7 @@ out vec3 dist;
 uniform mat4 view;
 uniform mat4 projection;
 uniform vec3 playerPos;
+
 uniform vec3 scale;
 uniform vec3 offset;
 

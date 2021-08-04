@@ -1,8 +1,14 @@
 #pragma once
 
+#include <functional>
 #include <string>
 #include <memory>
 #include <map>
+
+#include "Level.h"
+
+//forward declaration
+struct GLFWwindow;
 
 #define GAME (GameManager::instance)
 
@@ -35,8 +41,18 @@ namespace ResWolf
 		GameError status;
 		GameState state = GameState::MAIN_MENU;
 
+		std::map<size_t, std::function<void(GLFWwindow*, int, int, int, int)>> keydown;
+		std::map<size_t, std::function<void(GLFWwindow*, int, int, int, int)>> keyup;
+
+		bool loadLevel(std::string path);
+
 		void draw();
 		void update();
+	private:
+		void setInputCallbacks();
 
+		Level* level;
 	};
 }
+
+void dispatchKeyEvent(GLFWwindow* window, int key, int scancode, int action, int mod);

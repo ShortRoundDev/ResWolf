@@ -24,8 +24,8 @@ ApplicationSettings::ApplicationSettings(std::string path):
 	mouseSensitivity(0.5f),
 	fov(45.0f),
 	debugMode(false),
-	width(1024),
-	height(768),
+	width(1920),
+	height(1080),
 	appWindowMode(AppWindowMode::WINDOWED),
 	inputMode(InputMode::MODERN)
 {

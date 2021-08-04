@@ -9,21 +9,24 @@
 #include "GraphicsManager.h"
 #include "GameManager.h"
 
+#include "MainMenu.h"
+
 // Level
 #include "Level.h"
+#include "UIManager.h"
 
 using namespace ResWolf;
 
-int init();
+int init(int argc, char** argv);
 int run();
 
 int main(int argc, char** argv)
 {
-	if (init() != 1)
+	if (init(argc, argv) != 1)
 		run();
 }
 
-int init()
+int init(int argc, char** argv)
 {
 	SetHandlers();
 
@@ -50,15 +53,24 @@ int init()
 		return -2;
 	}
 
-	return 1;
+	UIManager::init();
+
+	MainMenu::init(); // TODO Put this in some UI Manager class
+
+	if (argc > 1)
+	{
+		GAME->loadLevel(std::string(argv[1]));
+	}
+
+	return 0;
 }
 
 int run()
 {
 	while (!glfwWindowShouldClose(GRAPHICS->window))
 	{
-		glfwPollEvents();
 		GAME->update();
 		GAME->draw();
 	}
+	return 1;
 }

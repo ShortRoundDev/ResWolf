@@ -1,12 +1,15 @@
 #include "GraphicsManager.h"
 #include "WindowEvents.h"
+#include "ApplicationSettings.h"
 #include "Logging.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/intersect.hpp>
 
 #define STB_IMAGE_IMPLEMENTATION
+#pragma warning(push, 0)
 #include "stb_image.h"
+#pragma warning(pop)
 #include "Texture.h"
 
 using namespace ResWolf;
@@ -54,6 +57,10 @@ GraphicsError GraphicsManager::init(
 		// TODO log error?
 		instance = nullptr;
 	}
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	glFrontFace(GL_CW);
+	
+	instance->notFound = instance->createTexture("Resources/Texture/NotFound.png", "NotFound");
 
 	return code;
 }
@@ -63,11 +70,13 @@ GraphicsError GraphicsManager::init(
 #pragma region Public
 
 GraphicsManager::GraphicsManager(
-	_In_ uint16_t width,
-	_In_ uint16_t height,
+	_In_ uint16_t w,
+	_In_ uint16_t h,
 	_In_ float fov
 ):
-	camera(new Camera(width, height, fov))
+	camera(new Camera(w, h, fov)),
+	width(w),
+	height(h)
 {
 	if ((status = initGLFW()) != GraphicsError::OK)
 	{
@@ -87,6 +96,10 @@ GraphicsManager::GraphicsManager(
 	if ((status = initShaders()) != GraphicsError::OK)
 	{
 		// TODO log error?
+		return;
+	}
+	if ((status = initVertices()) != GraphicsError::OK)
+	{
 		return;
 	}
 }
@@ -110,7 +123,7 @@ Texture* GraphicsManager::createTexture(_In_ std::string path, _In_ std::string 
 	return texture;
 }
 
-GLuint GraphicsManager::uploadVertices(_In_ const float* data, _In_ size_t size)
+Model* GraphicsManager::uploadVertices(_In_ const float* data, _In_ size_t size)
 {
 	unsigned int vbo, vao;
 	glGenVertexArrays(1, &vao);
@@ -126,18 +139,24 @@ GLuint GraphicsManager::uploadVertices(_In_ const float* data, _In_ size_t size)
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(sizeof(float) * 3));
 	glEnableVertexAttribArray(1);
 
-	return vao;
+	return new Model(vao, size);
 }
 
-GLuint GraphicsManager::assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size)
+Model* GraphicsManager::assignNamedVertices(_In_ std::string name, _In_ const float* data, _In_ size_t size)
 {
-	GLuint vao = uploadVertices(data, size);
-	vertices[name] = vao;
-	return vao;
+	auto result = vertices.find(name);
+	if (result != vertices.end())
+	{	// exists
+		return result->second;
+	}
+
+	Model* model = uploadVertices(data, size);
+	vertices[name] = model;
+	return model;
 }
 
 _Success_(return != 0)
-GLuint GraphicsManager::uploadTexture(_In_ std::string path, _Out_ int* w, _Out_ int* h)
+GLuint GraphicsManager::uploadTexture(_In_ std::string path, _Out_opt_ int* w, _Out_opt_ int* h)
 {
 	int _w = 0, _h = 0, channels = 0;
 	UCHAR* data = stbi_load(path.c_str(), &_w, &_h, &channels, 0);
@@ -157,13 +176,40 @@ GLuint GraphicsManager::uploadTexture(_In_ std::string path, _Out_ int* w, _Out_
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, _w, _h, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _w, _h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 	glGenerateMipmap(texture);
 
 	stbi_image_free(data);
 
 	return texture;
 }
+
+float GraphicsManager::scrnX(float x)
+{
+	return ((x / width) * 2.0f) - 1.0f;
+}
+
+float GraphicsManager::scrnY(float y)
+{
+	return -(((y / height) * 2.0f) - 1.0f);
+}
+
+float GraphicsManager::scrnW(float w)
+{
+	return w / width;
+}
+
+float GraphicsManager::scrnH(float h)
+{
+	return h / height;
+}
+
+void GraphicsManager::draw()
+{
+	glfwSwapBuffers(window);
+	glfwPollEvents();
+}
+
 #pragma endregion
 
 #pragma region Private
@@ -178,7 +224,7 @@ GraphicsError GraphicsManager::initGLFW()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	window = glfwCreateWindow(
-		1024, 768,
+		SETTINGS->width, SETTINGS->height,
 		"ResWolf3D",
 		nullptr, nullptr
 	);
@@ -191,7 +237,10 @@ GraphicsError GraphicsManager::initGLFW()
 
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, frameBufferSizeCallback);
+	glfwSwapInterval(1);
 	glfwShowWindow(window);
+
+	stbi_set_flip_vertically_on_load(true);
 
 	return GameErr(GraphicsError::OK);
 }
@@ -200,8 +249,8 @@ GraphicsError GraphicsManager::initGL()
 {
 	glEnable(GL_DEPTH_TEST);
 
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	return GameErr(GraphicsError::OK);
 }
 
@@ -238,6 +287,23 @@ GraphicsError GraphicsManager::initShaders()
 	shaders["entity"] = entityShader;
 
 	return GameErr(GraphicsError::OK);
+}
+
+GraphicsError GraphicsManager::initVertices()
+{
+	// Top-left oriented rect for UI
+	float UIRect[] = {
+		0.0f,  0.0f, 0.0f, 0.0f, 1.0f,
+		2.0f,  0.0f, 0.0f, 1.0f, 1.0f,
+		2.0f, -2.0f, 0.0f, 1.0f, 0.0f,
+		
+		2.0f, -2.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, -2.0f, 0.0f, 0.0f, 0.0f,
+		0.0f,  0.0f, 0.0f, 0.0f, 1.0f
+	};
+	vertices["UIRect"] = uploadVertices(UIRect, sizeof(UIRect));
+
+	return GraphicsError::OK;
 }
 
 #pragma endregion

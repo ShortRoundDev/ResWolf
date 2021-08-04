@@ -53,7 +53,7 @@ void PropertiesEditor::addBoolean(std::string name, bool* value)
 {
 	children.push_back(
 		new PropertyLine(
-			children.size(), name,
+			(uint16_t)children.size(), name,
 			new Checkbox(value)
 		)
 	);
@@ -63,7 +63,7 @@ void PropertiesEditor::addText(std::string name, std::string* value)
 {
 	children.push_back(
 		new PropertyLine(
-			children.size(), name,
+			(uint16_t)children.size(), name,
 			new TextButton(value)
 		)
 	);
@@ -73,7 +73,7 @@ void PropertiesEditor::addNumber(std::string name, uint8_t* value)
 {
 	children.push_back(
 		new PropertyLine(
-			children.size(), name,
+			(uint16_t)children.size(), name,
 			new NumberInput(value)
 		)
 	);

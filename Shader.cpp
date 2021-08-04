@@ -3,6 +3,8 @@
 #include "FileHandling.h"
 #include "Logging.h"
 
+#include "Model.h"
+
 #define WIN32_LEAN_AND_MEAN
 
 using namespace ResWolf;
@@ -38,6 +40,11 @@ void Shader::setTex(_In_ GLuint texture)
 	glBindTexture(GL_TEXTURE_2D, texture);
 }
 
+void Shader::setModel(_In_ const Model* model)
+{
+	glBindVertexArray(model->vao);
+}
+
 void Shader::setInt(_In_ const std::string& name, _In_ int value)
 {
 	glUniform1i(getUniformLocation(name.c_str()), value);
@@ -55,7 +62,8 @@ void Shader::setVec2(_In_ const std::string& name, _In_ const glm::vec2& vec)
 
 void Shader::setVec3(_In_ const std::string& name, _In_ const glm::vec3& vec)
 {
-	glUniform3f(getUniformLocation(name.c_str()), vec.x, vec.y, vec.z);
+	auto location = getUniformLocation(name.c_str());
+	glUniform3f(location, vec.x, vec.y, vec.z);
 }
 
 void Shader::setVec4(_In_ const std::string& name, _In_ const glm::vec4& vec)

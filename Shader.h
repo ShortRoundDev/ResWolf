@@ -8,6 +8,10 @@
 
 namespace ResWolf
 {
+
+	//Forward declaration
+	class Model;
+
 	enum class ShaderStatus
 	{
 		OK,
@@ -26,12 +30,14 @@ namespace ResWolf
 		void use();
 
 		void setTex(_In_ GLuint texture);
+		void setModel(_In_ const Model* model);
 		void setInt(_In_ const std::string& name, _In_ int value);
 		void setFloat(_In_ const std::string& name, _In_ float value);
 		void setVec2(_In_ const std::string& name, _In_ const glm::vec2& vec);
 		void setVec3(_In_ const std::string& name, _In_ const glm::vec3& vec);
 		void setVec4(_In_ const std::string& name, _In_ const glm::vec4& vec);
 		void setMat4(_In_ const std::string& name, _In_ const glm::mat4& matrix);
+		
 
 		ShaderStatus status;
 

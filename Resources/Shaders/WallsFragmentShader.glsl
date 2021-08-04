@@ -11,14 +11,14 @@ uniform float maxBright;
 
 void main(){
     
-    vec4 t = texture(tex, TexCoord);
-    if(t.a == 0.0)
+    FragColor = texture(tex, TexCoord);
+    /*if(t.a == 0.0)
         discard;
     float z = min(maxBright,
         max(
             minBright,
             round(10.0/(length(dist.xz)) - 1)/10.0
         )
-    );
-    FragColor = vec4(t.b, t.g, t.r, t.a) * vec4(z, z, min(1.0, z * 1.2), 1.0) * tint;
+    );*/
+    //FragColor = vec4(t.b, t.g, t.r, t.a) * vec4(z, z, min(1.0, z * 1.2), 1.0) * tint;
 }
