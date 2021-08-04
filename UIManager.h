@@ -18,10 +18,17 @@ namespace ResWolf
 		UIManager();
 		~UIManager();
 
-		void drawRect(Texture* image, float x, float y, float w, float h);
+		void drawRect(_In_ Texture* image, float x, float y, float w, float h);
+		void drawText(_In_ std::string text, float x, float y, float w, float h);
+		void drawText(_In_ const char* text, float x, float y, float w, float h);
 	private:
 		Shader* uiShader;
+		Shader* fontShader;
+
 		Texture* notFound;
+		Texture* font;
+
 		Model* rect;
+		Model* letter;
 	};
 }

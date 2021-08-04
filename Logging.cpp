@@ -48,3 +48,8 @@ void Warn(std::string warning)
 	MessageBoxA(NULL, warning.c_str(), "Warning", MB_OK);
 	#endif
 }
+
+std::string vec3ToString(_In_ glm::vec3 in)
+{
+	return std::to_string(in.x) + ", " + std::to_string(in.y) + ", " + std::to_string(in.z);
+}

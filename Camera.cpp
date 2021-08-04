@@ -4,10 +4,12 @@
 
 using namespace ResWolf;
 
+
+//3.672019, 0.467100, 0.250625 : -0.999312, 0.024432, 0.027911
 Camera::Camera(const uint16_t width, const uint16_t height, const float fov):
-    cameraPos(0.0f, 0.0f, -3.0f),
-    cameraFront(0.0f, 0.0f, 1.0f),  // Looking south
-    cameraUp(0.0f, 1.0f, 0.0f),     // Orthogonal to XZ plane
+    cameraPos(3.672019f, 0.467100f, 0.250625f),
+    cameraFront(-0.999312f, 0.024432f, 0.027911f),  // Looking south
+    cameraUp(0, 1.0f, 0),     // Orthogonal to XZ plane
     yaw(-90.f),
     pitch(0.0f),
     fov(fov),

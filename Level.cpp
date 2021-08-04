@@ -9,6 +9,7 @@
 
 #include "GraphicsManager.h"
 #include "GameManager.h"
+#include "UIManager.h"
 
 using namespace ResWolf;
 
@@ -85,9 +86,10 @@ void Level::draw()
 		for (int x = 0; x < width; x++)
 		{
 			wallAt(x, y)->draw();
-			return;
 		}
 	}
+
+	UI_MGR->drawText("CameraPos: " + vec3ToString(GRAPHICS->camera->cameraPos), 16, 64, 128, 128);
 }
 
 #pragma endregion

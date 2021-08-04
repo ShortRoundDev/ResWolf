@@ -17,7 +17,7 @@
 #define GRAPHICS (GraphicsManager::instance)
 
 #define TEX_TL 0, 0
-#define TEX_TR 0, 1
+#define TEX_TR 1, 0
 #define TEX_BL 0, 1
 #define TEX_BR 1, 1
 

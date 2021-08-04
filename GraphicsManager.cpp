@@ -58,7 +58,9 @@ GraphicsError GraphicsManager::init(
 		instance = nullptr;
 	}
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	glFrontFace(GL_CW);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
 	
 	instance->notFound = instance->createTexture("Resources/Texture/NotFound.png", "NotFound");
 
@@ -164,8 +166,14 @@ GLuint GraphicsManager::uploadTexture(_In_ std::string path, _Out_opt_ int* w, _
 	{
 		return 0;
 	}
-	*w = _w;
-	*h = _h;
+	if (w != NULL)
+	{
+		*w = _w;
+	}
+	if (h != NULL)
+	{
+		*h = _h;
+	}
 
 	GLuint texture = 0;
 	glGenTextures(1, &texture);
@@ -240,7 +248,7 @@ GraphicsError GraphicsManager::initGLFW()
 	glfwSwapInterval(1);
 	glfwShowWindow(window);
 
-	stbi_set_flip_vertically_on_load(true);
+	stbi_set_flip_vertically_on_load(false);
 
 	return GameErr(GraphicsError::OK);
 }
@@ -286,6 +294,13 @@ GraphicsError GraphicsManager::initShaders()
 	}
 	shaders["entity"] = entityShader;
 
+	Shader* fontShader = new Shader("Resources/Shaders/FontVertexShader.glsl", "Resources/Shaders/FontFragmentShader.glsl");
+	if (fontShader->status != ShaderStatus::OK)
+	{
+		return GameErr(GraphicsError::SHADERS_FAILED);
+	}
+	shaders["font"] = fontShader;
+
 	return GameErr(GraphicsError::OK);
 }
 
@@ -302,6 +317,19 @@ GraphicsError GraphicsManager::initVertices()
 		0.0f,  0.0f, 0.0f, 0.0f, 1.0f
 	};
 	vertices["UIRect"] = uploadVertices(UIRect, sizeof(UIRect));
+
+	const float cw = 1.0f / 254.0f;
+
+	float letter[] = {
+		0.0f, 0.0f, 1.0f, 0.0f, 1.0f, // top left
+		1.0f, 0.0f, 1.0f, cw,   1.0f, // top right
+		1.0f, 1.0f, 1.0f, cw,	0.0f, // bottom right
+
+		0.0f, 0.0f, 1.0f, 0.0f, 1.0f, // top right
+		1.0f, 1.0f, 1.0f, cw,	0.0f, // bottom right
+		0.0f, 1.0f, 1.0f, 0.0f, 0.0f // bottom left
+	};
+	vertices["letter"] = uploadVertices(letter, sizeof(letter));
 
 	return GraphicsError::OK;
 }

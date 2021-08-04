@@ -13,48 +13,48 @@ void Wall::init()
 	shader = GRAPHICS->shaders["wall"];
 
 	float box[] = {
-		// Front Face
-		0, 1, 0, TEX_TL,
-		1, 1, 0, TEX_TR,
-		0, 0, 0, TEX_BL,
-
-		1, 1, 0, TEX_TR,
-		1, 0, 0, TEX_BR,
-		0, 0, 0, TEX_BL,
-		// Right Face
+		// Front Face		0
+		0, 1, 0, TEX_TR,
 		1, 1, 0, TEX_TL,
-		1, 1, 1, TEX_TR,
-		1, 0, 0, TEX_BL,
+		0, 0, 0, TEX_BR,
 
-		1, 1, 1, TEX_TR,
-		1, 0, 1, TEX_BR,
+		1, 1, 0, TEX_TL,
 		1, 0, 0, TEX_BL,
-		// Back Face
+		0, 0, 0, TEX_BR,
+		// Right Face		6
+		1, 1, 0, TEX_TR,
 		1, 1, 1, TEX_TL,
-		0, 1, 1, TEX_TR,
+		1, 0, 0, TEX_BR,
+
+		1, 1, 1, TEX_TL,
 		1, 0, 1, TEX_BL,
+		1, 0, 0, TEX_BR,
+		// Back Face		12
+		1, 1, 1, TEX_TR,
+		0, 1, 1, TEX_TL,
+		1, 0, 1, TEX_BR,
 		
 		0, 1, 1, TEX_TL,
+		0, 0, 1, TEX_BL,
+		1, 0, 1, TEX_BR,
+		// Left Face		18
+		0, 1, 0, TEX_TL,
+		0, 0, 0, TEX_BL,
 		0, 0, 1, TEX_BR,
-		1, 0, 1, TEX_BL,
-		// Left Face
-		0, 1, 0, TEX_TR,
-		0, 0, 0, TEX_BR,
-		0, 0, 1, TEX_BL,
 
-		0, 1, 0, TEX_TR,
-		0, 0, 1, TEX_BL,
-		0, 1, 1, TEX_TL,
-		// Top Face
-		1, 1, 1, TEX_TR,
-		0, 1, 0, TEX_BL,
-		0, 1, 1, TEX_TL,
+		0, 1, 0, TEX_TL,
+		0, 0, 1, TEX_BR,
+		0, 1, 1, TEX_TR,
+		// Top Face			24
+		1, 1, 1, TEX_TL,
+		0, 1, 0, TEX_BR,
+		0, 1, 1, TEX_TR,
 
-		1, 1, 1, TEX_TR,
-		1, 1, 0, TEX_BR,
-		0, 1, 0, TEX_BL,
+		1, 1, 1, TEX_TL,
+		1, 1, 0, TEX_BL,
+		0, 1, 0, TEX_BR,
 
-		// Bottom Face
+		// Bottom Face		30
 		1, 0, 1, TEX_TR,
 		0, 0, 1, TEX_TL,
 		1, 0, 0, TEX_BR,
@@ -93,7 +93,7 @@ void Wall::draw()
 	shader->setVec3("offset", pos + glm::vec3(-openProgress, 0, 0));
 	shader->setVec3("scale", glm::vec3(1));
 
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glDrawArrays(GL_TRIANGLES, 0, model->size);
 }
 
 Wall::~Wall()

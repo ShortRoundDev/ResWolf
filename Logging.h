@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <glm/glm.hpp>
 
 extern thread_local int errLine;
 extern thread_local std::string errFile;
@@ -18,3 +19,5 @@ T _GameErr(T err, const char* file, int line)
 	return err;
 }
 #define GameErr(x) (_GameErr((x), __FILE__, __LINE__))
+
+std::string vec3ToString(_In_ glm::vec3 in);
