@@ -19,8 +19,6 @@ MainMenu* MainMenu::init()
 MainMenu::MainMenu()
 {
 	shown = true;
-	shader = GRAPHICS->shaders["UI"];
-	box = GRAPHICS->vertices["UIRect"];
 	background = GRAPHICS->createTexture("Resources/Texture/MainMenu.png", "Main Menu");
 	arrow = GRAPHICS->createTexture("Resources/Texture/MainArrow.png", "Arrow");
 

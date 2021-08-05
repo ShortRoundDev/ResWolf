@@ -17,7 +17,9 @@
 
 using namespace ResWolf;
 
+/** Initializes all managers. returns 1 on success */
 int init(int argc, char** argv);
+/** Runs the game */
 int run();
 
 int main(int argc, char** argv)
@@ -28,17 +30,21 @@ int main(int argc, char** argv)
 
 int init(int argc, char** argv)
 {
+	/* Set win32 handlers. This is the very first thing so that mem dumps can be created and
+	 * sent to a server on failure */
 	SetHandlers();
 
 	/* ----- APPLICATION SETTINGS ----- */
+	/* Get the app settings from settings.conf */
 	ApplicationSettings::init("settings.conf");
+	
+	/* ----- GRAPHICS MANAGER ----- */
+	/* Initialize GLAD, GL, and GLFW */
 	GraphicsError graphicsStatus = GraphicsManager::init(
 		SETTINGS->width,
 		SETTINGS->height,
 		SETTINGS->fov
 	);
-
-	/* ----- GRAPHICS MANAGER ----- */
 	if (graphicsStatus != GraphicsError::OK)
 	{
 		ShowError("Couldn't Initialize Graphics!", GraphicsErrorMessage(graphicsStatus));
@@ -46,6 +52,7 @@ int init(int argc, char** argv)
 	}
 
 	/* ----- GAME MANAGER ----- */
+	/* Initialize models, textures, etc. This also initializes input handlers for GLFW*/
 	GameError gameStatus = GameManager::init();
 	if (gameStatus != GameError::OK)
 	{
@@ -53,10 +60,11 @@ int init(int argc, char** argv)
 		return -2;
 	}
 
+	/* Initialize UI. This includes fonts and UI rectangle models */
 	UIManager::init();
+	MainMenu::init(); // TODO Put this in UI Manager class
 
-	MainMenu::init(); // TODO Put this in some UI Manager class
-
+	// TODO make a more robust CLI handler
 	if (argc > 1)
 	{
 		GAME->loadLevel(std::string(argv[1]));
@@ -67,6 +75,7 @@ int init(int argc, char** argv)
 
 int run()
 {
+	// TODO: Timer
 	while (!glfwWindowShouldClose(GRAPHICS->window))
 	{
 		GAME->update();

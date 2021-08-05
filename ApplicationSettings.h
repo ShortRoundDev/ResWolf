@@ -3,10 +3,12 @@
 #include <string>
 #include <memory>
 
+/** Used to access the singleton */
 #define SETTINGS (ApplicationSettings::instance)
 
 namespace ResWolf
 {
+	/** Window mode for the application */
 	enum class AppWindowMode
 	{
 		WINDOWED			= 0,	/** Windowed with title bar */
@@ -14,19 +16,24 @@ namespace ResWolf
 		WINDOWED_FULLSCREEN = 2		/** Windowed without title bar */
 	};
 
+	/** Input mode for the game */
 	enum class InputMode
 	{
 		MODERN				= 0,	/** Mouse and keyboard, WASD movement */
 		CLASSIC				= 1		/** Keyboard only. Arrow key movement, `,` and `.` for strafing */
 	};
 
+	/** Settings across the entire application. Defined in the settings.conf file or command line override */
 	class ApplicationSettings
 	{
 	public:
 
+		/** Singleton */
 		static std::unique_ptr<ApplicationSettings> instance;
+		/** Creates and assigns the singleton */
 		static void init(std::string path);
 
+		/** Constructs and loads the application settings object from the given conf file */
 		ApplicationSettings(std::string path);
 		~ApplicationSettings();
 

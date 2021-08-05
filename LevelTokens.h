@@ -50,7 +50,7 @@ namespace ResWolf
 		// --- Word 4 ---
 		EntityToken* entities;  // 24 - 31
 		// --- Words 5 - 7 ---
-		uint8_t reserved[24];	// 32 - 55	// Reserved for future use
+		uint8_t reserved[24];	// 32 - 55	// Reserved for future use // TODO: Put player position here. Only need 3 bytes (x, y, look)
 
 	} LevelToken;
 }
