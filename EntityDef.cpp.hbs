@@ -4,14 +4,14 @@
 
 using namespace ResWolf;
 
-Entity* ResWolf::createEntity(int id, uint16_t x, uint16_t y)
+Entity* ResWolf::createEntity(int id, uint16_t x, uint16_t y, char* config)
 {
     switch(id)
     {
     {{#each pairs}}
-    case {{this.Item2}}:
+    case {{Up this.Item1}}:
     {
-        return new {{this.Item1}}(x, y);
+        return new {{this.Item1}}(id, x, y, config);
     }
     {{/each}}
     }

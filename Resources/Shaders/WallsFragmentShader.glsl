@@ -2,23 +2,19 @@
 out vec4 FragColor;
 
 in vec2 TexCoord;
-in vec3 dist;
+in vec3 Normal;
+in vec3 FragPos;
 
 uniform sampler2D tex;
-uniform vec4 tint;
-uniform float minBright;
-uniform float maxBright;
+
+uniform vec3 lightPos;
+uniform vec3 lightColor;
 
 void main(){
-    
-    FragColor = texture(tex, TexCoord);
-    /*if(t.a == 0.0)
-        discard;
-    float z = min(maxBright,
-        max(
-            minBright,
-            round(10.0/(length(dist.xz)) - 1)/10.0
-        )
-    );*/
-    //FragColor = vec4(t.b, t.g, t.r, t.a) * vec4(z, z, min(1.0, z * 1.2), 1.0) * tint;
+    vec3 norm = normalize(Normal);
+    vec3 lightDir = normalize(lightPos - FragPos);  
+
+    float diff = max(dot(norm, lightDir), 0.0);
+    vec3 diffuse = diff * lightColor;
+    FragColor = vec4(diffuse * texture(tex, TexCoord).xyz, 1.0);
 }

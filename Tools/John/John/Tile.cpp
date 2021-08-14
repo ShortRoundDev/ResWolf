@@ -8,14 +8,14 @@ Tile::Tile(int t, int tileNum, Texture* image) : UINode({
 		(uint16_t)((t % 3) * 72 + 8),
 		(uint16_t)((t / 3) * 72 + 8),
 		64, 64,
-		"Resources/Tile",
+		"Resources/UI/Tile",
 		CGA_TRANSPARENT,
 		StyleDirection::TOP,
 		StyleDirection::LEFT
 	})
 {
 	this->tileNum = tileNum;
-	if (!APP->tryLoadTexture("Resources/TilePressed.png", "Resources/TilePressed", &pressed))
+	if (!APP->tryLoadTexture("Resources/UI/TilePressed.png", "Resources/UI/TilePressed", &pressed))
 	{
 		MessageBoxA(NULL, "Failed to load tile image!", NULL, MB_OK);
 	}

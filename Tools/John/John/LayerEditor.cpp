@@ -8,7 +8,7 @@ LayerEditor::LayerEditor(Grid* grid) : UINode(
 	{
 		256 + 16, 16,
 		128, 64,
-		"Resources/LayerEditor",
+		"Resources/UI/LayerEditor",
 		CGA_TRANSPARENT,
 		StyleDirection::TOP,
 		StyleDirection::RIGHT

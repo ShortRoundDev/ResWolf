@@ -2,6 +2,7 @@
 #include "WindowEvents.h"
 #include "ApplicationSettings.h"
 #include "Logging.h"
+#include "WavefrontLoader.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/intersect.hpp>
@@ -63,6 +64,8 @@ GraphicsError GraphicsManager::init(
 	glFrontFace(GL_CCW);
 	
 	instance->notFound = instance->createTexture("Resources/Texture/NotFound.png", "NotFound");
+
+	WavefrontLoader::init();
 
 	return code;
 }
@@ -135,11 +138,14 @@ Model* GraphicsManager::uploadVertices(_In_ const float* data, _In_ size_t size)
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(sizeof(float) * 3));
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(sizeof(float) * 3));
 	glEnableVertexAttribArray(1);
+
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(sizeof(float) * 5));
+	glEnableVertexAttribArray(2);
 
 	return new Model(vao, size);
 }

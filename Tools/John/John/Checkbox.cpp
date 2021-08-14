@@ -16,10 +16,10 @@ Checkbox::Checkbox(bool* toCheck) : UINode(
 {
 	this->toCheck = toCheck;
 	if (
-		!APP->tryLoadTexture("Resources/CheckBoxUnchecked.png", "CheckboxUnchecked", &uncheckDepressed) ||
-		!APP->tryLoadTexture("Resources/CheckBoxUncheckedPressed.png", "CheckboxUncheckedPressed", &uncheckPressed) ||
-		!APP->tryLoadTexture("Resources/CheckBoxChecked.png", "CheckboxChecked", &checkDepressed) ||
-		!APP->tryLoadTexture("Resources/CheckBoxCheckedPressed.png", "CheckboxCheckedPressed", &checkPressed)
+		!APP->tryLoadTexture("Resources/UI/CheckBoxUnchecked.png", "CheckboxUnchecked", &uncheckDepressed) ||
+		!APP->tryLoadTexture("Resources/UI/CheckBoxUncheckedPressed.png", "CheckboxUncheckedPressed", &uncheckPressed) ||
+		!APP->tryLoadTexture("Resources/UI/CheckBoxChecked.png", "CheckboxChecked", &checkDepressed) ||
+		!APP->tryLoadTexture("Resources/UI/CheckBoxCheckedPressed.png", "CheckboxCheckedPressed", &checkPressed)
 	)
 	{
 		MessageBoxA(NULL, "Failed to initialize checkbox images", NULL, MB_OK);

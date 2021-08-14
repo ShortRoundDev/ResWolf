@@ -5,28 +5,39 @@
 #include "FileHandling.h"
 #include "Logging.h"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 #include "Wall.h"
 
 #include "GraphicsManager.h"
 #include "GameManager.h"
 #include "UIManager.h"
 
+#include "EntityDef.h"
+
 using namespace ResWolf;
 
 #pragma region Public
 
 Shader* Level::wallShader;
+Shader* Level::entityShader;
 
 void Level::init()
 {
 	Wall::init();
 	wallShader = GRAPHICS->shaders["wall"];
+
+	Entity::init();
+	entityShader = GRAPHICS->shaders["entity"];
 }
 
 Level::Level(std::string path) :
 	levelToken(NULL),
 	width(0),
 	height(0),
+	totalEntities(0),
+	entities(NULL),
 	walls(NULL)
 {
 	char* data = NULL;
@@ -49,6 +60,8 @@ Level::Level(std::string path) :
 	width = levelToken->width;
 	height = levelToken->height;
 
+	totalEntities = levelToken->totalEntities;
+
 	parseLevelToken();
 
 	status = LevelStatus::OK;
@@ -70,12 +83,18 @@ Level::~Level()
 
 void Level::draw()
 {
+	static float progress = 0.0f;
+
 	// TODO, change this to (visible) area around player
 	if (width <= 0 || height <= 0 || walls == NULL)
 		return;
 
 	wallShader->use();
 
+	auto lightPos = glm::vec3(3.0f + cos(progress) * 0.5f, 0.5f, 3.0f + sin(progress) * 0.5f);
+
+	wallShader->setVec3("lightPos", lightPos);
+	wallShader->setVec3("lightColor", glm::vec3(cos(progress), sin(progress), cos(progress + M_PI / 6)));
 	wallShader->setMat4("view", GRAPHICS->camera->view);
 	wallShader->setMat4("projection", GRAPHICS->camera->projection);
 	wallShader->setVec3("playerPos", GRAPHICS->camera->cameraPos);
@@ -87,6 +106,21 @@ void Level::draw()
 		{
 			wallAt(x, y)->draw();
 		}
+	}
+
+	progress += 0.03f;
+
+	entityShader->use();
+	entityShader->setModel(Entity::rect);
+	entityShader->setMat4("view", GRAPHICS->camera->view);
+	entityShader->setMat4("projection", GRAPHICS->camera->projection);
+	entityShader->setVec3("playerPos", GRAPHICS->camera->cameraPos);
+	entityShader->setVec2("scale", glm::vec2(1.0f));
+	entityShader->setVec3("lightPos", lightPos);
+	for (uint64_t i = 0; i < totalEntities; i++)
+	{
+		entities[i]->draw();
+		
 	}
 
 	UI_MGR->drawText("CameraPos: " + vec3ToString(GRAPHICS->camera->cameraPos), 16, 64, 128, 128);
@@ -139,6 +173,8 @@ bool Level::fixPointers(LevelToken* levelToken)
 
 bool Level::parseLevelToken()
 {
+
+	// ----- Walls ----- //
 	walls = (Wall*)calloc(height * width, sizeof(Wall));
 	if (walls == NULL)
 	{
@@ -161,6 +197,30 @@ bool Level::parseLevelToken()
 			);
 		}
 	}
+
+	// ----- Entities ----- //
+	if (totalEntities == 0)
+		return true;
+
+	auto entityTokenCursor = levelToken->entities;
+
+	entities = (Entity**)calloc(totalEntities, sizeof(Entity*));
+	if (entities == NULL)
+	{
+		status = LevelStatus::FAILED_MEM;
+		return false;
+	}
+	Entity** cursor = entities;
+	for (uint64_t i = 0; i < totalEntities; i++, cursor++, entityTokenCursor++)
+	{
+		*cursor = createEntity(
+			entityTokenCursor->entityId,
+			entityTokenCursor->x,
+			entityTokenCursor->y,
+			entityTokenCursor->config
+		);
+	}
+	return true;
 }
 
 inline Wall* Level::wallAt(int x, int y)

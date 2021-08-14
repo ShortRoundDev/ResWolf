@@ -4,13 +4,17 @@
  * If you want to change this file, change the relevant entity config file, or change the
  * EntityDef.hbs template file
  */
+#include "SmallHealthPack.h"
 
 using namespace ResWolf;
 
-/*Entity* ResWolf::createEntity(int id, uint16_t x, uint16_t y)
+Entity* ResWolf::createEntity(int id, uint16_t x, uint16_t y, char* config)
 {
     switch(id)
     {
+    case SMALLHEALTHPACK:
+    {
+        return new SmallHealthPack(id, x, y, config);
+    }
     }
 }
-*/

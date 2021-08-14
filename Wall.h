@@ -19,6 +19,10 @@ namespace ResWolf
 		static Shader* shader;
 		/** statically caches the wall model for easy use without lookup multiple times per frame */
 		static Model* model;
+		/** statically caches the ceiling model for eays use without lookup multiple times per frame */
+		static Model* ceilingPlane;
+		/** statically caches the floor model for eays use without lookup multiple times per frame */
+		static Model* floorPlane;
 
 		/** initializes the static variables for the wall */
 		static void init();
@@ -29,10 +33,14 @@ namespace ResWolf
 
 		/** The texture for the floor tile. If none is specified, will load the floor tile at (0, 0) */
 		Texture* floorTexture;
+		
+		uint16_t floorCode;
 		/** The texture for the wall */
 		Texture* wallTexture;
+		uint16_t wallCode;
 		/** The texture for the ceiling tile. If none is specified, will load the ceiling tile at (0, 0) */
 		Texture* ceilingTexture;
+		uint16_t ceilingCode;
 
 		/** The position of the wall */
 		glm::vec3 pos;

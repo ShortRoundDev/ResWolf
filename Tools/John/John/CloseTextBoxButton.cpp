@@ -8,7 +8,7 @@ CloseTextBoxButton::CloseTextBoxButton() : UINode(
 	{
 		8, 4,
 		18, 18,
-		"Resources/CloseButton",
+		"Resources/UI/CloseButton",
 		CGA_TRANSPARENT,
 		StyleDirection::TOP,
 		StyleDirection::RIGHT
@@ -16,7 +16,7 @@ CloseTextBoxButton::CloseTextBoxButton() : UINode(
 )
 {
 	depressed = image;
-	if (!APP->tryLoadTexture("Resources/CloseButtonPressed.png", "CloseButtonPressed", &pressed))
+	if (!APP->tryLoadTexture("Resources/UI/CloseButtonPressed.png", "CloseButtonPressed", &pressed))
 	{
 		MessageBoxA(NULL, "Failed to lose CloseButtonPressed", NULL, MB_OK);
 		return;

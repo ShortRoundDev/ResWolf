@@ -5,8 +5,9 @@
 
 #include "Shader.h"
 #include "LevelTokens.h"
+
 #include "Wall.h"
-//#include "Entity.h"
+#include "Entity.h"
 
 namespace ResWolf
 {
@@ -30,6 +31,9 @@ namespace ResWolf
 		/** Cached shader for rendering walls */
 		static Shader* wallShader;
 
+		/** Cached shader for rendering entities */
+		static Shader* entityShader;
+
 		/** Loads a level from the given path. If the level fails to load (doesn't exist or malformed or some bug)
 		  * then the status field will be set to a status code other than LevelStatus::OK */
 		Level(std::string path);
@@ -41,7 +45,7 @@ namespace ResWolf
 
 		/** A single array of walls. Loaded from a 2D specification but put into a single array */
 		Wall* walls;
-		//Entity** entities;
+		Entity** entities;
 
 		/** The current load status of the level */
 		LevelStatus status;
@@ -51,6 +55,9 @@ namespace ResWolf
 
 		/** Width and height of the level, in # of tiles*/
 		int width, height;
+
+		/** Total entities in the level */
+		uint64_t totalEntities;
 
 	private:
 		/** Fixes the pointer offsets in the level token. Pointers are relative in the file and must be made absolute upon loading. */

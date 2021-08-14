@@ -9,4 +9,8 @@
     <PackageReference Include="Handlebars.Net" Version="2.0.8" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy .\$(OutDir)  $(ProjectDir) /f /y" />
+  </Target>
+
 </Project>

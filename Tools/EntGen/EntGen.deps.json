@@ -1,0 +1,52 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "EntGen/1.0.0": {
+        "dependencies": {
+          "Handlebars.Net": "2.0.8"
+        },
+        "runtime": {
+          "EntGen.dll": {}
+        }
+      },
+      "Handlebars.Net/2.0.8": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Handlebars.dll": {
+            "assemblyVersion": "2.0.8.0",
+            "fileVersion": "2.0.8.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {}
+    }
+  },
+  "libraries": {
+    "EntGen/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Handlebars.Net/2.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jtj3CLFtAcDfi5Mol11lUXgWhaNV+ReTm8yVsb94P69PVL+IdYkpx8J6fUqlntk+mv0lXUBanmPDAd9inVFfkQ==",
+      "path": "handlebars.net/2.0.8",
+      "hashPath": "handlebars.net.2.0.8.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    }
+  }
+}

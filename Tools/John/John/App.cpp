@@ -26,11 +26,11 @@ void App::init(std::string title)
 	instance = std::make_unique<App>(title);
 	instance->createDom();
 
-	if (!instance->tryLoadTexture("Resources/Numbers.png", "Numbers", &instance->numbers))
+	if (!instance->tryLoadTexture("Resources/UI/Numbers.png", "Numbers", &instance->numbers))
 	{
 		MessageBoxA(NULL, "Failed to load numbers font file", NULL, MB_OK);
 	}
-	if (!instance->tryLoadTexture("Resources/Font.png", "Letters", &instance->letters))
+	if (!instance->tryLoadTexture("Resources/UI/Font.png", "Letters", &instance->letters))
 	{
 		MessageBoxA(NULL, "Failed to load letters font file", NULL, MB_OK);
 	}
@@ -53,7 +53,7 @@ App::App(std::string title)
 	);
 	SDL_SetWindowTitle(window, title.c_str());
 
-	auto mouse = IMG_Load("Resources/mouse.png");
+	auto mouse = IMG_Load("Resources/UI/mouse.png");
 	auto cursor = SDL_CreateColorCursor(mouse, 0, 0);
 	SDL_SetCursor(cursor);
 }
@@ -88,17 +88,17 @@ void App::createDom()
 			6,
 			new SectionHeader(
 				64, 48,
-				"Resources/Tiles"
+				"Resources/UI/Tiles"
 			),
 			new TileArea(),
 			new SectionHeader(
 				64, 256 + 112,
-				"Resources/Entities"
+				"Resources/UI/Entities"
 			),
 			new EntityArea,
 			new SectionHeader(
 				64, 512 + 112 + 64,
-				"Resources/Properties"
+				"Resources/UI/Properties"
 			),
 			PropertiesEditor::init()
 		),

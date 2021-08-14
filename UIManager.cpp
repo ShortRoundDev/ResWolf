@@ -27,7 +27,7 @@ UIManager::~UIManager()
 
 }
 
-void UIManager::drawRect(Texture* image, float x, float y, float w, float h)
+void UIManager::drawRect(_In_ Texture* image, float x, float y, float w, float h)
 {
 	uiShader->use();
 	uiShader->setModel(rect);
@@ -35,7 +35,7 @@ void UIManager::drawRect(Texture* image, float x, float y, float w, float h)
 
 	uiShader->setVec3("scale", glm::vec3(GRAPHICS->scrnW(w), GRAPHICS->scrnH(h), 1.0f));
 	uiShader->setVec3("offset", glm::vec3(GRAPHICS->scrnX(x), GRAPHICS->scrnY(y), 0.0f));
-	glDrawArrays(GL_TRIANGLES, 0, rect->size);
+	glDrawArrays(GL_TRIANGLES, 0, (GLsizei)rect->size);
 }
 
 void UIManager::drawText(_In_ std::string text, float x, float y, float w, float h)
@@ -61,12 +61,12 @@ void UIManager::drawText(_In_ const char* text, float x, float y, float w, float
 		fontShader->setVec2(
 			"pos",
 			glm::vec2(
-				GRAPHICS->scrnX(x) + GRAPHICS->scrnW((w * 0.65) * i),
+				GRAPHICS->scrnX(x) + GRAPHICS->scrnW((w * 0.65f) * i),
 				GRAPHICS->scrnY(y)
 			)
 		);
 		fontShader->setVec2("size", glm::vec2(GRAPHICS->scrnW(w), GRAPHICS->scrnH(h)));
-		glDrawArrays(GL_TRIANGLES, 0, letter->size);
+		glDrawArrays(GL_TRIANGLES, 0, (GLsizei)letter->size);
 	}
 	glEnable(GL_DEPTH_TEST);
 }

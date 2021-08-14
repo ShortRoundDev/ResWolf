@@ -14,7 +14,7 @@ EntityButton::EntityButton
 		(uint16_t)((tileOrder % 3) * 72 + 8),
 		(uint16_t)((tileOrder / 3) * 72 + 8),
 		64, 64,
-		"Resources/Tile"
+		"Resources/UI/Tile"
 	}
 	)
 {
@@ -24,7 +24,7 @@ EntityButton::EntityButton
 
 	depressed = image;
 
-	if (!APP->tryLoadTexture("Resources/TilePressed.png", "Resources/TilePressed", &pressed))
+	if (!APP->tryLoadTexture("Resources/UI/TilePressed.png", "Resources/UI/TilePressed", &pressed))
 	{
 		MessageBoxA(NULL, "Failed to load tile image!", NULL, MB_OK);
 	}

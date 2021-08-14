@@ -127,7 +127,7 @@
       <AdditionalLibraryDirectories>C:\Program Files %28x86%29\OpenAL 1.1 SDK\libs\Win64;Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
-      <Command>rem $(ProjectDir)Tools/EntGen/EntGen.exe Entities.conf EntityDef</Command>
+      <Command>$(ProjectDir)Tools\EntGen\EntGen\EntGen.exe Entities.conf EntityDef</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="ApplicationSettings.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityDef.cpp" />
     <ClCompile Include="FileHandling.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -164,15 +165,18 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SmallHealthPack.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="WavefrontLoader.cpp" />
     <ClCompile Include="Win32Application.cpp" />
     <ClCompile Include="WindowEvents.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationSettings.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityDef.h" />
     <ClInclude Include="FileHandling.h" />
     <ClInclude Include="GameManager.h" />
@@ -183,9 +187,11 @@
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="SmallHealthPack.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="WavefrontLoader.h" />
     <ClInclude Include="Win32Application.h" />
     <ClInclude Include="WindowEvents.h" />
   </ItemGroup>

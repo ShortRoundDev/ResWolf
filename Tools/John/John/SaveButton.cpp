@@ -8,7 +8,7 @@ SaveButton::SaveButton() : UIButton(
 	{
 		0, 0,
 		128, 32,
-		"Resources/Save"
+		"Resources/UI/Save"
 	}
 )
 {

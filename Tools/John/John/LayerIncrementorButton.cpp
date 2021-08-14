@@ -9,13 +9,13 @@ LayerIncrementorButton::LayerIncrementorButton(uint16_t x, uint16_t y, bool up, 
 	{
 		x, y,
 		14, 22,
-		up ? "Resources/Up" : "Resources/Down"
+		up ? "Resources/UI/Up" : "Resources/UI/Down"
 	}
 )
 {
 	this->increment = callback;
 	this->depressed = image;
-	std::string icon = up ? "Resources/Up" : "Resources/Down";
+	std::string icon = up ? "Resources/UI/Up" : "Resources/UI/Down";
 	icon += "Pressed";
 	if(!APP->tryLoadTexture(icon + ".png", icon, &pressed))
 	{

@@ -72,7 +72,7 @@ void EntityArea::loadEntities()
 		int id = atoi(value);
 
 		Texture* t = NULL;
-		if (!APP->tryLoadTexture(std::string("Resources/") + key + "Thumb.png", key, &t))
+		if (!APP->tryLoadTexture(std::string("Resources/Entities/") + key + ".png", key, &t))
 		{
 			MessageBoxA(NULL, ("Failed to load entity thumb for " + std::string(key)).c_str(), NULL, MB_OK);
 			continue;

@@ -8,7 +8,7 @@ TextButton::TextButton(std::string* text) : UINode(
 	{
 		24, 0,
 		22, 22,
-		"Resources/TextButton",
+		"Resources/UI/TextButton",
 		CGA_TRANSPARENT,
 		StyleDirection::TOP,
 		StyleDirection::RIGHT
@@ -18,7 +18,7 @@ TextButton::TextButton(std::string* text) : UINode(
 	this->text = text;
 	depressed = image;
 
-	if (!APP->tryLoadTexture("Resources/TextButtonPressed.png", "TextButtonPressed", &pressed))
+	if (!APP->tryLoadTexture("Resources/UI/TextButtonPressed.png", "TextButtonPressed", &pressed))
 	{
 		MessageBoxA(NULL, "Failed to load Textbuttonpressed!", NULL, MB_OK);
 		return;

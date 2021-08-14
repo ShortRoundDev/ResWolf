@@ -64,7 +64,7 @@ void TileArea::loadTiles()
 		}
 
 		Texture* t = NULL;
-		if (!APP->tryLoadTexture(("Resources/" + std::to_string(tileNum) + ".png"), std::to_string(tileNum), &t))
+		if (!APP->tryLoadTexture(("Resources/Tiles/" + std::to_string(tileNum) + ".png"), std::to_string(tileNum), &t))
 		{
 			MessageBoxA(NULL, ("Couldn't load tile " + std::to_string(tileNum)).c_str(), NULL, MB_OK);
 			continue;

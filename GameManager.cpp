@@ -6,6 +6,11 @@
 #include "MainMenu.h"
 #include "Logging.h"
 
+#define _USE_MATH_DEFINES // for C++
+#include <math.h>
+
+#include "glm/gtx/rotate_vector.hpp"
+
 using namespace ResWolf;
 
 #pragma region Error
@@ -97,13 +102,26 @@ void GameManager::draw()
 void GameManager::update()
 {
 	GRAPHICS->camera->update();
+	float velocity = keymap[GLFW_KEY_LEFT_SHIFT] ? 0.05f : 0.1f;
 	if (keymap[GLFW_KEY_W])
 	{
-		GRAPHICS->camera->cameraPos += GRAPHICS->camera->cameraFront * 0.1f;
+		GRAPHICS->camera->cameraPos += GRAPHICS->camera->cameraFront * velocity;
+	}
+	if (keymap[GLFW_KEY_S])
+	{
+		GRAPHICS->camera->cameraPos -= GRAPHICS->camera->cameraFront * velocity;
 	}
 	if (keymap[GLFW_KEY_SPACE])
 	{
-		GRAPHICS->camera->cameraPos += GRAPHICS->camera->cameraUp * 0.1f;
+		GRAPHICS->camera->cameraPos += GRAPHICS->camera->cameraUp * velocity;
+	}
+	if (keymap[GLFW_KEY_A])
+	{
+		GRAPHICS->camera->cameraPos -= glm::normalize(glm::cross(GRAPHICS->camera->cameraFront, GRAPHICS->camera->cameraUp)) * velocity;
+	}
+	if (keymap[GLFW_KEY_D])
+	{
+		GRAPHICS->camera->cameraPos += glm::normalize(glm::cross(GRAPHICS->camera->cameraFront, GRAPHICS->camera->cameraUp)) * velocity;
 	}
 }
 

@@ -8,7 +8,7 @@ TextBox::TextBox(std::string* text) : UINode(
 	{
 		256 + 16, 16,
 		512, 320,
-		"Resources/TextBox",
+		"Resources/UI/TextBox",
 		CGA_TRANSPARENT,
 		StyleDirection::BOTTOM,
 		StyleDirection::RIGHT,

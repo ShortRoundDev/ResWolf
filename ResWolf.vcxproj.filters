@@ -13,155 +13,245 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{2b15d290-f7c6-4417-98f8-62a8fe424be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Walls">
+      <UniqueIdentifier>{198c4f9a-6a65-42f4-8bc5-2d8f57502d1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\UI">
+      <UniqueIdentifier>{5bcb3b57-2222-4a96-b197-fd25da6fd0d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Font">
+      <UniqueIdentifier>{ed551087-fc62-4259-b274-84aed363fd39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Entity">
+      <UniqueIdentifier>{3a45ab0a-00ee-427e-9262-8b359d32cece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\BrushSprite">
+      <UniqueIdentifier>{d2d66d24-fe9e-4304-848d-087add9e212b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers">
+      <UniqueIdentifier>{689a8156-a7b3-470a-9844-58b4e15346d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{09b05ae9-c310-4670-9411-48537415dffa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Entities">
+      <UniqueIdentifier>{d6dbef07-cf80-4564-9063-54c047b4690d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers\Graphics">
+      <UniqueIdentifier>{e2bd9f10-4641-49ab-865c-cadb84594d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers\Game">
+      <UniqueIdentifier>{93a8cba4-37de-4c60-8a75-92a409379120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers\UserInterface">
+      <UniqueIdentifier>{cd300419-4c79-4416-a514-5beb4c3d1cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Application">
+      <UniqueIdentifier>{6ac5b07b-b447-48e6-a593-d224dcb094f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Entities\Config">
+      <UniqueIdentifier>{d7b4d019-80f5-41ee-a1d0-776d86dc3aa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{12b1e70d-9bc3-4525-9f49-3b2f15eb154d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers\Graphics">
+      <UniqueIdentifier>{f741eefb-5050-4d21-84b5-bb858d6dc30d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers\Game">
+      <UniqueIdentifier>{d06df276-bda1-4efe-874d-2cfb463fa83c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers\UserInterface">
+      <UniqueIdentifier>{867704f2-afaa-4b34-b38f-80d22717b481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{cbb388b0-e50d-42b1-9cd9-1cc8a0ed3101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Entities">
+      <UniqueIdentifier>{11d91843-8c32-4794-bbd7-76e8d117a2ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Entities\Config">
+      <UniqueIdentifier>{74447fd8-7201-48f1-b15d-997ae112d363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Application">
+      <UniqueIdentifier>{634e7744-1722-4463-9abb-2f61de3986aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Entities\Items">
+      <UniqueIdentifier>{57a10f3b-bf9e-4b65-a1aa-c4109f1fe0d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Entities\Items">
+      <UniqueIdentifier>{beedd568-15ae-4c35-b31f-67ce6f282ec8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\Game\Entities</Filter>
     </ClCompile>
     <ClCompile Include="GraphicsManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WindowEvents.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Logging.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Win32Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FileHandling.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ApplicationSettings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityDef.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Managers\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Managers\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="UIManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Wall.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files\Managers\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files\Managers\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\Managers\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Source Files\Managers\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files\Managers\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Source Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHandling.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Logging.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32Application.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowEvents.cpp">
+      <Filter>Source Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityDef.cpp">
+      <Filter>Source Files\Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationSettings.cpp">
+      <Filter>Source Files\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="SmallHealthPack.cpp">
+      <Filter>Source Files\Game\Entities\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="WavefrontLoader.cpp">
+      <Filter>Source Files\Managers\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Game\Entities</Filter>
     </ClInclude>
     <ClInclude Include="GraphicsManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Managers\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowEvents.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Logging.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Win32Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FileHandling.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ApplicationSettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelTokens.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityDef.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\Managers\Game</Filter>
     </ClInclude>
     <ClInclude Include="UIManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Managers\UserInterface</Filter>
     </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Header Files\Managers\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationSettings.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityDef.h">
+      <Filter>Header Files\Game\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Application.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHandling.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelTokens.h">
+      <Filter>Header Files\Managers\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging.h">
+      <Filter>Header Files\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files\Managers\UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowEvents.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="SmallHealthPack.h">
+      <Filter>Header Files\Game\Entities\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="WavefrontLoader.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Shaders\BrushSpriteFragmentShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\BrushSpriteVertexShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\EntityFragmentShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\EntityVertexShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\FontFragmentShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\FontVertexShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\UIFragmentShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="Resources\Shaders\UIVertexShader.glsl">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="Resources\Shaders\WallsFragmentShader.glsl">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Shaders\Walls</Filter>
     </None>
     <None Include="Resources\Shaders\WallsVertexShader.glsl">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Shaders\Walls</Filter>
+    </None>
+    <None Include="Resources\Shaders\UIFragmentShader.glsl">
+      <Filter>Source Files\Shaders\UI</Filter>
+    </None>
+    <None Include="Resources\Shaders\UIVertexShader.glsl">
+      <Filter>Source Files\Shaders\UI</Filter>
+    </None>
+    <None Include="Resources\Shaders\FontFragmentShader.glsl">
+      <Filter>Source Files\Shaders\Font</Filter>
+    </None>
+    <None Include="Resources\Shaders\FontVertexShader.glsl">
+      <Filter>Source Files\Shaders\Font</Filter>
+    </None>
+    <None Include="Resources\Shaders\EntityFragmentShader.glsl">
+      <Filter>Source Files\Shaders\Entity</Filter>
+    </None>
+    <None Include="Resources\Shaders\EntityVertexShader.glsl">
+      <Filter>Source Files\Shaders\Entity</Filter>
+    </None>
+    <None Include="Resources\Shaders\BrushSpriteFragmentShader.glsl">
+      <Filter>Source Files\Shaders\BrushSprite</Filter>
+    </None>
+    <None Include="Resources\Shaders\BrushSpriteVertexShader.glsl">
+      <Filter>Source Files\Shaders\BrushSprite</Filter>
     </None>
     <None Include="Entities.conf">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game\Entities\Config</Filter>
     </None>
     <None Include="EntityDef.cpp.hbs">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game\Entities\Config</Filter>
     </None>
     <None Include="EntityDef.h.hbs">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\Game\Entities\Config</Filter>
     </None>
   </ItemGroup>
 </Project>

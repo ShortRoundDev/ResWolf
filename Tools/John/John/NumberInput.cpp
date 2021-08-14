@@ -7,7 +7,7 @@
 NumberInput::NumberInput(uint8_t* number) : UINode({
 	0, 0,
 	128, 32,
-	"Resources/NumberInput",
+	"Resources/UI/NumberInput",
 	CGA_TRANSPARENT,
 	StyleDirection::TOP,
 	StyleDirection::RIGHT

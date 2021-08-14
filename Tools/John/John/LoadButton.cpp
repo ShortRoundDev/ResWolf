@@ -6,7 +6,7 @@ LoadButton::LoadButton() : UIButton(
 	{
 		128, 0,
 		128, 32,
-		"Resources/Load"
+		"Resources/UI/Load"
 	}
 )
 {
