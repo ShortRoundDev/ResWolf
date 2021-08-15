@@ -96,3 +96,26 @@ void WavefrontLoader::parseItemCount(
 		}
 	}
 }
+
+_Success_(return == WavefrontStatus::OK)
+WavefrontStatus WavefrontLoader::parseVertexData(
+	_In_ char* data,
+	_Out_ glm::vec3* vertices,
+	_Out_ size_t* verticesCount
+)
+{
+	if (data == NULL || *data == NULL)
+	{
+		return WavefrontStatus::ERROR_PARSE;
+	}
+	bool newLine = true;
+	for (; *data != NULL; data++)
+	{
+		// get a newline
+		// check if it begins with "v " (with space)
+		// strtok_s the newline
+		// strtok_s each space
+		// atof the dimensions
+		// continue
+	}
+}
