@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shaders>
+    <shader Key="Perspective" VS="PerspectiveVertexShader.hlsl" PS="PerspectivePixelShader.hlsl" CBuffer="MatrixCBuffer" />
+    <shader Key="Skybox" VS="SkyboxVertexShader.hlsl" PS="SkyboxPixelShader.hlsl" CBuffer="MatrixCBuffer" />
+    <shader Key="Sprite" VS="SpriteVertexShader.hlsl" PS="SpritePixelShader.hlsl" CBuffer="SpriteCBuffer" />
+    <shader Key="Water" VS="WaterVertexShader.hlsl" PS="WaterPixelShader.hlsl" CBuffer="WaterCBuffer" />
+    <shader Key="FontUI" VS="FontUIVertexShader.hlsl" PS="FontUIPixelShader.hlsl" CBuffer="FontUICBuffer" />
+    <shader Key="Structure" VS="StructureVertexShader.hlsl" PS="StructurePixelShader.hlsl" CBuffer="StructureCBuffer" />
+</shaders>
