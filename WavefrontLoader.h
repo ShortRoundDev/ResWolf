@@ -9,12 +9,12 @@
 
 namespace ResWolf
 {
-	typedef struct _IndexedWaveVertex
+	typedef struct _IndexedWaveFace
 	{
-		int vertex[3];
-		int textureCoordinate[3];
-		int normal[3];
-	} IndexedWaveVertex;
+		int vertex[4];
+		int textureCoordinate[4];
+		int normal[4];
+	} IndexedWaveFace;
 
 	typedef struct _IndexedWaveModel
 	{
@@ -25,20 +25,20 @@ namespace ResWolf
 		glm::vec3* vertices;
 		glm::vec3* textureCoordinates;
 		glm::vec3* normals;
-		IndexedWaveVertex* waveVertices;
+		IndexedWaveFace* waveVertices;
 	} IndexedWaveModel;
 
-	typedef struct _RawWaveVertex
+	typedef struct _RawWaveFace
 	{
-		glm::vec3 vertex;
-		glm::vec3 textureCoordinate;
-		glm::vec3 normal;
-	} RawWaveVertex;
+		glm::vec3 vertex[4];
+		glm::vec3 textureCoordinate[4];
+		glm::vec3 normal[4];
+	} RawWaveFace;
 
 	typedef struct _RawWaveModel
 	{
 		size_t vertexSize;
-		RawWaveVertex* waveVertices;
+		RawWaveFace* waveVertices;
 	} RawWaveModel;
 
 	enum class WavefrontStatus
