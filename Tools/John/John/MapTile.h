@@ -21,11 +21,11 @@ typedef struct _WallToken
 	uint16_t floor;			// 4, 5
 	uint16_t ceiling;		// 6, 7
 	// --- Word 2 ---
-	uint8_t zone;
-	uint8_t reserved[7] =	// 4 - 15	// Reserved for future use
+	uint8_t zone;			// 8
+	uint8_t reserved[7] =	// 9 - 15	// Reserved for future use
 		{ 0 }; 
 	// --- Word 3 ---
-	char* message = 0;			// 16 - 22
+	char* message = 0;		// 16 - 23
 } WallToken;
 
 typedef struct _EntityToken
@@ -45,7 +45,7 @@ typedef struct _LevelToken
 {
 	// --- Word 1 ---
 	char waterMark[3];		// 0, 1, 2	// FUK
-	uint8_t version;	// 3
+	uint8_t version;		// 3
 	uint16_t width;			// 4, 5
 	uint16_t height;		// 6, 7
 	// --- Word 2 ---

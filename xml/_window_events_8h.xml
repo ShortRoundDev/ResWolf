@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_window_events_8h" kind="file" language="C++">
+    <compoundname>WindowEvents.h</compoundname>
+    <includes local="yes">glad/glad.h</includes>
+    <includes local="yes">GL/gl.h</includes>
+    <includes local="yes">GLFW/glfw3.h</includes>
+    <includedby refid="_graphics_manager_8cpp" local="yes">GraphicsManager.cpp</includedby>
+    <includedby refid="_window_events_8cpp" local="yes">WindowEvents.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="2">
+        <label>glad/glad.h</label>
+      </node>
+      <node id="3">
+        <label>GL/gl.h</label>
+      </node>
+      <node id="1">
+        <label>WindowEvents.h</label>
+        <link refid="_window_events_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_window_events_8h_1a8c06953d0003e636116a65990f3fbb1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void frameBufferSizeCallback</definition>
+        <argsstring>(GLFWwindow *window, int width, int height)</argsstring>
+        <name>frameBufferSizeCallback</name>
+        <param>
+          <type>GLFWwindow *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WindowEvents.h" line="7" column="6" bodyfile="WindowEvents.cpp" bodystart="3" bodyend="6" declfile="WindowEvents.h" declline="7" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glad/glad.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GL/gl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GLFW/glfw3.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>frameBufferSizeCallback(GLFWwindow*<sp/>window,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+    </programlisting>
+    <location file="WindowEvents.h"/>
+  </compounddef>
+</doxygen>

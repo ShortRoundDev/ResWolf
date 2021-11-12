@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___level_token" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_LevelToken</compoundname>
+    <includes refid="_level_tokens_8h" local="no">LevelTokens.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1acd0e771e58dcd07d9e87e6b691b389ea" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char ResWolf::_LevelToken::waterMark[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>waterMark</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Watermark to make sure this is the right filetype </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="57" column="6" bodyfile="LevelTokens.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1a27454f03a8e560c309b767f1191fa90f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_LevelToken::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Version #, for backward compatibility </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="59" column="9" bodyfile="LevelTokens.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1af003fc1c9bf4d2169bd8d67fc7b603f0" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_LevelToken::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the map, in # of tiles </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="61" column="10" bodyfile="LevelTokens.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1a88ef8d4cb32a9c05093a58be3b66867c" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_LevelToken::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Height of the map, in # of tiles </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="63" column="10" bodyfile="LevelTokens.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1a8c3dd2469ba4d5785e6283666f44c576" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t ResWolf::_LevelToken::totalEntities</definition>
+        <argsstring></argsstring>
+        <name>totalEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total # of entities in the map </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="67" column="10" bodyfile="LevelTokens.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1a73270119d84d54379a68bae295e2b07a" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_res_wolf_1_1___wall_token" kindref="compound">WallToken</ref> *</type>
+        <definition>WallToken* ResWolf::_LevelToken::walls</definition>
+        <argsstring></argsstring>
+        <name>walls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>2D (width x height) map of tiles </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="71" column="11" bodyfile="LevelTokens.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1af72e4b079e3776d0b3d1f0d61eb34794" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_res_wolf_1_1___entity_token" kindref="compound">EntityToken</ref> *</type>
+        <definition>EntityToken* ResWolf::_LevelToken::entities</definition>
+        <argsstring></argsstring>
+        <name>entities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Linear array of entities, <computeroutput>totalEntities</computeroutput> long </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="75" column="13" bodyfile="LevelTokens.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___level_token_1a451f5cfa110b895542139969125604b9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_LevelToken::reserved[24]</definition>
+        <argsstring>[24]</argsstring>
+        <name>reserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="77" column="9" bodyfile="LevelTokens.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A token in a map file representing the header of the map. Manually aligned. Pointers are relative to the file and must be changed to absolute upon loading </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>ResWolf::_EntityToken</label>
+        <link refid="struct_res_wolf_1_1___entity_token"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::_LevelToken</label>
+        <link refid="struct_res_wolf_1_1___level_token"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>walls</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>entities</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ResWolf::_WallToken</label>
+        <link refid="struct_res_wolf_1_1___wall_token"/>
+      </node>
+    </collaborationgraph>
+    <location file="LevelTokens.h" line="53" column="1" bodyfile="LevelTokens.h" bodystart="54" bodyend="79"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___level_token_1af72e4b079e3776d0b3d1f0d61eb34794" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>entities</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1a88ef8d4cb32a9c05093a58be3b66867c" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>height</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1a451f5cfa110b895542139969125604b9" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>reserved</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1a8c3dd2469ba4d5785e6283666f44c576" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>totalEntities</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1a27454f03a8e560c309b767f1191fa90f" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>version</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1a73270119d84d54379a68bae295e2b07a" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>walls</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1acd0e771e58dcd07d9e87e6b691b389ea" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>waterMark</name></member>
+      <member refid="struct_res_wolf_1_1___level_token_1af003fc1c9bf4d2169bd8d67fc7b603f0" prot="public" virt="non-virtual"><scope>ResWolf::_LevelToken</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

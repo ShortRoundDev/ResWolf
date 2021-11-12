@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___entity_token" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_EntityToken</compoundname>
+    <includes refid="_level_tokens_8h" local="no">LevelTokens.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___entity_token_1aaf422238b65bc88cdba3a39bcea45e3b" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_EntityToken::entityId</definition>
+        <argsstring></argsstring>
+        <name>entityId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="39" column="10" bodyfile="LevelTokens.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___entity_token_1aed7d038996ac0c91e99472fe14596dac" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_EntityToken::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="40" column="10" bodyfile="LevelTokens.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___entity_token_1ac1a2489574e6a98996eedd989dcf3c59" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_EntityToken::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="41" column="10" bodyfile="LevelTokens.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___entity_token_1a3632cb8fe0e63fdd13c55f82db327d23" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_EntityToken::reserved[10]</definition>
+        <argsstring>[10]</argsstring>
+        <name>reserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="43" column="9" bodyfile="LevelTokens.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___entity_token_1acad555f3e9630e3defff5015b291861e" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* ResWolf::_EntityToken::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>config&apos;s use is defined by the specific entity. Can be any text </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="46" column="6" bodyfile="LevelTokens.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A token representing an entity. These variables are used to construct a new entity. the entity ID is used by a generated function in EntityDef.cpp to choose the correct entity&apos;s constructor. </para>
+    </detaileddescription>
+    <location file="LevelTokens.h" line="36" column="1" bodyfile="LevelTokens.h" bodystart="37" bodyend="47"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___entity_token_1acad555f3e9630e3defff5015b291861e" prot="public" virt="non-virtual"><scope>ResWolf::_EntityToken</scope><name>config</name></member>
+      <member refid="struct_res_wolf_1_1___entity_token_1aaf422238b65bc88cdba3a39bcea45e3b" prot="public" virt="non-virtual"><scope>ResWolf::_EntityToken</scope><name>entityId</name></member>
+      <member refid="struct_res_wolf_1_1___entity_token_1a3632cb8fe0e63fdd13c55f82db327d23" prot="public" virt="non-virtual"><scope>ResWolf::_EntityToken</scope><name>reserved</name></member>
+      <member refid="struct_res_wolf_1_1___entity_token_1aed7d038996ac0c91e99472fe14596dac" prot="public" virt="non-virtual"><scope>ResWolf::_EntityToken</scope><name>x</name></member>
+      <member refid="struct_res_wolf_1_1___entity_token_1ac1a2489574e6a98996eedd989dcf3c59" prot="public" virt="non-virtual"><scope>ResWolf::_EntityToken</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

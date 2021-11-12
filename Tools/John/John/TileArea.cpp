@@ -70,6 +70,7 @@ void TileArea::loadTiles()
 			continue;
 		}
 		tileTextures[tileNum] = t;
+		APP->idTextureMapping[tileNum] = std::to_string(tileNum);
 
 		// create tile button
 

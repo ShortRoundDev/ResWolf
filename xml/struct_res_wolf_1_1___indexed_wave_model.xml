@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___indexed_wave_model" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_IndexedWaveModel</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1a10b010b8deab0a8bebcacfaaf22fdbe7" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ResWolf::_IndexedWaveModel::vertexSize</definition>
+        <argsstring></argsstring>
+        <name>vertexSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="21" column="8" bodyfile="WavefrontLoader.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1a5ca5dd39bcb0e11f7eef27f2aaad6965" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ResWolf::_IndexedWaveModel::textureCoordinateSize</definition>
+        <argsstring></argsstring>
+        <name>textureCoordinateSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="22" column="8" bodyfile="WavefrontLoader.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1a25dbc08615f4d7450aff84151b52e50b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ResWolf::_IndexedWaveModel::normalSize</definition>
+        <argsstring></argsstring>
+        <name>normalSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="23" column="8" bodyfile="WavefrontLoader.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1abdcf6a66325b1efa74e95188c914ab9b" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ResWolf::_IndexedWaveModel::waveVertexSize</definition>
+        <argsstring></argsstring>
+        <name>waveVertexSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="24" column="8" bodyfile="WavefrontLoader.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1a2b5c40fb9d761ee3fbc14b1cce2c0bb7" prot="public" static="no" mutable="no">
+        <type>glm::vec3 *</type>
+        <definition>glm::vec3* ResWolf::_IndexedWaveModel::vertices</definition>
+        <argsstring></argsstring>
+        <name>vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="25" column="11" bodyfile="WavefrontLoader.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1a93134a8144a417c0b5a29a0351db5685" prot="public" static="no" mutable="no">
+        <type>glm::vec3 *</type>
+        <definition>glm::vec3* ResWolf::_IndexedWaveModel::textureCoordinates</definition>
+        <argsstring></argsstring>
+        <name>textureCoordinates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="26" column="11" bodyfile="WavefrontLoader.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1ad233e68f7cf8242e164fec6d82bb37ea" prot="public" static="no" mutable="no">
+        <type>glm::vec3 *</type>
+        <definition>glm::vec3* ResWolf::_IndexedWaveModel::normals</definition>
+        <argsstring></argsstring>
+        <name>normals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="27" column="11" bodyfile="WavefrontLoader.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_model_1ac61e2fd4e4060f3ef6783584c9c995e3" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_res_wolf_1_1___indexed_wave_vertex" kindref="compound">IndexedWaveVertex</ref> *</type>
+        <definition>IndexedWaveVertex* ResWolf::_IndexedWaveModel::waveVertices</definition>
+        <argsstring></argsstring>
+        <name>waveVertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="28" column="19" bodyfile="WavefrontLoader.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ResWolf::_IndexedWaveVertex</label>
+        <link refid="struct_res_wolf_1_1___indexed_wave_vertex"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::_IndexedWaveModel</label>
+        <link refid="struct_res_wolf_1_1___indexed_wave_model"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>waveVertices</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="WavefrontLoader.h" line="19" column="1" bodyfile="WavefrontLoader.h" bodystart="20" bodyend="29"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1ad233e68f7cf8242e164fec6d82bb37ea" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>normals</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1a25dbc08615f4d7450aff84151b52e50b" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>normalSize</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1a93134a8144a417c0b5a29a0351db5685" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>textureCoordinates</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1a5ca5dd39bcb0e11f7eef27f2aaad6965" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>textureCoordinateSize</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1a10b010b8deab0a8bebcacfaaf22fdbe7" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>vertexSize</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1a2b5c40fb9d761ee3fbc14b1cce2c0bb7" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>vertices</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1abdcf6a66325b1efa74e95188c914ab9b" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>waveVertexSize</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_model_1ac61e2fd4e4060f3ef6783584c9c995e3" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveModel</scope><name>waveVertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

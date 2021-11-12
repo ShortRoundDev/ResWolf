@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_model_8h" kind="file" language="C++">
+    <compoundname>Model.h</compoundname>
+    <includes local="yes">glad/glad.h</includes>
+    <includedby refid="_entity_8h" local="yes">Entity.h</includedby>
+    <includedby refid="_graphics_manager_8h" local="yes">GraphicsManager.h</includedby>
+    <includedby refid="_main_menu_8h" local="yes">MainMenu.h</includedby>
+    <includedby refid="_model_8cpp" local="yes">Model.cpp</includedby>
+    <includedby refid="_shader_8cpp" local="yes">Shader.cpp</includedby>
+    <includedby refid="_u_i_manager_8h" local="yes">UIManager.h</includedby>
+    <includedby refid="_wall_8h" local="yes">Wall.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Model.h</label>
+        <link refid="_model_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>glad/glad.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>EntityDef.h</label>
+        <link refid="_entity_def_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Model.h</label>
+        <link refid="_model_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>GraphicsManager.h</label>
+        <link refid="_graphics_manager_8h_source"/>
+      </node>
+      <node id="5">
+        <label>GameManager.h</label>
+        <link refid="_game_manager_8h_source"/>
+      </node>
+      <node id="10">
+        <label>Wall.h</label>
+        <link refid="_wall_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Entity.h</label>
+        <link refid="_entity_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>MainMenu.h</label>
+        <link refid="_main_menu_8h_source"/>
+      </node>
+      <node id="9">
+        <label>UIManager.h</label>
+        <link refid="_u_i_manager_8h_source"/>
+      </node>
+      <node id="4">
+        <label>Level.h</label>
+        <link refid="_level_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SmallHealthPack.h</label>
+        <link refid="_small_health_pack_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_res_wolf_1_1_model" prot="public">ResWolf::Model</innerclass>
+    <innernamespace refid="namespace_res_wolf">ResWolf</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glad/glad.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">ResWolf</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="class_res_wolf_1_1_model" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_model_1a049c9484f1d012f040ac7fc062b23827" kindref="member">Model</ref>(GLuint<sp/><ref refid="class_res_wolf_1_1_model_1a20675f5ee3a1bbc20a5e17032aa65af3" kindref="member">vao</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_res_wolf_1_1_model_1a20675f5ee3a1bbc20a5e17032aa65af3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLuint<sp/><ref refid="class_res_wolf_1_1_model_1a20675f5ee3a1bbc20a5e17032aa65af3" kindref="member">vao</ref>;</highlight></codeline>
+<codeline lineno="20" refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Model.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_u_i_manager" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::UIManager</compoundname>
+    <includes refid="_u_i_manager_8h" local="no">UIManager.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1afdc42879180916324f46eed80dfdcb80" prot="public" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_res_wolf_1_1_u_i_manager" kindref="compound">UIManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; UIManager &gt; UIManager::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="19" column="24" bodyfile="UIManager.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1a6b7e2726e843a9abf080752a115627b2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader* ResWolf::UIManager::uiShader</definition>
+        <argsstring></argsstring>
+        <name>uiShader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached shader for drawing 2D UI </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="39" column="8" bodyfile="UIManager.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1af4dff0f6762e7ee121a874e4692d91fa" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader* ResWolf::UIManager::fontShader</definition>
+        <argsstring></argsstring>
+        <name>fontShader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached shader for drawing text </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="41" column="8" bodyfile="UIManager.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1a689e826552b431b1f82db4336f738043" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::UIManager::notFound</definition>
+        <argsstring></argsstring>
+        <name>notFound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached fallback texture for when the provided texture cannot be found </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="44" column="9" bodyfile="UIManager.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1a1ee9eeaf9d2f892c88b7f8de5e3ff6ce" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::UIManager::font</definition>
+        <argsstring></argsstring>
+        <name>font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached font texture </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="46" column="9" bodyfile="UIManager.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1a37245a6a51197c3711d7939771833bc3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model* ResWolf::UIManager::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached UI 2D rect mesh </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="49" column="7" bodyfile="UIManager.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_u_i_manager_1a7580f1be4bdceef966055d40eed4d27f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model* ResWolf::UIManager::letter</definition>
+        <argsstring></argsstring>
+        <name>letter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached text character 2D rect mesh </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="51" column="7" bodyfile="UIManager.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_u_i_manager_1aedd9d0577af515a852425dfe414b2968" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the Singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="21" column="13" bodyfile="UIManager.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_u_i_manager_1a32b72c377f864f7cd197e6ffe738142f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UIManager::UIManager</definition>
+        <argsstring>()</argsstring>
+        <name>UIManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs the <ref refid="class_res_wolf_1_1_u_i_manager" kindref="compound">UIManager</ref>, caching shaders, textures, and models </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="23" column="1" bodyfile="UIManager.cpp" bodystart="14" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_u_i_manager_1aeac3e2a8fd4ba49821ce653f4d2fa6b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UIManager::~UIManager</definition>
+        <argsstring>()</argsstring>
+        <name>~UIManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="24" column="1" bodyfile="UIManager.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_u_i_manager_1a3fbfc538d39141c399a1cc58eb2b9241" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager::drawRect</definition>
+        <argsstring>(_In_ Texture *image, float x, float y, float w, float h)</argsstring>
+        <name>drawRect</name>
+        <param>
+          <type>_In_ <ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws the provided texture at the given x, y coordinate (in pixels) with the provided w, h dimensions (in pixels) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="27" column="6" bodyfile="UIManager.cpp" bodystart="30" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_u_i_manager_1a14ad8867e1ad42b1512c2e19bb7b02b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager::drawText</definition>
+        <argsstring>(_In_ std::string text, float x, float y, float w, float h)</argsstring>
+        <name>drawText</name>
+        <param>
+          <type>_In_ std::string</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws the provided string at the given x, y, coordinate (in pixels) with each character of the provided w, h dimensions (in pixels). Uses the ASCII table font found at Resources/Texture/Font.png </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="31" column="6" bodyfile="UIManager.cpp" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_u_i_manager_1a2bfca9cbdcba8d56eb82c1cfa61fa232" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UIManager::drawText</definition>
+        <argsstring>(_In_ const char *text, float x, float y, float w, float h)</argsstring>
+        <name>drawText</name>
+        <param>
+          <type>_In_ const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws the provided text at the given x, y, coordinate (in pixels) with each character of the provided w, h dimensions (in pixels). Uses the ASCII table font found at Resources/Texture/Font.png </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="UIManager.h" line="35" column="6" bodyfile="UIManager.cpp" bodystart="48" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Responsible for drawing simple 2D UI images and text </para>
+    </detaileddescription>
+    <location file="UIManager.h" line="15" column="1" bodyfile="UIManager.h" bodystart="16" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a3fbfc538d39141c399a1cc58eb2b9241" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>drawRect</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a14ad8867e1ad42b1512c2e19bb7b02b0" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>drawText</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a2bfca9cbdcba8d56eb82c1cfa61fa232" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>drawText</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a1ee9eeaf9d2f892c88b7f8de5e3ff6ce" prot="private" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>font</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1af4dff0f6762e7ee121a874e4692d91fa" prot="private" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>fontShader</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1aedd9d0577af515a852425dfe414b2968" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1afdc42879180916324f46eed80dfdcb80" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>instance</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a7580f1be4bdceef966055d40eed4d27f" prot="private" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>letter</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a689e826552b431b1f82db4336f738043" prot="private" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>notFound</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a37245a6a51197c3711d7939771833bc3" prot="private" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>rect</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a32b72c377f864f7cd197e6ffe738142f" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>UIManager</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1a6b7e2726e843a9abf080752a115627b2" prot="private" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>uiShader</name></member>
+      <member refid="class_res_wolf_1_1_u_i_manager_1aeac3e2a8fd4ba49821ce653f4d2fa6b6" prot="public" virt="non-virtual"><scope>ResWolf::UIManager</scope><name>~UIManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

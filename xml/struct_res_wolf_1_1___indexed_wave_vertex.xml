@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___indexed_wave_vertex" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_IndexedWaveVertex</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_vertex_1a0086e47900e3aca24d8dd16d108df94e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::_IndexedWaveVertex::vertex[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>vertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="14" column="5" bodyfile="WavefrontLoader.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_vertex_1a365e443a0e29d1097eff82b4e10a0e3b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::_IndexedWaveVertex::textureCoordinate[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>textureCoordinate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="15" column="5" bodyfile="WavefrontLoader.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___indexed_wave_vertex_1a4208215395ca9b20142dd848c7d92c85" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::_IndexedWaveVertex::normal[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>normal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="16" column="5" bodyfile="WavefrontLoader.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="WavefrontLoader.h" line="12" column="1" bodyfile="WavefrontLoader.h" bodystart="13" bodyend="17"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___indexed_wave_vertex_1a4208215395ca9b20142dd848c7d92c85" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveVertex</scope><name>normal</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_vertex_1a365e443a0e29d1097eff82b4e10a0e3b" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveVertex</scope><name>textureCoordinate</name></member>
+      <member refid="struct_res_wolf_1_1___indexed_wave_vertex_1a0086e47900e3aca24d8dd16d108df94e" prot="public" virt="non-virtual"><scope>ResWolf::_IndexedWaveVertex</scope><name>vertex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

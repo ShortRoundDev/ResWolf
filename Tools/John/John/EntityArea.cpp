@@ -77,6 +77,7 @@ void EntityArea::loadEntities()
 			MessageBoxA(NULL, ("Failed to load entity thumb for " + std::string(key)).c_str(), NULL, MB_OK);
 			continue;
 		}
+		APP->idTextureMapping[id] = key;
 
 		children.push_back(new EntityButton(i++, id, t, std::string(key)));
 

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_texture" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Texture</compoundname>
+    <includes refid="_texture_8h" local="no">Texture.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_texture_1ab6eb807322f47a56023b2633410e2fd3" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint ResWolf::Texture::image</definition>
+        <argsstring></argsstring>
+        <name>image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The OpenGL ID of the texture resource </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Texture.h" line="20" column="8" bodyfile="Texture.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_texture_1ae1fbcc27e98634130e08cb460b64232f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::Texture::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The width of the texture resource </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Texture.h" line="22" column="5" bodyfile="Texture.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_texture_1a543d2ba63e3388ecb8265519293c7b0c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::Texture::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The height of the texture resource </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Texture.h" line="24" column="5" bodyfile="Texture.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_texture_1a7775edff718dcb5e0233734132e56c02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Texture::Texture</definition>
+        <argsstring>(std::string path)</argsstring>
+        <name>Texture</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uploads the image from the given path to the GPU, stores itself in the <ref refid="class_res_wolf_1_1_graphics_manager_1a38aec125b7133bc702b10c954156049b" kindref="member">GraphicsManager::textures</ref> dictionary, then stores the GLuint representing the resource in itself. Stores width and height (in pixels) as well </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Texture.h" line="16" column="1" bodyfile="Texture.cpp" bodystart="7" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_texture_1a09c4bcb7462f64c1d20fa69dba3cee8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Texture::~Texture</definition>
+        <argsstring>()</argsstring>
+        <name>~Texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Texture.h" line="17" column="1" bodyfile="Texture.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Utility class for OpenGL textures </para>
+    </detaileddescription>
+    <location file="Texture.h" line="11" column="1" bodyfile="Texture.h" bodystart="12" bodyend="25"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_texture_1a543d2ba63e3388ecb8265519293c7b0c" prot="public" virt="non-virtual"><scope>ResWolf::Texture</scope><name>h</name></member>
+      <member refid="class_res_wolf_1_1_texture_1ab6eb807322f47a56023b2633410e2fd3" prot="public" virt="non-virtual"><scope>ResWolf::Texture</scope><name>image</name></member>
+      <member refid="class_res_wolf_1_1_texture_1a7775edff718dcb5e0233734132e56c02" prot="public" virt="non-virtual"><scope>ResWolf::Texture</scope><name>Texture</name></member>
+      <member refid="class_res_wolf_1_1_texture_1ae1fbcc27e98634130e08cb460b64232f" prot="public" virt="non-virtual"><scope>ResWolf::Texture</scope><name>w</name></member>
+      <member refid="class_res_wolf_1_1_texture_1a09c4bcb7462f64c1d20fa69dba3cee8a" prot="public" virt="non-virtual"><scope>ResWolf::Texture</scope><name>~Texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

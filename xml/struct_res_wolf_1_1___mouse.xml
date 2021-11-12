@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___mouse" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_Mouse</compoundname>
+    <includes refid="_game_manager_8h" local="no">GameManager.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___mouse_1a24f73db0ce271d47f4438db05a16c57f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::_Mouse::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="25" column="6" bodyfile="GameManager.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___mouse_1a061a278b9ff72e75352bb429de48a889" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::_Mouse::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="26" column="6" bodyfile="GameManager.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___mouse_1a383ead66c6cce0407c5651c17390c56f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::_Mouse::middle</definition>
+        <argsstring></argsstring>
+        <name>middle</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="27" column="6" bodyfile="GameManager.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Describes mouse up/down status for the 3 mouse buttons </para>
+    </detaileddescription>
+    <location file="GameManager.h" line="23" column="1" bodyfile="GameManager.h" bodystart="24" bodyend="28"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___mouse_1a24f73db0ce271d47f4438db05a16c57f" prot="public" virt="non-virtual"><scope>ResWolf::_Mouse</scope><name>left</name></member>
+      <member refid="struct_res_wolf_1_1___mouse_1a383ead66c6cce0407c5651c17390c56f" prot="public" virt="non-virtual"><scope>ResWolf::_Mouse</scope><name>middle</name></member>
+      <member refid="struct_res_wolf_1_1___mouse_1a061a278b9ff72e75352bb429de48a889" prot="public" virt="non-virtual"><scope>ResWolf::_Mouse</scope><name>right</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

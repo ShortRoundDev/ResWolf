@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_model" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Model</compoundname>
+    <includes refid="_model_8h" local="no">Model.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_model_1a20675f5ee3a1bbc20a5e17032aa65af3" prot="public" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint ResWolf::Model::vao</definition>
+        <argsstring></argsstring>
+        <name>vao</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vertex array object </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Model.h" line="18" column="8" bodyfile="Model.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ResWolf::Model::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>size of the vao, in # of vertices </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Model.h" line="20" column="8" bodyfile="Model.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_model_1a049c9484f1d012f040ac7fc062b23827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Model::Model</definition>
+        <argsstring>(GLuint vao, size_t size)</argsstring>
+        <name>Model</name>
+        <param>
+          <type>GLuint</type>
+          <declname>vao</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>creates the model simply from a provided VAO. Sets the <ref refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" kindref="member">Model::size</ref> variable to the provided <computeroutput>size</computeroutput> in the constructor divided by 5, since there are 5 floats per vertex, 5 floats = 1 vertex. This may change if bones are added later </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Model.h" line="14" column="1" bodyfile="Model.cpp" bodystart="5" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_model_1ad6ebd2062a0b823db841a0b88baac4c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Model::~Model</definition>
+        <argsstring>()</argsstring>
+        <name>~Model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Model.h" line="15" column="1" bodyfile="Model.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a vertex mesh </para>
+    </detaileddescription>
+    <location file="Model.h" line="8" column="1" bodyfile="Model.h" bodystart="9" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_model_1a049c9484f1d012f040ac7fc062b23827" prot="public" virt="non-virtual"><scope>ResWolf::Model</scope><name>Model</name></member>
+      <member refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" prot="public" virt="non-virtual"><scope>ResWolf::Model</scope><name>size</name></member>
+      <member refid="class_res_wolf_1_1_model_1a20675f5ee3a1bbc20a5e17032aa65af3" prot="public" virt="non-virtual"><scope>ResWolf::Model</scope><name>vao</name></member>
+      <member refid="class_res_wolf_1_1_model_1ad6ebd2062a0b823db841a0b88baac4c0" prot="public" virt="non-virtual"><scope>ResWolf::Model</scope><name>~Model</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

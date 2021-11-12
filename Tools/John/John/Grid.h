@@ -61,10 +61,10 @@ public:
 
 	void save(std::wstring path);
 
-private:
 	int maxX = 10;
 	int maxY = 10;
-	
+private:
+
 	int floodToken = 0;
 
 	int currentLayer = 1;

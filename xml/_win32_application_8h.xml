@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_win32_application_8h" kind="file" language="C++">
+    <compoundname>Win32Application.h</compoundname>
+    <includes local="yes">windows.h</includes>
+    <includedby refid="_main_8cpp" local="yes">Main.cpp</includedby>
+    <includedby refid="_win32_application_8cpp" local="yes">Win32Application.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Win32Application.h</label>
+        <link refid="_win32_application_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>windows.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_win32_application_8h_1a75ea662aa6b758428c0a23a1f416e1b1" prot="public" static="no" mutable="no">
+        <type>HMODULE</type>
+        <definition>HMODULE NTHand</definition>
+        <argsstring></argsstring>
+        <name>NTHand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Win32Application.h" line="4" column="16" bodyfile="Win32Application.cpp" bodystart="10" bodyend="-1" declfile="Win32Application.h" declline="4" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_win32_application_8h_1aa7aa23614768bdc0b4ac54aea796a1b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>LONG WINAPI</type>
+        <definition>LONG WINAPI ResWolfUnhandledExceptionFilter</definition>
+        <argsstring>(_In_ PEXCEPTION_POINTERS ExceptionInfo)</argsstring>
+        <name>ResWolfUnhandledExceptionFilter</name>
+        <param>
+          <type>_In_ PEXCEPTION_POINTERS</type>
+          <declname>ExceptionInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handles segmentation faults. Creates a memdump and allows the user to send it to a server </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Win32Application.h" line="8" column="13" bodyfile="Win32Application.cpp" bodystart="12" bodyend="56" declfile="Win32Application.h" declline="8" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="_win32_application_8h_1af5e32a3234c763a95a67c503800217ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SetHandlers</definition>
+        <argsstring>()</argsstring>
+        <name>SetHandlers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Win32Application.h" line="10" column="6" bodyfile="Win32Application.cpp" bodystart="58" bodyend="61" declfile="Win32Application.h" declline="10" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;windows.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>HMODULE<sp/>NTHand;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Seg<sp/>fault<sp/>handler</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight><highlight class="normal">LONG<sp/>WINAPI<sp/>ResWolfUnhandledExceptionFilter(_In_<sp/>PEXCEPTION_POINTERS<sp/>ExceptionInfo);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetHandlers();</highlight></codeline>
+    </programlisting>
+    <location file="Win32Application.h"/>
+  </compounddef>
+</doxygen>

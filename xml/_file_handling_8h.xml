@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_file_handling_8h" kind="file" language="C++">
+    <compoundname>FileHandling.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="yes">windows.h</includes>
+    <includedby refid="_application_settings_8cpp" local="yes">ApplicationSettings.cpp</includedby>
+    <includedby refid="_file_handling_8cpp" local="yes">FileHandling.cpp</includedby>
+    <includedby refid="_level_8cpp" local="yes">Level.cpp</includedby>
+    <includedby refid="_shader_8cpp" local="yes">Shader.cpp</includedby>
+    <includedby refid="_wavefront_loader_8cpp" local="yes">WavefrontLoader.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>windows.h</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>FileHandling.h</label>
+        <link refid="_file_handling_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_file_handling_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9" prot="public" static="no">
+        <name>WIN32_LEAN_AND_MEAN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="5" column="9" bodyfile="FileHandling.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_file_handling_8h_1a9ab4e5a8d2af6b4340e349cd3c31752a" prot="public" static="no">
+        <name>FILE_SUCCESS</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="8" column="9" bodyfile="FileHandling.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_file_handling_8h_1afe43d6050eb508c07793271052829756" prot="public" static="no">
+        <name>FILE_FAILED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="9" column="9" bodyfile="FileHandling.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_file_handling_8h_1a775241e32b7ccb12e344ae23aa2db6b1" prot="public" static="no">
+        <name>FILE_NOT_FOUND</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="10" column="9" bodyfile="FileHandling.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_file_handling_8h_1ac0082484e283da2d95b80770e053bec9" prot="public" static="no">
+        <name>FILE_SIZE_ERROR</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="11" column="9" bodyfile="FileHandling.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_file_handling_8h_1a1d531d20fdfce9e67b33fd930c14fde6" prot="public" static="no">
+        <name>FILE_NULL_BUFFER</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="12" column="9" bodyfile="FileHandling.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_file_handling_8h_1aee63b5d3e53a98a39a77197fd7142220" prot="public" static="no">
+        <name>FILE_ALLOC_FAILURE</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="FileHandling.h" line="13" column="9" bodyfile="FileHandling.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;windows.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_SUCCESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_NOT_FOUND<sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_SIZE_ERROR<sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_NULL_BUFFER<sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FILE_ALLOC_FAILURE<sp/><sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">_Success_(</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">int<sp/>ReadTextFile(_In_<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>path,<sp/>_Out_<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>file,<sp/>_In_opt_<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>size);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">_Success_(return<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ReadBinaryFile(_In_<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>path,<sp/>_Out_<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>file,<sp/>_In_opt_<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>size);</highlight></codeline>
+    </programlisting>
+    <location file="FileHandling.h"/>
+  </compounddef>
+</doxygen>

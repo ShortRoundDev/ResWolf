@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_small_health_pack" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::SmallHealthPack</compoundname>
+    <basecompoundref refid="class_res_wolf_1_1_entity" prot="public" virt="non-virtual">ResWolf::Entity</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_small_health_pack_1a4086331247e640750feb5740b179d48e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SmallHealthPack::SmallHealthPack</definition>
+        <argsstring>(int id, uint16_t x, uint16_t y, char *config)</argsstring>
+        <name>SmallHealthPack</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="SmallHealthPack.h" line="10" column="1" bodyfile="SmallHealthPack.cpp" bodystart="5" bodyend="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ResWolf::SmallHealthPack</label>
+        <link refid="class_res_wolf_1_1_small_health_pack"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ResWolf::Entity</label>
+        <link refid="class_res_wolf_1_1_entity"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>ResWolf::Model</label>
+        <link refid="class_res_wolf_1_1_model"/>
+      </node>
+      <node id="4">
+        <label>ResWolf::Shader</label>
+        <link refid="class_res_wolf_1_1_shader"/>
+      </node>
+      <node id="5">
+        <label>ResWolf::Texture</label>
+        <link refid="class_res_wolf_1_1_texture"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::SmallHealthPack</label>
+        <link refid="class_res_wolf_1_1_small_health_pack"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ResWolf::Entity</label>
+        <link refid="class_res_wolf_1_1_entity"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>rect</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="SmallHealthPack.h" line="7" column="1" bodyfile="SmallHealthPack.h" bodystart="8" bodyend="11"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_entity_1a4763b23420dae25f1a5e622f577b3460" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>config</name></member>
+      <member refid="class_res_wolf_1_1_entity_1ae8fcecea2bc0d1d0aab80afef7464392" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>direction</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a7666f416dd0d1fce0f1133f78df44476" prot="public" virt="virtual"><scope>ResWolf::SmallHealthPack</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a0de43cd95a2b7d258e26b7b25600fa8d" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>Entity</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a15b704ab023b1d009d455261e0be3a22" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>Entity</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a93bfb0b92c06297c207fad4164810fed" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a8856b5d7f70f9e798512f1963ceb6648" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>pos</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a9137952983ebccd9ae6bd72a006840e9" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>rect</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a996bf0aae6b3bc831a2b5dac32d29ba4" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>scale</name></member>
+      <member refid="class_res_wolf_1_1_entity_1ad14b36d3dc0152043b699d6ffeefe77c" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>shader</name></member>
+      <member refid="class_res_wolf_1_1_small_health_pack_1a4086331247e640750feb5740b179d48e" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>SmallHealthPack</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a0ee482260130c720b251b4327b2153c4" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>texture</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a00b6eeaf99b35c8f8b10b5fbfc1baf4f" prot="public" virt="virtual"><scope>ResWolf::SmallHealthPack</scope><name>update</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a00bbc4451eeb8d0e320e3fe53d595196" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>velocity</name></member>
+      <member refid="class_res_wolf_1_1_entity_1adf6d3f7cb1b2ba029b6b048a395cc8ae" prot="public" virt="non-virtual"><scope>ResWolf::SmallHealthPack</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

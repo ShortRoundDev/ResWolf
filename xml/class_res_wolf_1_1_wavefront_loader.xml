@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_wavefront_loader" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::WavefrontLoader</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1aeb09da3d2ce6f2c93edc835d9f5fe419" prot="public" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_res_wolf_1_1_wavefront_loader" kindref="compound">WavefrontLoader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; WavefrontLoader &gt; WavefrontLoader::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="56" column="24" bodyfile="WavefrontLoader.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1a6bcbe0445b9bc8f5f7ae34090ac34e0e" prot="private" static="no" mutable="no">
+        <type>_Out_ glm::vec3 *</type>
+        <definition>_Out_ glm::vec3* ResWolf::WavefrontLoader::vertices</definition>
+        <argsstring></argsstring>
+        <name>vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="76" column="21" bodyfile="WavefrontLoader.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1a1e22f6143b4ad5b233f741647b2ec552" prot="private" static="no" mutable="no">
+        <type>_Out_ glm::vec3 _Out_ size_t *</type>
+        <definition>_Out_ glm::vec3 _Out_ size_t* ResWolf::WavefrontLoader::verticesCount</definition>
+        <argsstring></argsstring>
+        <name>verticesCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="76" column="43" bodyfile="WavefrontLoader.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1a91c7729fd925a109b261f3608ae58811" prot="private" static="no" mutable="no">
+        <type>_Out_ glm::vec3 *</type>
+        <definition>_Out_ glm::vec3* ResWolf::WavefrontLoader::textureCoords</definition>
+        <argsstring></argsstring>
+        <name>textureCoords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="79" column="21" bodyfile="WavefrontLoader.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1ad1942429ae05f9bdd1f0d1837f19102f" prot="private" static="no" mutable="no">
+        <type>_Out_ glm::vec3 _Out_ size_t *</type>
+        <definition>_Out_ glm::vec3 _Out_ size_t* ResWolf::WavefrontLoader::textureCoordsCount</definition>
+        <argsstring></argsstring>
+        <name>textureCoordsCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="79" column="48" bodyfile="WavefrontLoader.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1aee3beee5cb091f22cb597d75d6ffcae3" prot="private" static="no" mutable="no">
+        <type>_Out_ glm::vec3 *</type>
+        <definition>_Out_ glm::vec3* ResWolf::WavefrontLoader::normals</definition>
+        <argsstring></argsstring>
+        <name>normals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="82" column="21" bodyfile="WavefrontLoader.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wavefront_loader_1a938c78e60a1ab6e97b6b9d7dd4e30d3b" prot="private" static="no" mutable="no">
+        <type>_Out_ glm::vec3 _Out_ size_t *</type>
+        <definition>_Out_ glm::vec3 _Out_ size_t* ResWolf::WavefrontLoader::normalCount</definition>
+        <argsstring></argsstring>
+        <name>normalCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="82" column="42" bodyfile="WavefrontLoader.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1ad2fb1277c362b02a4a596e472a4dfc7c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WavefrontLoader::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="57" column="13" bodyfile="WavefrontLoader.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1a66833eb86696e19ac3b4f5112ea5e12e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WavefrontLoader::WavefrontLoader</definition>
+        <argsstring>()</argsstring>
+        <name>WavefrontLoader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="59" column="1" bodyfile="WavefrontLoader.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1a3282fac27deb11c5eaa36642aca205b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WavefrontLoader::~WavefrontLoader</definition>
+        <argsstring>()</argsstring>
+        <name>~WavefrontLoader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="60" column="1" bodyfile="WavefrontLoader.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1a48783080a273d75adc5e074232cac93b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WavefrontLoader::parseItemCount</definition>
+        <argsstring>(_In_ char *data, _Out_ size_t *vertexCount, _Out_ size_t *texelCount, _Out_ size_t *normalCount, _Out_ size_t *faceCount)</argsstring>
+        <name>parseItemCount</name>
+        <param>
+          <type>_In_ char *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>_Out_ size_t *</type>
+          <declname>vertexCount</declname>
+        </param>
+        <param>
+          <type>_Out_ size_t *</type>
+          <declname>texelCount</declname>
+        </param>
+        <param>
+          <type>_Out_ size_t *</type>
+          <declname>normalCount</declname>
+        </param>
+        <param>
+          <type>_Out_ size_t *</type>
+          <declname>faceCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a wavefront .obj file using indexed vertex data Returns WavefrontStatus::OK on success, other statuses on failure Loads a wavefront .obj file using raw vertex data Returns WavefrontStatus::OK on success, other statuses on failure </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="73" column="6" bodyfile="WavefrontLoader.cpp" bodystart="53" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1a21e6638d18bd4cc132024e37a9d98553" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::WavefrontLoader::_Success_</definition>
+        <argsstring>(return==WavefrontStatus::OK) WavefrontStatus parseVertexData(_In_ char *data</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=WavefrontStatus::OK</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1acf3ec5f64d2eada0c191d3de9ab14e3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::WavefrontLoader::_Success_</definition>
+        <argsstring>(return==WavefrontStatus::OK) WavefrontStatus parseTextureCoordData(_In_ char *data</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=WavefrontStatus::OK</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="78" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wavefront_loader_1a1678db173f74fdf9fc1d5a15ae4a8ee7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::WavefrontLoader::_Success_</definition>
+        <argsstring>(return==WavefrontStatus::OK) WavefrontStatus parseTextureNormalData(_In_ char *data</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=WavefrontStatus::OK</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="81" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="WavefrontLoader.h" line="53" column="1" bodyfile="WavefrontLoader.h" bodystart="54" bodyend="83"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a21e6638d18bd4cc132024e37a9d98553" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1acf3ec5f64d2eada0c191d3de9ab14e3e" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a1678db173f74fdf9fc1d5a15ae4a8ee7" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1ad2fb1277c362b02a4a596e472a4dfc7c" prot="public" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1aeb09da3d2ce6f2c93edc835d9f5fe419" prot="public" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>instance</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a938c78e60a1ab6e97b6b9d7dd4e30d3b" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>normalCount</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1aee3beee5cb091f22cb597d75d6ffcae3" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>normals</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a48783080a273d75adc5e074232cac93b" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>parseItemCount</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a91c7729fd925a109b261f3608ae58811" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>textureCoords</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1ad1942429ae05f9bdd1f0d1837f19102f" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>textureCoordsCount</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a6bcbe0445b9bc8f5f7ae34090ac34e0e" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>vertices</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a1e22f6143b4ad5b233f741647b2ec552" prot="private" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>verticesCount</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a66833eb86696e19ac3b4f5112ea5e12e" prot="public" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>WavefrontLoader</name></member>
+      <member refid="class_res_wolf_1_1_wavefront_loader_1a3282fac27deb11c5eaa36642aca205b7" prot="public" virt="non-virtual"><scope>ResWolf::WavefrontLoader</scope><name>~WavefrontLoader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

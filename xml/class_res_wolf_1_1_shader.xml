@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_shader" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Shader</compoundname>
+    <includes refid="_shader_8h" local="no">Shader.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_shader_1aadb9fd6ea61701f22e83382f64c0921a" prot="public" static="no" mutable="no">
+        <type>ShaderStatus</type>
+        <definition>ShaderStatus ResWolf::Shader::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Represents the current status of the shader. OK means no problems. Anything else is a failure state </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="53" column="14" bodyfile="Shader.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_shader_1a41a7e2e94f1791f1968e18588e611ac6" prot="private" static="no" mutable="no">
+        <type>GLuint</type>
+        <definition>GLuint ResWolf::Shader::program</definition>
+        <argsstring></argsstring>
+        <name>program</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The compiled OpenGL <ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> progra </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="57" column="8" bodyfile="Shader.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a1c078cd1464883c8803d2077f8aa8657" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Shader::Shader</definition>
+        <argsstring>(std::string vsPath, std::string fsPath)</argsstring>
+        <name>Shader</name>
+        <param>
+          <type>std::string</type>
+          <declname>vsPath</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>fsPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compiles the provided vertex and fragment shaders. Sets the <computeroutput>status</computeroutput> flag on failure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="29" column="1" bodyfile="Shader.cpp" bodystart="12" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1aff01df87e8a102f270b5b135a295e59d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Shader::~Shader</definition>
+        <argsstring>()</argsstring>
+        <name>~Shader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="30" column="1" bodyfile="Shader.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a870fa9f13d69e558815d6fd351a469dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::use</definition>
+        <argsstring>()</argsstring>
+        <name>use</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the current OpenGL context to use this shader </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="33" column="6" bodyfile="Shader.cpp" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a2a00e3e4e5dd6c5a26422158c08c5ba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setTex</definition>
+        <argsstring>(_In_ GLuint texture)</argsstring>
+        <name>setTex</name>
+        <param>
+          <type>_In_ GLuint</type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds a texture </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="36" column="6" bodyfile="Shader.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1abcb2ccc2202939d6e08af46fb6ea9745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setModel</definition>
+        <argsstring>(_In_ const Model *model)</argsstring>
+        <name>setModel</name>
+        <param>
+          <type>_In_ const <ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+          <declname>model</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Binds the VAO from the provided model </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="38" column="6" bodyfile="Shader.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1ab90e0070067412261d7b93b1d12641dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setInt</definition>
+        <argsstring>(_In_ const std::string &amp;name, _In_ int value)</argsstring>
+        <name>setInt</name>
+        <param>
+          <type>_In_ const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>_In_ int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the integer uniform specified by the name string to the provided value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="40" column="6" bodyfile="Shader.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a522cd087da3aca22179ccd425b6cbf81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setFloat</definition>
+        <argsstring>(_In_ const std::string &amp;name, _In_ float value)</argsstring>
+        <name>setFloat</name>
+        <param>
+          <type>_In_ const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>_In_ float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the float uniform specified by the name string to the provided value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="42" column="6" bodyfile="Shader.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a8e71a5e3966ac92dd326167169d8d18a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setVec2</definition>
+        <argsstring>(_In_ const std::string &amp;name, _In_ const glm::vec2 &amp;vec)</argsstring>
+        <name>setVec2</name>
+        <param>
+          <type>_In_ const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>_In_ const glm::vec2 &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the Vec2 uniform specified by the name string to the provided value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="44" column="6" bodyfile="Shader.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a9cac95f8d3370bdd09ba5894ebc134c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setVec3</definition>
+        <argsstring>(_In_ const std::string &amp;name, _In_ const glm::vec3 &amp;vec)</argsstring>
+        <name>setVec3</name>
+        <param>
+          <type>_In_ const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>_In_ const glm::vec3 &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the Vec3 uniform specified by the name string to the provided value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="46" column="6" bodyfile="Shader.cpp" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1af731eb39a3479f80eb9edb780ff0ee22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setVec4</definition>
+        <argsstring>(_In_ const std::string &amp;name, _In_ const glm::vec4 &amp;vec)</argsstring>
+        <name>setVec4</name>
+        <param>
+          <type>_In_ const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>_In_ const glm::vec4 &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the Vec4 uniform specified by the name string to the provided value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="48" column="6" bodyfile="Shader.cpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a8b28dfb7729efbca36d6859f0eb850c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::setMat4</definition>
+        <argsstring>(_In_ const std::string &amp;name, _In_ const glm::mat4 &amp;matrix)</argsstring>
+        <name>setMat4</name>
+        <param>
+          <type>_In_ const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>_In_ const glm::mat4 &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the Mat4 uniform specified by the name string to the provided value </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="50" column="6" bodyfile="Shader.cpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1ae052cf57eb41efea1c33f6e5bfe74c21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLuint</type>
+        <definition>GLuint Shader::buildShader</definition>
+        <argsstring>(std::string path, GLenum type)</argsstring>
+        <name>buildShader</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>GLenum</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads and builds the shader from the path for the given <ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> type <computeroutput>type</computeroutput> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="60" column="8" bodyfile="Shader.cpp" bodystart="79" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a3133d8dd90318d376094ff7a76c1a068" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shader::buildProgram</definition>
+        <argsstring>(GLuint vertex, GLuint fragment)</argsstring>
+        <name>buildProgram</name>
+        <param>
+          <type>GLuint</type>
+          <declname>vertex</declname>
+        </param>
+        <param>
+          <type>GLuint</type>
+          <declname>fragment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Builds the shader program from the two provided vertex and fragment shaders </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="62" column="6" bodyfile="Shader.cpp" bodystart="105" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1aaaa397d87b2bc51ce72fd139f57266ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Shader::checkShaderCompilationError</definition>
+        <argsstring>(std::string path, GLuint shader)</argsstring>
+        <name>checkShaderCompilationError</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>GLuint</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks the shader for errors. Uses path to specify the glsl file in any error messages </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="66" column="6" bodyfile="Shader.cpp" bodystart="122" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1ad02cfb1d2abf1139427fcaa3265cf96f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Shader::checkProgramLinkError</definition>
+        <argsstring>(GLuint program)</argsstring>
+        <name>checkProgramLinkError</name>
+        <param>
+          <type>GLuint</type>
+          <declname>program</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks the shader program for errors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="68" column="6" bodyfile="Shader.cpp" bodystart="136" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_shader_1a5aa9767f5ff973abf343262e94888355" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLint</type>
+        <definition>GLint Shader::getUniformLocation</definition>
+        <argsstring>(_In_ const GLchar *name)</argsstring>
+        <name>getUniformLocation</name>
+        <param>
+          <type>_In_ const GLchar *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the uniform location for the given uniform name </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="72" column="7" bodyfile="Shader.cpp" bodystart="150" bodyend="153"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Utility class for GLSL shader </para>
+    </detaileddescription>
+    <location file="Shader.h" line="25" column="1" bodyfile="Shader.h" bodystart="26" bodyend="73"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_shader_1a3133d8dd90318d376094ff7a76c1a068" prot="private" virt="non-virtual"><scope>ResWolf::Shader</scope><name>buildProgram</name></member>
+      <member refid="class_res_wolf_1_1_shader_1ae052cf57eb41efea1c33f6e5bfe74c21" prot="private" virt="non-virtual"><scope>ResWolf::Shader</scope><name>buildShader</name></member>
+      <member refid="class_res_wolf_1_1_shader_1ad02cfb1d2abf1139427fcaa3265cf96f" prot="private" virt="non-virtual"><scope>ResWolf::Shader</scope><name>checkProgramLinkError</name></member>
+      <member refid="class_res_wolf_1_1_shader_1aaaa397d87b2bc51ce72fd139f57266ca" prot="private" virt="non-virtual"><scope>ResWolf::Shader</scope><name>checkShaderCompilationError</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a5aa9767f5ff973abf343262e94888355" prot="private" virt="non-virtual"><scope>ResWolf::Shader</scope><name>getUniformLocation</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a41a7e2e94f1791f1968e18588e611ac6" prot="private" virt="non-virtual"><scope>ResWolf::Shader</scope><name>program</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a522cd087da3aca22179ccd425b6cbf81" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setFloat</name></member>
+      <member refid="class_res_wolf_1_1_shader_1ab90e0070067412261d7b93b1d12641dc" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setInt</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a8b28dfb7729efbca36d6859f0eb850c3" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setMat4</name></member>
+      <member refid="class_res_wolf_1_1_shader_1abcb2ccc2202939d6e08af46fb6ea9745" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setModel</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a2a00e3e4e5dd6c5a26422158c08c5ba3" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setTex</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a8e71a5e3966ac92dd326167169d8d18a" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setVec2</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a9cac95f8d3370bdd09ba5894ebc134c3" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setVec3</name></member>
+      <member refid="class_res_wolf_1_1_shader_1af731eb39a3479f80eb9edb780ff0ee22" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>setVec4</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a1c078cd1464883c8803d2077f8aa8657" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>Shader</name></member>
+      <member refid="class_res_wolf_1_1_shader_1aadb9fd6ea61701f22e83382f64c0921a" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>status</name></member>
+      <member refid="class_res_wolf_1_1_shader_1a870fa9f13d69e558815d6fd351a469dc" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>use</name></member>
+      <member refid="class_res_wolf_1_1_shader_1aff01df87e8a102f270b5b135a295e59d" prot="public" virt="non-virtual"><scope>ResWolf::Shader</scope><name>~Shader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

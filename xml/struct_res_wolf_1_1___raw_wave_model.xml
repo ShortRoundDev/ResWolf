@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___raw_wave_model" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_RawWaveModel</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___raw_wave_model_1aa65db3ba6adf58cc1c56fa37941aaaa0" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t ResWolf::_RawWaveModel::vertexSize</definition>
+        <argsstring></argsstring>
+        <name>vertexSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="40" column="8" bodyfile="WavefrontLoader.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___raw_wave_model_1a1fb68980564db5ab64cacf1d1f95546d" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_res_wolf_1_1___raw_wave_vertex" kindref="compound">RawWaveVertex</ref> *</type>
+        <definition>RawWaveVertex* ResWolf::_RawWaveModel::waveVertices</definition>
+        <argsstring></argsstring>
+        <name>waveVertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="41" column="15" bodyfile="WavefrontLoader.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ResWolf::_RawWaveModel</label>
+        <link refid="struct_res_wolf_1_1___raw_wave_model"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>waveVertices</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ResWolf::_RawWaveVertex</label>
+        <link refid="struct_res_wolf_1_1___raw_wave_vertex"/>
+      </node>
+    </collaborationgraph>
+    <location file="WavefrontLoader.h" line="38" column="1" bodyfile="WavefrontLoader.h" bodystart="39" bodyend="42"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___raw_wave_model_1aa65db3ba6adf58cc1c56fa37941aaaa0" prot="public" virt="non-virtual"><scope>ResWolf::_RawWaveModel</scope><name>vertexSize</name></member>
+      <member refid="struct_res_wolf_1_1___raw_wave_model_1a1fb68980564db5ab64cacf1d1f95546d" prot="public" virt="non-virtual"><scope>ResWolf::_RawWaveModel</scope><name>waveVertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,453 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_graphics_manager" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::GraphicsManager</compoundname>
+    <includes refid="_graphics_manager_8h" local="no">GraphicsManager.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1ac463c9d86b9b66c824014b2d7b4204dd" prot="public" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_res_wolf_1_1_graphics_manager" kindref="compound">GraphicsManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; GraphicsManager &gt; GraphicsManager::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="46" column="24" bodyfile="GraphicsManager.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1a6a218c7c5c67c4780e4cf26962c64aad" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_camera" kindref="compound">Camera</ref> *</type>
+        <definition>Camera* ResWolf::GraphicsManager::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The main (and only) camera for the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="55" column="8" bodyfile="GraphicsManager.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1ac6addf986ab1523fb9c8350490e1163b" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> * &gt;</type>
+        <definition>std::map&lt;std::string, Model*&gt; ResWolf::GraphicsManager::vertices</definition>
+        <argsstring></argsstring>
+        <name>vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All available models in the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="58" column="10" bodyfile="GraphicsManager.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1afc2683619348ad5dd6f7d6daae6eb894" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> * &gt;</type>
+        <definition>std::map&lt;std::string, Shader*&gt; ResWolf::GraphicsManager::shaders</definition>
+        <argsstring></argsstring>
+        <name>shaders</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All available shaders in the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="60" column="10" bodyfile="GraphicsManager.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1a38aec125b7133bc702b10c954156049b" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> * &gt;</type>
+        <definition>std::map&lt;std::string, Texture*&gt; ResWolf::GraphicsManager::textures</definition>
+        <argsstring></argsstring>
+        <name>textures</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All available textures in the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="62" column="10" bodyfile="GraphicsManager.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1a8b7e7314c9c4d946024e4880f641c974" prot="public" static="no" mutable="no">
+        <type>GraphicsError</type>
+        <definition>GraphicsError ResWolf::GraphicsManager::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The current status of the <ref refid="class_res_wolf_1_1_graphics_manager" kindref="compound">GraphicsManager</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="65" column="15" bodyfile="GraphicsManager.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1a172fad00e21b05ad821d2e3ee13ce01a" prot="public" static="no" mutable="no">
+        <type>GLFWwindow *</type>
+        <definition>GLFWwindow* ResWolf::GraphicsManager::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The main (and only) window </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="68" column="12" bodyfile="GraphicsManager.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1a968c8265c743c7aaa62e9fc7f3ee3c12" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::GraphicsManager::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the window in pixels </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="70" column="5" bodyfile="GraphicsManager.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1a7c7ac94a1d20f53e1a65deb7fb60c24f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::GraphicsManager::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the window in pixels </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="72" column="5" bodyfile="GraphicsManager.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_graphics_manager_1ada0bf9f3b669d3e162637db84aa21170" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::GraphicsManager::notFound</definition>
+        <argsstring></argsstring>
+        <name>notFound</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The default texture to display when another texture is not found to be displayed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="83" column="9" bodyfile="GraphicsManager.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1ab9f06ff41f7b71ec425fbf83dda2fd8b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GraphicsError</type>
+        <definition>GraphicsError GraphicsManager::init</definition>
+        <argsstring>(_In_ uint16_t width, _In_ uint16_t height, _In_ float fov)</argsstring>
+        <name>init</name>
+        <param>
+          <type>_In_ uint16_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>_In_ uint16_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>_In_ float</type>
+          <declname>fov</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="48" column="22" bodyfile="GraphicsManager.cpp" bodystart="48" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a6dc9681344ce46beb7cb221e098b5b7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GraphicsManager::GraphicsManager</definition>
+        <argsstring>(_In_ uint16_t width, _In_ uint16_t height, _In_ float fov)</argsstring>
+        <name>GraphicsManager</name>
+        <param>
+          <type>_In_ uint16_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>_In_ uint16_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>_In_ float</type>
+          <declname>fov</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a graphics manager. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="75" column="1" bodyfile="GraphicsManager.cpp" bodystart="77" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1ab5fdf685bbe4ae44b980ffc930ca1b6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GraphicsManager::~GraphicsManager</definition>
+        <argsstring>()</argsstring>
+        <name>~GraphicsManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="80" column="1" bodyfile="GraphicsManager.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a3277abb27dc97dcb6db834007f8912cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model * GraphicsManager::uploadVertices</definition>
+        <argsstring>(_In_ const float *data, _In_ size_t size)</argsstring>
+        <name>uploadVertices</name>
+        <param>
+          <type>_In_ const float *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>_In_ size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Uploads the provided vertices to the GPU and constructs a <ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> from the created VAO </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="100" column="7" bodyfile="GraphicsManager.cpp" bodystart="131" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1adecc8e9b998f9c2d5285209a576f072e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float GraphicsManager::scrnX</definition>
+        <argsstring>(float x)</argsstring>
+        <name>scrnX</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts screen coordinate X to normalized device coordinate </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="103" column="7" bodyfile="GraphicsManager.cpp" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a92ed6b23646fa61f7d7643bf1f277357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float GraphicsManager::scrnY</definition>
+        <argsstring>(float y)</argsstring>
+        <name>scrnY</name>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts screen coordinate Y to normalized device coordinate </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="105" column="7" bodyfile="GraphicsManager.cpp" bodystart="206" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1aa350bfb0a0a701d8a02a8718d821ce8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float GraphicsManager::scrnW</definition>
+        <argsstring>(float w)</argsstring>
+        <name>scrnW</name>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts screen width W to normalized device width </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="107" column="7" bodyfile="GraphicsManager.cpp" bodystart="211" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a7e4b756a06c06d0b577aa74bb3dd0ea5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float GraphicsManager::scrnH</definition>
+        <argsstring>(float h)</argsstring>
+        <name>scrnH</name>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts screen height H to normalized device height </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="109" column="7" bodyfile="GraphicsManager.cpp" bodystart="216" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a1fe6f2223cb8aca74986028dc31e6d69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GraphicsManager::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs basic draw tasks (swapping the buffer), and polls GLFW events </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="113" column="6" bodyfile="GraphicsManager.cpp" bodystart="221" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a16e6086c78707881a1ea5b4ffbe20b65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GraphicsError</type>
+        <definition>GraphicsError GraphicsManager::initGLFW</definition>
+        <argsstring>()</argsstring>
+        <name>initGLFW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes GLFW (window) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="116" column="15" bodyfile="GraphicsManager.cpp" bodystart="233" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1aeaf4226c6e2ebf11b522f33d3efc56c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GraphicsError</type>
+        <definition>GraphicsError GraphicsManager::initGL</definition>
+        <argsstring>()</argsstring>
+        <name>initGL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets OpenGL initial variables (clipping) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="118" column="15" bodyfile="GraphicsManager.cpp" bodystart="262" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a28fe94b65c002106030fdfc3222b4799" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GraphicsError</type>
+        <definition>GraphicsError GraphicsManager::initGLAD</definition>
+        <argsstring>()</argsstring>
+        <name>initGLAD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>runs GLAD loader </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="120" column="15" bodyfile="GraphicsManager.cpp" bodystart="271" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1aa37cde02220565b84a32a083ae05e23d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GraphicsError</type>
+        <definition>GraphicsError GraphicsManager::initShaders</definition>
+        <argsstring>()</argsstring>
+        <name>initShaders</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates shaders and puts them into the shader dictionary </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="122" column="15" bodyfile="GraphicsManager.cpp" bodystart="280" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_graphics_manager_1a7d26122ef455cb23662830b43cec82a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GraphicsError</type>
+        <definition>GraphicsError GraphicsManager::initVertices</definition>
+        <argsstring>()</argsstring>
+        <name>initVertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates some global models and puts them into the vertices dictionary </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="124" column="15" bodyfile="GraphicsManager.cpp" bodystart="313" bodyend="341"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Manages everything associated with OpenGL, GLAD, and everything GLFW does with Graphics </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ResWolf::GraphicsManager</label>
+        <link refid="class_res_wolf_1_1_graphics_manager"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>camera</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>notFound</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ResWolf::Texture</label>
+        <link refid="class_res_wolf_1_1_texture"/>
+      </node>
+      <node id="2">
+        <label>ResWolf::Camera</label>
+        <link refid="class_res_wolf_1_1_camera"/>
+      </node>
+    </collaborationgraph>
+    <location file="GraphicsManager.h" line="42" column="1" bodyfile="GraphicsManager.h" bodystart="43" bodyend="125"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a6a218c7c5c67c4780e4cf26962c64aad" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>camera</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a1fe6f2223cb8aca74986028dc31e6d69" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a6dc9681344ce46beb7cb221e098b5b7f" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>GraphicsManager</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a7c7ac94a1d20f53e1a65deb7fb60c24f" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>height</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1ab9f06ff41f7b71ec425fbf83dda2fd8b" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1aeaf4226c6e2ebf11b522f33d3efc56c4" prot="private" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>initGL</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a28fe94b65c002106030fdfc3222b4799" prot="private" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>initGLAD</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a16e6086c78707881a1ea5b4ffbe20b65" prot="private" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>initGLFW</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1aa37cde02220565b84a32a083ae05e23d" prot="private" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>initShaders</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a7d26122ef455cb23662830b43cec82a6" prot="private" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>initVertices</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1ac463c9d86b9b66c824014b2d7b4204dd" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>instance</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1ada0bf9f3b669d3e162637db84aa21170" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>notFound</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a7e4b756a06c06d0b577aa74bb3dd0ea5" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>scrnH</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1aa350bfb0a0a701d8a02a8718d821ce8b" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>scrnW</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1adecc8e9b998f9c2d5285209a576f072e" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>scrnX</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a92ed6b23646fa61f7d7643bf1f277357" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>scrnY</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1afc2683619348ad5dd6f7d6daae6eb894" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>shaders</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a8b7e7314c9c4d946024e4880f641c974" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>status</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a38aec125b7133bc702b10c954156049b" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>textures</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a3277abb27dc97dcb6db834007f8912cd" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>uploadVertices</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1ac6addf986ab1523fb9c8350490e1163b" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>vertices</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a968c8265c743c7aaa62e9fc7f3ee3c12" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>width</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1a172fad00e21b05ad821d2e3ee13ce01a" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>window</name></member>
+      <member refid="class_res_wolf_1_1_graphics_manager_1ab5fdf685bbe4ae44b980ffc930ca1b6d" prot="public" virt="non-virtual"><scope>ResWolf::GraphicsManager</scope><name>~GraphicsManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

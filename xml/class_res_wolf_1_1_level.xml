@@ -1,0 +1,339 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_level" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Level</compoundname>
+    <includes refid="_level_8h" local="no">Level.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1ac83c1eb77c40ebb6d0e297ddf87eac41" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader * Level::wallShader</definition>
+        <argsstring></argsstring>
+        <name>wallShader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached shader for rendering walls </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="32" column="15" bodyfile="Level.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1ae5a4078e2e94e7c8834cfd53359c8b2b" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader * Level::entityShader</definition>
+        <argsstring></argsstring>
+        <name>entityShader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached shader for rendering entities </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="35" column="15" bodyfile="Level.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1a981c7402c950e7bdde617386fef43f00" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_wall" kindref="compound">Wall</ref> *</type>
+        <definition>Wall* ResWolf::Level::walls</definition>
+        <argsstring></argsstring>
+        <name>walls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A single array of walls. Loaded from a 2D specification but put into a single array </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="47" column="6" bodyfile="Level.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1a5eeee2c1ed0c3c0f92b86454507f2d05" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_entity" kindref="compound">Entity</ref> **</type>
+        <definition>Entity** ResWolf::Level::entities</definition>
+        <argsstring></argsstring>
+        <name>entities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="48" column="8" bodyfile="Level.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1a067c4f412449878e981163db9b526dab" prot="public" static="no" mutable="no">
+        <type>LevelStatus</type>
+        <definition>LevelStatus ResWolf::Level::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The current load status of the level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="51" column="13" bodyfile="Level.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1ae18e9382f9bf305c7577093a7a5d8447" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::Level::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width and height of the level, in # of tiles </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="57" column="5" bodyfile="Level.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1ad92371e56da1eb2a75d6bd04b05c22cd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::Level::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="57" column="11" bodyfile="Level.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1aa4d7025695de3d029b9ae12a70d0be33" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t ResWolf::Level::totalEntities</definition>
+        <argsstring></argsstring>
+        <name>totalEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total entities in the level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="60" column="10" bodyfile="Level.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_level_1a46d74aaa95d2962f65d5ede62dfaf676" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_res_wolf_1_1___level_token" kindref="compound">LevelToken</ref> *</type>
+        <definition>LevelToken* ResWolf::Level::levelToken</definition>
+        <argsstring></argsstring>
+        <name>levelToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The raw level file. Used to build the actual walls. Kept around in memory because it&apos;s easier than deleting it and moving all the data elsewhere </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="67" column="12" bodyfile="Level.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1a1b7d0b4f509a9300a494247aae75181a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Level::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes some statically cached things for the level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="29" column="13" bodyfile="Level.cpp" bodystart="26" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1ae5223ab9cf97336416297cca5bb2d85d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Level::Level</definition>
+        <argsstring>(std::string path)</argsstring>
+        <name>Level</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a level from the given path. If the level fails to load (doesn&apos;t exist or malformed or some bug) then the status field will be set to a status code other than LevelStatus::OK </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="39" column="1" bodyfile="Level.cpp" bodystart="35" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1a249eac1e8f19ff44134efa5e986feaca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Level::~Level</definition>
+        <argsstring>()</argsstring>
+        <name>~Level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys all data associated with the level (walls, entities, text), but not their underlying assets (textures, models) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="41" column="1" bodyfile="Level.cpp" bodystart="70" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1a9b7478818e1aa80d3d4d059fa5faf9bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Level::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws the level, its walls, its characters </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="44" column="6" bodyfile="Level.cpp" bodystart="84" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1a6f39e4e3b1228299dbd635b2c4ddb5d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_res_wolf_1_1_wall" kindref="compound">Wall</ref> *</type>
+        <definition>Wall * Level::wallAt</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>wallAt</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the wall at the given x y location, doing the math inline to access it from a single array </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="54" column="13" bodyfile="Level.cpp" bodystart="226" bodyend="231"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1a0341f79b6a373d5e92765718a14ba425" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Level::fixPointers</definition>
+        <argsstring>(LevelToken *levelToken)</argsstring>
+        <name>fixPointers</name>
+        <param>
+          <type><ref refid="struct_res_wolf_1_1___level_token" kindref="compound">LevelToken</ref> *</type>
+          <declname>levelToken</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fixes the pointer offsets in the level token. Pointers are relative in the file and must be made absolute upon loading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="64" column="6" bodyfile="Level.cpp" bodystart="133" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_level_1af84807a04aa4965d0aba0d20b3f37537" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Level::parseLevelToken</definition>
+        <argsstring>()</argsstring>
+        <name>parseLevelToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads player pos, walls, and entities </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="70" column="6" bodyfile="Level.cpp" bodystart="174" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A level of the game. Contains walls and entities </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>ResWolf::Model</label>
+        <link refid="class_res_wolf_1_1_model"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::Level</label>
+        <link refid="class_res_wolf_1_1_level"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>entities</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>entityShader</edgelabel>
+          <edgelabel>wallShader</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>walls</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ResWolf::Shader</label>
+        <link refid="class_res_wolf_1_1_shader"/>
+      </node>
+      <node id="6">
+        <label>ResWolf::Wall</label>
+        <link refid="class_res_wolf_1_1_wall"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ceilingPlane</edgelabel>
+          <edgelabel>floorPlane</edgelabel>
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ceilingTexture</edgelabel>
+          <edgelabel>floorTexture</edgelabel>
+          <edgelabel>wallTexture</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ResWolf::Texture</label>
+        <link refid="class_res_wolf_1_1_texture"/>
+      </node>
+      <node id="2">
+        <label>ResWolf::Entity</label>
+        <link refid="class_res_wolf_1_1_entity"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>rect</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Level.h" line="25" column="1" bodyfile="Level.h" bodystart="26" bodyend="71"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_level_1a9b7478818e1aa80d3d4d059fa5faf9bf" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_level_1a5eeee2c1ed0c3c0f92b86454507f2d05" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>entities</name></member>
+      <member refid="class_res_wolf_1_1_level_1ae5a4078e2e94e7c8834cfd53359c8b2b" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>entityShader</name></member>
+      <member refid="class_res_wolf_1_1_level_1a0341f79b6a373d5e92765718a14ba425" prot="private" virt="non-virtual"><scope>ResWolf::Level</scope><name>fixPointers</name></member>
+      <member refid="class_res_wolf_1_1_level_1ad92371e56da1eb2a75d6bd04b05c22cd" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>height</name></member>
+      <member refid="class_res_wolf_1_1_level_1a1b7d0b4f509a9300a494247aae75181a" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_level_1ae5223ab9cf97336416297cca5bb2d85d" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>Level</name></member>
+      <member refid="class_res_wolf_1_1_level_1a46d74aaa95d2962f65d5ede62dfaf676" prot="private" virt="non-virtual"><scope>ResWolf::Level</scope><name>levelToken</name></member>
+      <member refid="class_res_wolf_1_1_level_1af84807a04aa4965d0aba0d20b3f37537" prot="private" virt="non-virtual"><scope>ResWolf::Level</scope><name>parseLevelToken</name></member>
+      <member refid="class_res_wolf_1_1_level_1a067c4f412449878e981163db9b526dab" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>status</name></member>
+      <member refid="class_res_wolf_1_1_level_1aa4d7025695de3d029b9ae12a70d0be33" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>totalEntities</name></member>
+      <member refid="class_res_wolf_1_1_level_1a6f39e4e3b1228299dbd635b2c4ddb5d5" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>wallAt</name></member>
+      <member refid="class_res_wolf_1_1_level_1a981c7402c950e7bdde617386fef43f00" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>walls</name></member>
+      <member refid="class_res_wolf_1_1_level_1ac83c1eb77c40ebb6d0e297ddf87eac41" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>wallShader</name></member>
+      <member refid="class_res_wolf_1_1_level_1ae18e9382f9bf305c7577093a7a5d8447" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>width</name></member>
+      <member refid="class_res_wolf_1_1_level_1a249eac1e8f19ff44134efa5e986feaca" prot="public" virt="non-virtual"><scope>ResWolf::Level</scope><name>~Level</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

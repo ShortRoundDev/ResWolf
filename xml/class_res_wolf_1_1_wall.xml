@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_wall" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Wall</compoundname>
+    <includes refid="_wall_8h" local="no">Wall.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader * Wall::shader</definition>
+        <argsstring></argsstring>
+        <name>shader</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>statically caches the wall shader for easy use without lookup multiple times per frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="19" column="15" bodyfile="Wall.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model * Wall::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>statically caches the wall model for easy use without lookup multiple times per frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="21" column="14" bodyfile="Wall.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model * Wall::ceilingPlane</definition>
+        <argsstring></argsstring>
+        <name>ceilingPlane</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>statically caches the ceiling model for eays use without lookup multiple times per frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="23" column="14" bodyfile="Wall.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model * Wall::floorPlane</definition>
+        <argsstring></argsstring>
+        <name>floorPlane</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>statically caches the floor model for eays use without lookup multiple times per frame </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="25" column="14" bodyfile="Wall.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a9d5a400a91c2df1cf65313b105726e3a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::Wall::floorTexture</definition>
+        <argsstring></argsstring>
+        <name>floorTexture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The texture for the floor tile. If none is specified, will load the floor tile at (0, 0) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="35" column="9" bodyfile="Wall.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a3a02e6d917dd662eab21e1efae208dfe" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::Wall::floorCode</definition>
+        <argsstring></argsstring>
+        <name>floorCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="37" column="10" bodyfile="Wall.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1ae139839c972fbf0904762e0692296328" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::Wall::wallTexture</definition>
+        <argsstring></argsstring>
+        <name>wallTexture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The texture for the wall </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="39" column="9" bodyfile="Wall.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1adfdc63ea820c3613b9630ee827f6521d" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::Wall::wallCode</definition>
+        <argsstring></argsstring>
+        <name>wallCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="40" column="10" bodyfile="Wall.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a8b412e7842bb1a6bd78c640b0f0b7012" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::Wall::ceilingTexture</definition>
+        <argsstring></argsstring>
+        <name>ceilingTexture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The texture for the ceiling tile. If none is specified, will load the ceiling tile at (0, 0) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="42" column="9" bodyfile="Wall.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a5af99785771b3c3715251effee291280" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::Wall::ceilingCode</definition>
+        <argsstring></argsstring>
+        <name>ceilingCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="43" column="10" bodyfile="Wall.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a27ef6952e28df16d229ed0f6dfd05a2a" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Wall::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The position of the wall </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="46" column="11" bodyfile="Wall.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a3d38cd45c7ff1435d10e9bb2622f06ff" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::Wall::isDoor</definition>
+        <argsstring></argsstring>
+        <name>isDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is this a door </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="48" column="6" bodyfile="Wall.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a1adbef1956a537bb4409167fa9693a65" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::Wall::lockType</definition>
+        <argsstring></argsstring>
+        <name>lockType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>What kind of key unlocks this door (if it&apos;s a door). 0 -&gt; no key, it&apos;s always unlocked </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="50" column="9" bodyfile="Wall.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1ac5dfcf12f279d46f7ab6d991073fd5c5" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* ResWolf::Wall::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Message associated with the wall. Generally used for signs </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="52" column="6" bodyfile="Wall.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1ac4dcf454be3ea46deb8cbf3d21e160e0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::Wall::solid</definition>
+        <argsstring></argsstring>
+        <name>solid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is this solid? </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="55" column="6" bodyfile="Wall.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1afb3d1ee492a365254020993426f58d09" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::Wall::openProgress</definition>
+        <argsstring></argsstring>
+        <name>openProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tracks the movement of the door </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="58" column="7" bodyfile="Wall.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_wall_1a79f77ad69bef298056406389f45a645a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::Wall::isOpen</definition>
+        <argsstring></argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is the door open? If so, don&apos;t collide </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="61" column="6" bodyfile="Wall.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1a66375124438a8e33b6b5561f2924f40a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Wall::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>initializes the static variables for the wall </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="28" column="13" bodyfile="Wall.cpp" bodystart="13" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1aace9851f6de0d3d9bc900a3b8eb66be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Wall::Wall</definition>
+        <argsstring>(uint16_t x, uint16_t y, uint16_t floorCode, uint16_t wallCode, uint16_t ceilingCode, bool isDoor, uint8_t lockType, char *message, bool solid)</argsstring>
+        <name>Wall</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>floorCode</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>wallCode</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>ceilingCode</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isDoor</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>lockType</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>solid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a wall </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="31" column="1" bodyfile="Wall.cpp" bodystart="95" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1a9a2992f2b533e1c160513d1e719f920c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Wall::~Wall</definition>
+        <argsstring>()</argsstring>
+        <name>~Wall</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="32" column="1" bodyfile="Wall.cpp" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1a306b3cb84f9f596892eeb80b71c98fb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Wall::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draw the wall </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="64" column="6" bodyfile="Wall.cpp" bodystart="113" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1af8628fb3c62d2ffb4b96994cc6fd3eef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResWolf::Wall::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the wall (check open progress) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="66" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1ab9abbec664dccb3a5ac6a3443115c205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ResWolf::Wall::tryOpen</definition>
+        <argsstring>(uint8_t playerKeys)</argsstring>
+        <name>tryOpen</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>playerKeys</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try to open this wall, given the player&apos;s keys. If the player doesn&apos;t have the right key, return false and don&apos;t open. Otherwise, open and return true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="70" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_wall_1a334077dd8d81d412fd832f78d862e7e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResWolf::Wall::open</definition>
+        <argsstring>()</argsstring>
+        <name>open</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens the door unconditionally </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Wall.h" line="73" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A wall in the level </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ResWolf::Model</label>
+        <link refid="class_res_wolf_1_1_model"/>
+      </node>
+      <node id="3">
+        <label>ResWolf::Shader</label>
+        <link refid="class_res_wolf_1_1_shader"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::Wall</label>
+        <link refid="class_res_wolf_1_1_wall"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ceilingPlane</edgelabel>
+          <edgelabel>floorPlane</edgelabel>
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ceilingTexture</edgelabel>
+          <edgelabel>floorTexture</edgelabel>
+          <edgelabel>wallTexture</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ResWolf::Texture</label>
+        <link refid="class_res_wolf_1_1_texture"/>
+      </node>
+    </collaborationgraph>
+    <location file="Wall.h" line="14" column="1" bodyfile="Wall.h" bodystart="15" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_wall_1a5af99785771b3c3715251effee291280" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>ceilingCode</name></member>
+      <member refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>ceilingPlane</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a8b412e7842bb1a6bd78c640b0f0b7012" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>ceilingTexture</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a306b3cb84f9f596892eeb80b71c98fb5" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a3a02e6d917dd662eab21e1efae208dfe" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>floorCode</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>floorPlane</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a9d5a400a91c2df1cf65313b105726e3a" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>floorTexture</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a66375124438a8e33b6b5561f2924f40a" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a3d38cd45c7ff1435d10e9bb2622f06ff" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>isDoor</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a79f77ad69bef298056406389f45a645a" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>isOpen</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a1adbef1956a537bb4409167fa9693a65" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>lockType</name></member>
+      <member refid="class_res_wolf_1_1_wall_1ac5dfcf12f279d46f7ab6d991073fd5c5" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>message</name></member>
+      <member refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>model</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a334077dd8d81d412fd832f78d862e7e4" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>open</name></member>
+      <member refid="class_res_wolf_1_1_wall_1afb3d1ee492a365254020993426f58d09" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>openProgress</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a27ef6952e28df16d229ed0f6dfd05a2a" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>pos</name></member>
+      <member refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>shader</name></member>
+      <member refid="class_res_wolf_1_1_wall_1ac4dcf454be3ea46deb8cbf3d21e160e0" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>solid</name></member>
+      <member refid="class_res_wolf_1_1_wall_1ab9abbec664dccb3a5ac6a3443115c205" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>tryOpen</name></member>
+      <member refid="class_res_wolf_1_1_wall_1af8628fb3c62d2ffb4b96994cc6fd3eef" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>update</name></member>
+      <member refid="class_res_wolf_1_1_wall_1aace9851f6de0d3d9bc900a3b8eb66be4" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>Wall</name></member>
+      <member refid="class_res_wolf_1_1_wall_1adfdc63ea820c3613b9630ee827f6521d" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>wallCode</name></member>
+      <member refid="class_res_wolf_1_1_wall_1ae139839c972fbf0904762e0692296328" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>wallTexture</name></member>
+      <member refid="class_res_wolf_1_1_wall_1a9a2992f2b533e1c160513d1e719f920c" prot="public" virt="non-virtual"><scope>ResWolf::Wall</scope><name>~Wall</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_main_menu" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::MainMenu</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_main_menu_1acc76307f51774fbdf37ecebf8c2bfb1f" prot="public" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_res_wolf_1_1_main_menu" kindref="compound">MainMenu</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; MainMenu &gt; MainMenu::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="18" column="24" bodyfile="MainMenu.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_main_menu_1ad470e492d5beade511c15be77c7f94ed" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::MainMenu::background</definition>
+        <argsstring></argsstring>
+        <name>background</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cache the background texture </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="34" column="9" bodyfile="MainMenu.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_main_menu_1a38792681ebed2027b7ba5f58d221e0cc" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::MainMenu::arrow</definition>
+        <argsstring></argsstring>
+        <name>arrow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cache the arrow for showing which menu item is selected </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="36" column="9" bodyfile="MainMenu.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_main_menu_1a1d281e563fd83a90192a8fd6f13aeacb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ResWolf::MainMenu::option</definition>
+        <argsstring></argsstring>
+        <name>option</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently selected option </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="39" column="5" bodyfile="MainMenu.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_main_menu_1acf16b70bd9f4dc0d98eade275e4e7367" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::MainMenu::shown</definition>
+        <argsstring></argsstring>
+        <name>shown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether or not to show the menu. Used for pasuing the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="42" column="6" bodyfile="MainMenu.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_main_menu_1ac6e9a1c20b8373e3f4365dd476ac1dcd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_res_wolf_1_1_main_menu" kindref="compound">MainMenu</ref> *</type>
+        <definition>MainMenu * MainMenu::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the <ref refid="class_res_wolf_1_1_main_menu" kindref="compound">MainMenu</ref> singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="20" column="17" bodyfile="MainMenu.cpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_main_menu_1a53eecf9d5ffd094f54ac4193e7e57eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainMenu::MainMenu</definition>
+        <argsstring>()</argsstring>
+        <name>MainMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a main menu </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="23" column="1" bodyfile="MainMenu.cpp" bodystart="19" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_main_menu_1a0a19ddba3ac52bf39c09b579171c98f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainMenu::~MainMenu</definition>
+        <argsstring>()</argsstring>
+        <name>~MainMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="24" column="1" bodyfile="MainMenu.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_main_menu_1a2e34d70391204bae4b08fcfb3125a3f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMenu::toggle</definition>
+        <argsstring>()</argsstring>
+        <name>toggle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Show or no show. Used for pausing the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="27" column="6" bodyfile="MainMenu.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_main_menu_1a6c17addf154519404a791d3c2a40a2aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMenu::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draw the main menu </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="29" column="6" bodyfile="MainMenu.cpp" bodystart="54" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_main_menu_1a717f81c5c352319251a533fdd3c51cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ResWolf::MainMenu::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the main menu </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MainMenu.h" line="31" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ResWolf::Texture</label>
+        <link refid="class_res_wolf_1_1_texture"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::MainMenu</label>
+        <link refid="class_res_wolf_1_1_main_menu"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>arrow</edgelabel>
+          <edgelabel>background</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MainMenu.h" line="14" column="1" bodyfile="MainMenu.h" bodystart="15" bodyend="43"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_main_menu_1a38792681ebed2027b7ba5f58d221e0cc" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>arrow</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1ad470e492d5beade511c15be77c7f94ed" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>background</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1a6c17addf154519404a791d3c2a40a2aa" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1ac6e9a1c20b8373e3f4365dd476ac1dcd" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1acc76307f51774fbdf37ecebf8c2bfb1f" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>instance</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1a53eecf9d5ffd094f54ac4193e7e57eaf" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>MainMenu</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1a1d281e563fd83a90192a8fd6f13aeacb" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>option</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1acf16b70bd9f4dc0d98eade275e4e7367" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>shown</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1a2e34d70391204bae4b08fcfb3125a3f9" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>toggle</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1a717f81c5c352319251a533fdd3c51cfb" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>update</name></member>
+      <member refid="class_res_wolf_1_1_main_menu_1a0a19ddba3ac52bf39c09b579171c98f2" prot="public" virt="non-virtual"><scope>ResWolf::MainMenu</scope><name>~MainMenu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

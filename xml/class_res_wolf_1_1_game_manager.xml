@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_game_manager" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::GameManager</compoundname>
+    <includes refid="_game_manager_8h" local="no">GameManager.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1a56e0b0e5df0c5761df168fb25b8693d5" prot="public" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_res_wolf_1_1_game_manager" kindref="compound">GameManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; GameManager &gt; GameManager::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_res_wolf_1_1_game_manager" kindref="compound">GameManager</ref> singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="53" column="24" bodyfile="GameManager.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1a13292333adbbfadbde59333e0bdca91c" prot="public" static="no" mutable="no">
+        <type>GameError</type>
+        <definition>GameError ResWolf::GameManager::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current status of the <ref refid="class_res_wolf_1_1_game_manager" kindref="compound">GameManager</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="62" column="11" bodyfile="GameManager.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1aa083e9c9449b246113ff2160a4751848" prot="public" static="no" mutable="no">
+        <type>GameState</type>
+        <definition>GameState ResWolf::GameManager::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <initializer>= GameState::MAIN_MENU</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current Game State </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="64" column="11" bodyfile="GameManager.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1a517232e2adacb109e10af48d13acd943" prot="public" static="no" mutable="no">
+        <type>std::map&lt; size_t, std::function&lt; void(GLFWwindow *, int, int, int, int)&gt; &gt;</type>
+        <definition>std::map&lt;size_t, std::function&lt;void(GLFWwindow*, int, int, int, int)&gt; &gt; ResWolf::GameManager::keydown</definition>
+        <argsstring></argsstring>
+        <name>keydown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>keydown event handlers. All are called on a keydown event. Owners can choose whatever dictionary key they want, but typeid().hashcode is the designed intent </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="68" column="10" bodyfile="GameManager.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1ab6e2d142dc74814efe01dc0f7150f795" prot="public" static="no" mutable="no">
+        <type>std::map&lt; size_t, std::function&lt; void(GLFWwindow *, int, int, int, int)&gt; &gt;</type>
+        <definition>std::map&lt;size_t, std::function&lt;void(GLFWwindow*, int, int, int, int)&gt; &gt; ResWolf::GameManager::keyup</definition>
+        <argsstring></argsstring>
+        <name>keyup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>keyup event handlers. All are called on a keyup event. Owners can choose whatever dictionary key they want, but typeid().hashcode is the designed intent </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="72" column="10" bodyfile="GameManager.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1af07efb9c8cf889e9003c94bb49e3a8b4" prot="public" static="no" mutable="no">
+        <type>std::map&lt; int, bool &gt;</type>
+        <definition>std::map&lt;int, bool&gt; ResWolf::GameManager::keymap</definition>
+        <argsstring></argsstring>
+        <name>keymap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current state of all keys. true = down, false = up. this can be accessed with the regular [] accessor since it will initialize non-existant members to false </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="76" column="10" bodyfile="GameManager.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1ac5a0abf924f8bf3d99fac31b1c0e1a48" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_res_wolf_1_1___mouse" kindref="compound">Mouse</ref></type>
+        <definition>Mouse ResWolf::GameManager::mouse</definition>
+        <argsstring></argsstring>
+        <name>mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current state of the mouse buttons (up/down) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="79" column="7" bodyfile="GameManager.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_game_manager_1ab433ae97a5601822ab94074101604bd8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_level" kindref="compound">Level</ref> *</type>
+        <definition>Level* ResWolf::GameManager::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The current level </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="96" column="7" bodyfile="GameManager.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1aa9be2e5eb479ee94d23b4ed7c278e63c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GameError</type>
+        <definition>GameError GameManager::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates the <ref refid="class_res_wolf_1_1_game_manager" kindref="compound">GameManager</ref> singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="55" column="18" bodyfile="GameManager.cpp" bodystart="37" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1aa0e2424dc1a39d380e5b6605b179bf05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameManager::GameManager</definition>
+        <argsstring>()</argsstring>
+        <name>GameManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="class_res_wolf_1_1_game_manager" kindref="compound">GameManager</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="58" column="1" bodyfile="GameManager.cpp" bodystart="51" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1aaae63e38e358379c1fe507c5197a8435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GameManager::~GameManager</definition>
+        <argsstring>()</argsstring>
+        <name>~GameManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="59" column="1" bodyfile="GameManager.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1a06838e720f2c82dc0df4a919c85022c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GameManager::loadLevel</definition>
+        <argsstring>(std::string path)</argsstring>
+        <name>loadLevel</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads a level and starts the game state to play it. If the game already has a level, this will destroy the current level and move the player to the new one. If the provided level path doesn&apos;t exist or otherwise fails to load, the game state is set to go to the main menu </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="85" column="6" bodyfile="GameManager.cpp" bodystart="64" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1a4fa99153e63dc3419ba126af71188cfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws level and UI (including main menu UI) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="88" column="6" bodyfile="GameManager.cpp" bodystart="83" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1a7ecc3a14cd9e92f50729b37d1364953f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates all game objects </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="90" column="6" bodyfile="GameManager.cpp" bodystart="102" bodyend="126"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_game_manager_1a1a297d8030a7b408ff52f75fac0908ec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GameManager::setInputCallbacks</definition>
+        <argsstring>()</argsstring>
+        <name>setInputCallbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the GLFW event handlers </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="93" column="6" bodyfile="GameManager.cpp" bodystart="132" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Handles all things related to the game, menu, etc. This is the daddy of the entire program </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>ResWolf::_Mouse</label>
+        <link refid="struct_res_wolf_1_1___mouse"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::GameManager</label>
+        <link refid="class_res_wolf_1_1_game_manager"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>mouse</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="GameManager.h" line="49" column="1" bodyfile="GameManager.h" bodystart="50" bodyend="97"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_game_manager_1a4fa99153e63dc3419ba126af71188cfa" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1aa0e2424dc1a39d380e5b6605b179bf05" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>GameManager</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1aa9be2e5eb479ee94d23b4ed7c278e63c" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1a56e0b0e5df0c5761df168fb25b8693d5" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>instance</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1a517232e2adacb109e10af48d13acd943" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>keydown</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1af07efb9c8cf889e9003c94bb49e3a8b4" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>keymap</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1ab6e2d142dc74814efe01dc0f7150f795" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>keyup</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1ab433ae97a5601822ab94074101604bd8" prot="private" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>level</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1a06838e720f2c82dc0df4a919c85022c9" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>loadLevel</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1ac5a0abf924f8bf3d99fac31b1c0e1a48" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>mouse</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1a1a297d8030a7b408ff52f75fac0908ec" prot="private" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>setInputCallbacks</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1aa083e9c9449b246113ff2160a4751848" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>state</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1a13292333adbbfadbde59333e0bdca91c" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>status</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1a7ecc3a14cd9e92f50729b37d1364953f" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>update</name></member>
+      <member refid="class_res_wolf_1_1_game_manager_1aaae63e38e358379c1fe507c5197a8435" prot="public" virt="non-virtual"><scope>ResWolf::GameManager</scope><name>~GameManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,523 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespace_res_wolf" kind="namespace" language="C++">
+    <compoundname>ResWolf</compoundname>
+    <innerclass refid="class_res_wolf_1_1_application_settings" prot="public">ResWolf::ApplicationSettings</innerclass>
+    <innerclass refid="class_res_wolf_1_1_camera" prot="public">ResWolf::Camera</innerclass>
+    <innerclass refid="class_res_wolf_1_1_entity" prot="public">ResWolf::Entity</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___mouse" prot="public">ResWolf::_Mouse</innerclass>
+    <innerclass refid="class_res_wolf_1_1_game_manager" prot="public">ResWolf::GameManager</innerclass>
+    <innerclass refid="class_res_wolf_1_1_graphics_manager" prot="public">ResWolf::GraphicsManager</innerclass>
+    <innerclass refid="class_res_wolf_1_1_level" prot="public">ResWolf::Level</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___wall_token" prot="public">ResWolf::_WallToken</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___entity_token" prot="public">ResWolf::_EntityToken</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___level_token" prot="public">ResWolf::_LevelToken</innerclass>
+    <innerclass refid="class_res_wolf_1_1_main_menu" prot="public">ResWolf::MainMenu</innerclass>
+    <innerclass refid="class_res_wolf_1_1_model" prot="public">ResWolf::Model</innerclass>
+    <innerclass refid="class_res_wolf_1_1_shader" prot="public">ResWolf::Shader</innerclass>
+    <innerclass refid="class_res_wolf_1_1_small_health_pack" prot="public">ResWolf::SmallHealthPack</innerclass>
+    <innerclass refid="class_res_wolf_1_1_texture" prot="public">ResWolf::Texture</innerclass>
+    <innerclass refid="class_res_wolf_1_1_u_i_manager" prot="public">ResWolf::UIManager</innerclass>
+    <innerclass refid="class_res_wolf_1_1_wall" prot="public">ResWolf::Wall</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___indexed_wave_vertex" prot="public">ResWolf::_IndexedWaveVertex</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___indexed_wave_model" prot="public">ResWolf::_IndexedWaveModel</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___raw_wave_vertex" prot="public">ResWolf::_RawWaveVertex</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___raw_wave_model" prot="public">ResWolf::_RawWaveModel</innerclass>
+    <innerclass refid="class_res_wolf_1_1_wavefront_loader" prot="public">ResWolf::WavefrontLoader</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_application_settings_8h_1a4194a7cad17300043b85fb4f0e1e0661" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AppWindowMode</name>
+        <enumvalue id="_application_settings_8h_1a4194a7cad17300043b85fb4f0e1e0661adaa43822b2c6abbb5d4eaf867ff6e4a4" prot="public">
+          <name>WINDOWED</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_application_settings_8h_1a4194a7cad17300043b85fb4f0e1e0661ab89c3d897b196ffff1537331bc659a97" prot="public">
+          <name>FULLSCREEN</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Windowed with title bar </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_application_settings_8h_1a4194a7cad17300043b85fb4f0e1e0661abac83b23bbc4b0e9ee65976e0e3b0e25" prot="public">
+          <name>WINDOWED_FULLSCREEN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fullscreen </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Window mode for the application </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="12" column="1" bodyfile="ApplicationSettings.h" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="enum" id="_application_settings_8h_1a6a45ac53a968193a27080b8218fead34" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>InputMode</name>
+        <enumvalue id="_application_settings_8h_1a6a45ac53a968193a27080b8218fead34ad120ba8110833fb5fb3da80a4cbf21f6" prot="public">
+          <name>MODERN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_application_settings_8h_1a6a45ac53a968193a27080b8218fead34a21994d6177b29e1128b2d7f0f8342057" prot="public">
+          <name>CLASSIC</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Mouse and keyboard, WASD movement </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Input mode for the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="20" column="1" bodyfile="ApplicationSettings.h" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="enum" id="_game_manager_8h_1a3a65da75b32eeef5379095d1a7a84ed8" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GameState</name>
+        <enumvalue id="_game_manager_8h_1a3a65da75b32eeef5379095d1a7a84ed8aa16d505f03a4b6f35486f65f6a61317e" prot="public">
+          <name>MAIN_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_manager_8h_1a3a65da75b32eeef5379095d1a7a84ed8a888ef1cd608fab904ae2c290a76dbce2" prot="public">
+          <name>PLAYING_GAME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_manager_8h_1a3a65da75b32eeef5379095d1a7a84ed8a6f68f49a3697c4bd5599f658b5de430a" prot="public">
+          <name>LOADING_SAVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_game_manager_8h_1a3a65da75b32eeef5379095d1a7a84ed8a3c4ef597ad18ae784e7ad4d2b154fa86" prot="public">
+          <name>OPTIONS_MENU</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current state of the game </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="31" column="1" bodyfile="GameManager.h" bodystart="32" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="enum" id="_game_manager_8h_1a9166db16e22ab211eeb37b01902bf8d6" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GameError</name>
+        <enumvalue id="_game_manager_8h_1a9166db16e22ab211eeb37b01902bf8d6ae0aa021e21dddbd6d8cecec71e9cf564" prot="public">
+          <name>OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Error codes for the <ref refid="class_res_wolf_1_1_game_manager" kindref="compound">GameManager</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="40" column="1" bodyfile="GameManager.h" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="enum" id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GraphicsError</name>
+        <enumvalue id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1ae0aa021e21dddbd6d8cecec71e9cf564" prot="public">
+          <name>OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1a8486de7be8350703a0243d3f0c7ccfdc" prot="public">
+          <name>GLFW_WINDOW_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1ab00aeb775e8581fc7aeb8e457111d665" prot="public">
+          <name>GL_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1ae861b94782f4192c7c4d7571fa96017c" prot="public">
+          <name>GLAD_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1ae4bad00f38aeaab96645d887fd8b6d9c" prot="public">
+          <name>SHADERS_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_graphics_manager_8h_1acadb6a7113a4f18ec0a6a891b53f34f1a9b021f6f7a3d72ad202d83594f7881af" prot="public">
+          <name>VERTICES_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="30" column="1" bodyfile="GraphicsManager.h" bodystart="30" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="enum" id="_level_8h_1a87b75f5c9d69d7711f103ac1a9ec84b5" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LevelStatus</name>
+        <enumvalue id="_level_8h_1a87b75f5c9d69d7711f103ac1a9ec84b5ae0aa021e21dddbd6d8cecec71e9cf564" prot="public">
+          <name>OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_level_8h_1a87b75f5c9d69d7711f103ac1a9ec84b5af69cbf795aebe244af87565ea9cb2806" prot="public">
+          <name>FAILED_FNF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_level_8h_1a87b75f5c9d69d7711f103ac1a9ec84b5adc07c3db77f006a112f407628beef7fd" prot="public">
+          <name>FAILED_CORRUPT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_level_8h_1a87b75f5c9d69d7711f103ac1a9ec84b5aa9c8d1c3dee4f53a92eba109850df7b4" prot="public">
+          <name>FAILED_MEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The status of the level. Used for loading errors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Level.h" line="16" column="1" bodyfile="Level.h" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="enum" id="_shader_8h_1af55698915bc1112357e19c3b763b65c1" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ShaderStatus</name>
+        <enumvalue id="_shader_8h_1af55698915bc1112357e19c3b763b65c1ae0aa021e21dddbd6d8cecec71e9cf564" prot="public">
+          <name>OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_shader_8h_1af55698915bc1112357e19c3b763b65c1afb170ffea05221be6d4e256c6a5b0266" prot="public">
+          <name>FILE_OPEN_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_shader_8h_1af55698915bc1112357e19c3b763b65c1abe42c62d0fe31aacd534a3c8738cca14" prot="public">
+          <name>VS_COMPILATION_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_shader_8h_1af55698915bc1112357e19c3b763b65c1aa722daa5bb2e372f3631812f186bba50" prot="public">
+          <name>FS_COMPILATION_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_shader_8h_1af55698915bc1112357e19c3b763b65c1a2eb8fdc475edb2c17385d630bee5dc6c" prot="public">
+          <name>PROGRAM_LINK_FAILED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Shader.h" line="15" column="1" bodyfile="Shader.h" bodystart="16" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="enum" id="_wavefront_loader_8h_1ab2c76ebaea5889edbe3c89e6cd5ba84f" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>WavefrontStatus</name>
+        <enumvalue id="_wavefront_loader_8h_1ab2c76ebaea5889edbe3c89e6cd5ba84fae0aa021e21dddbd6d8cecec71e9cf564" prot="public">
+          <name>OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_wavefront_loader_8h_1ab2c76ebaea5889edbe3c89e6cd5ba84fa53e8fbbf08a6858ab233cc5126662642" prot="public">
+          <name>ERROR_FNF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_wavefront_loader_8h_1ab2c76ebaea5889edbe3c89e6cd5ba84fa0388ba03aa72d65bfc7b437e5d5d8f9b" prot="public">
+          <name>ERROR_PARSE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_wavefront_loader_8h_1ab2c76ebaea5889edbe3c89e6cd5ba84faaa56a0221764dcebefdcf5bd0d944b34" prot="public">
+          <name>ERROR_MEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_wavefront_loader_8h_1ab2c76ebaea5889edbe3c89e6cd5ba84fad867e5cf13bcaa7c2d2010faf92c34ae" prot="public">
+          <name>ERROR_UNKOWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="44" column="1" bodyfile="WavefrontLoader.h" bodystart="45" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_game_manager_8h_1a98a61804d727ddbbcddb0e918f27dcb8" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___mouse" kindref="compound">ResWolf::_Mouse</ref></type>
+        <definition>typedef struct ResWolf::_Mouse ResWolf::Mouse</definition>
+        <argsstring></argsstring>
+        <name>Mouse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Describes mouse up/down status for the 3 mouse buttons </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="28" column="7"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_level_tokens_8h_1a51bdfad7c4a199af6693e63911d9c839" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___wall_token" kindref="compound">ResWolf::_WallToken</ref></type>
+        <definition>typedef struct ResWolf::_WallToken ResWolf::WallToken</definition>
+        <argsstring></argsstring>
+        <name>WallToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A token representing a wall. These variables are used to construct the wall. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="30" column="11"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_level_tokens_8h_1ad5c2435642d14684a99320adc7991e87" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___entity_token" kindref="compound">ResWolf::_EntityToken</ref></type>
+        <definition>typedef struct ResWolf::_EntityToken ResWolf::EntityToken</definition>
+        <argsstring></argsstring>
+        <name>EntityToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A token representing an entity. These variables are used to construct a new entity. the entity ID is used by a generated function in EntityDef.cpp to choose the correct entity&apos;s constructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="47" column="13"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_level_tokens_8h_1a5c8c23c760f2d1db39656e37b19f6ce2" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___level_token" kindref="compound">ResWolf::_LevelToken</ref></type>
+        <definition>typedef struct ResWolf::_LevelToken ResWolf::LevelToken</definition>
+        <argsstring></argsstring>
+        <name>LevelToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A token in a map file representing the header of the map. Manually aligned. Pointers are relative to the file and must be changed to absolute upon loading </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="79" column="12"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_wavefront_loader_8h_1ab759e69fe5db4acb1eb7758f6f611e20" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___indexed_wave_vertex" kindref="compound">ResWolf::_IndexedWaveVertex</ref></type>
+        <definition>typedef struct ResWolf::_IndexedWaveVertex ResWolf::IndexedWaveVertex</definition>
+        <argsstring></argsstring>
+        <name>IndexedWaveVertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="17" column="19"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_wavefront_loader_8h_1a0c68395d59e83978620b386458cddb6f" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___indexed_wave_model" kindref="compound">ResWolf::_IndexedWaveModel</ref></type>
+        <definition>typedef struct ResWolf::_IndexedWaveModel ResWolf::IndexedWaveModel</definition>
+        <argsstring></argsstring>
+        <name>IndexedWaveModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="29" column="18"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_wavefront_loader_8h_1abdad739457a500f32a5a6642634d4973" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___raw_wave_vertex" kindref="compound">ResWolf::_RawWaveVertex</ref></type>
+        <definition>typedef struct ResWolf::_RawWaveVertex ResWolf::RawWaveVertex</definition>
+        <argsstring></argsstring>
+        <name>RawWaveVertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="36" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_wavefront_loader_8h_1ad6796f7762d852fea3d5ca8c0aa74df6" prot="public" static="no">
+        <type>struct <ref refid="struct_res_wolf_1_1___raw_wave_model" kindref="compound">ResWolf::_RawWaveModel</ref></type>
+        <definition>typedef struct ResWolf::_RawWaveModel ResWolf::RawWaveModel</definition>
+        <argsstring></argsstring>
+        <name>RawWaveModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="WavefrontLoader.h" line="42" column="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_entity_def_8h_1a5381164b60c94175670b4c878a0b5ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_res_wolf_1_1_entity" kindref="compound">Entity</ref> *</type>
+        <definition>Entity * ResWolf::createEntity</definition>
+        <argsstring>(int id, uint16_t x, uint16_t y, char *config)</argsstring>
+        <name>createEntity</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EntityDef.h" line="16" column="12" bodyfile="EntityDef.cpp" bodystart="11" bodyend="20" declfile="EntityDef.h" declline="16" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="_game_manager_8h_1a138b3a628110f856a0d53d7f440b05fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ResWolf::GameErrorMessage</definition>
+        <argsstring>(GameError error)</argsstring>
+        <name>GameErrorMessage</name>
+        <param>
+          <type>GameError</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts GameError code to string message </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GameManager.h" line="46" column="13" bodyfile="GameManager.cpp" bodystart="18" bodyend="28" declfile="GameManager.h" declline="46" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="_graphics_manager_8h_1a7897550523f825671b06a961e5f2740c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ResWolf::GraphicsErrorMessage</definition>
+        <argsstring>(GraphicsError error)</argsstring>
+        <name>GraphicsErrorMessage</name>
+        <param>
+          <type>GraphicsError</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts the given graphics error into a string error code </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="39" column="13" bodyfile="GraphicsManager.cpp" bodystart="19" bodyend="41" declfile="GraphicsManager.h" declline="39" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ApplicationSettings.h" line="9" column="1"/>
+  </compounddef>
+</doxygen>

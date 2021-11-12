@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_wall_8h" kind="file" language="C++">
+    <compoundname>Wall.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="_model_8h" local="yes">Model.h</includes>
+    <includes refid="_shader_8h" local="yes">Shader.h</includes>
+    <includes refid="_texture_8h" local="yes">Texture.h</includes>
+    <includes local="yes">glm/glm.hpp</includes>
+    <includedby refid="_level_8cpp" local="yes">Level.cpp</includedby>
+    <includedby refid="_level_8h" local="yes">Level.h</includedby>
+    <includedby refid="_wall_8cpp" local="yes">Wall.cpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>windows.h</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="5">
+        <label>Shader.h</label>
+        <link refid="_shader_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>Texture.h</label>
+        <link refid="_texture_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Wall.h</label>
+        <link refid="_wall_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>glad/glad.h</label>
+      </node>
+      <node id="8">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>GameManager.h</label>
+        <link refid="_game_manager_8h_source"/>
+      </node>
+      <node id="1">
+        <label>Wall.h</label>
+        <link refid="_wall_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Level.h</label>
+        <link refid="_level_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_res_wolf_1_1_wall" prot="public">ResWolf::Wall</innerclass>
+    <innernamespace refid="namespace_res_wolf">ResWolf</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Model.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Shader.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Texture.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glm/glm.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">ResWolf</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14" refid="class_res_wolf_1_1_wall" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_res_wolf_1_1_wall" kindref="compound">Wall</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>;</highlight></codeline>
+<codeline lineno="21" refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" kindref="member">model</ref>;</highlight></codeline>
+<codeline lineno="23" refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" kindref="member">ceilingPlane</ref>;</highlight></codeline>
+<codeline lineno="25" refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" kindref="member">floorPlane</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a66375124438a8e33b6b5561f2924f40a" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aace9851f6de0d3d9bc900a3b8eb66be4" kindref="member">Wall</ref>(uint16_t<sp/>x,<sp/>uint16_t<sp/>y,<sp/>uint16_t<sp/>floorCode,<sp/>uint16_t<sp/>wallCode,<sp/>uint16_t<sp/>ceilingCode,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a3d38cd45c7ff1435d10e9bb2622f06ff" kindref="member">isDoor</ref>,<sp/>uint8_t<sp/><ref refid="class_res_wolf_1_1_wall_1a1adbef1956a537bb4409167fa9693a65" kindref="member">lockType</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="class_res_wolf_1_1_wall_1ac5dfcf12f279d46f7ab6d991073fd5c5" kindref="member">message</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1ac4dcf454be3ea46deb8cbf3d21e160e0" kindref="member">solid</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="class_res_wolf_1_1_wall" kindref="compound">Wall</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_res_wolf_1_1_wall_1a9d5a400a91c2df1cf65313b105726e3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1a9d5a400a91c2df1cf65313b105726e3a" kindref="member">floorTexture</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>floorCode;</highlight></codeline>
+<codeline lineno="39" refid="class_res_wolf_1_1_wall_1ae139839c972fbf0904762e0692296328" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1ae139839c972fbf0904762e0692296328" kindref="member">wallTexture</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>wallCode;</highlight></codeline>
+<codeline lineno="42" refid="class_res_wolf_1_1_wall_1a8b412e7842bb1a6bd78c640b0f0b7012" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1a8b412e7842bb1a6bd78c640b0f0b7012" kindref="member">ceilingTexture</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>ceilingCode;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_res_wolf_1_1_wall_1a27ef6952e28df16d229ed0f6dfd05a2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="class_res_wolf_1_1_wall_1a27ef6952e28df16d229ed0f6dfd05a2a" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="48" refid="class_res_wolf_1_1_wall_1a3d38cd45c7ff1435d10e9bb2622f06ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a3d38cd45c7ff1435d10e9bb2622f06ff" kindref="member">isDoor</ref>;</highlight></codeline>
+<codeline lineno="50" refid="class_res_wolf_1_1_wall_1a1adbef1956a537bb4409167fa9693a65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_res_wolf_1_1_wall_1a1adbef1956a537bb4409167fa9693a65" kindref="member">lockType</ref>;</highlight></codeline>
+<codeline lineno="52" refid="class_res_wolf_1_1_wall_1ac5dfcf12f279d46f7ab6d991073fd5c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="class_res_wolf_1_1_wall_1ac5dfcf12f279d46f7ab6d991073fd5c5" kindref="member">message</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="class_res_wolf_1_1_wall_1ac4dcf454be3ea46deb8cbf3d21e160e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1ac4dcf454be3ea46deb8cbf3d21e160e0" kindref="member">solid</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Use<sp/>some<sp/>nice<sp/>easing<sp/>animations<sp/>for<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="class_res_wolf_1_1_wall_1afb3d1ee492a365254020993426f58d09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1afb3d1ee492a365254020993426f58d09" kindref="member">openProgress</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_res_wolf_1_1_wall_1a79f77ad69bef298056406389f45a645a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a79f77ad69bef298056406389f45a645a" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a306b3cb84f9f596892eeb80b71c98fb5" kindref="member">draw</ref>();</highlight></codeline>
+<codeline lineno="66" refid="class_res_wolf_1_1_wall_1af8628fb3c62d2ffb4b96994cc6fd3eef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1af8628fb3c62d2ffb4b96994cc6fd3eef" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="70" refid="class_res_wolf_1_1_wall_1ab9abbec664dccb3a5ac6a3443115c205" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1ab9abbec664dccb3a5ac6a3443115c205" kindref="member">tryOpen</ref>(uint8_t<sp/>playerKeys);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="class_res_wolf_1_1_wall_1a334077dd8d81d412fd832f78d862e7e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a334077dd8d81d412fd832f78d862e7e4" kindref="member">open</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Wall.h"/>
+  </compounddef>
+</doxygen>

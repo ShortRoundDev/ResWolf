@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_level_tokens_8h" kind="file" language="C++">
+    <compoundname>LevelTokens.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="_level_8h" local="yes">Level.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>LevelTokens.h</label>
+        <link refid="_level_tokens_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>GameManager.h</label>
+        <link refid="_game_manager_8h_source"/>
+      </node>
+      <node id="1">
+        <label>LevelTokens.h</label>
+        <link refid="_level_tokens_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Level.h</label>
+        <link refid="_level_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_res_wolf_1_1___wall_token" prot="public">ResWolf::_WallToken</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___entity_token" prot="public">ResWolf::_EntityToken</innerclass>
+    <innerclass refid="struct_res_wolf_1_1___level_token" prot="public">ResWolf::_LevelToken</innerclass>
+    <innernamespace refid="namespace_res_wolf">ResWolf</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">ResWolf</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3<sp/>Words</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Size<sp/>24</highlight></codeline>
+<codeline lineno="9" refid="struct_res_wolf_1_1___wall_token" refkind="compound"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_res_wolf_1_1___wall_token" kindref="compound">_WallToken</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>1<sp/>---</highlight></codeline>
+<codeline lineno="13" refid="struct_res_wolf_1_1___wall_token_1a9fe5b5a224f8ab1df3eed9e2c822ad8f" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_res_wolf_1_1___wall_token_1a9fe5b5a224f8ab1df3eed9e2c822ad8f" kindref="member">wallType</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0,<sp/>1</highlight></codeline>
+<codeline lineno="15" refid="struct_res_wolf_1_1___wall_token_1a6c4bd7bf3ad8ae316fbc4f7c0b8c6109" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_res_wolf_1_1___wall_token_1a6c4bd7bf3ad8ae316fbc4f7c0b8c6109" kindref="member">isDoor</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2</highlight></codeline>
+<codeline lineno="17" refid="struct_res_wolf_1_1___wall_token_1a4490f09fdb0f0c992b148c1f65dfe104" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_res_wolf_1_1___wall_token_1a4490f09fdb0f0c992b148c1f65dfe104" kindref="member">lockType</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3</highlight></codeline>
+<codeline lineno="19" refid="struct_res_wolf_1_1___wall_token_1ad24f1ce3cb11674d66006d7f9873a3db" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_res_wolf_1_1___wall_token_1ad24f1ce3cb11674d66006d7f9873a3db" kindref="member">floor</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4,<sp/>5</highlight></codeline>
+<codeline lineno="21" refid="struct_res_wolf_1_1___wall_token_1a8bfda40b0551610dcf6bd001d70d28c5" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_res_wolf_1_1___wall_token_1a8bfda40b0551610dcf6bd001d70d28c5" kindref="member">ceiling</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>6,<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>2<sp/>---</highlight></codeline>
+<codeline lineno="24" refid="struct_res_wolf_1_1___wall_token_1a8edaad295657ac1d9cc69ec5b7f24ed8" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_res_wolf_1_1___wall_token_1a8edaad295657ac1d9cc69ec5b7f24ed8" kindref="member">grid</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>reserved[7];<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4<sp/>-<sp/>15<sp/><sp/><sp/>//<sp/>Reserved<sp/>for<sp/>future<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>3<sp/>---</highlight></codeline>
+<codeline lineno="29" refid="struct_res_wolf_1_1___wall_token_1a3c532e48e75dd953c44750ed82ef3e8c" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="struct_res_wolf_1_1___wall_token_1a3c532e48e75dd953c44750ed82ef3e8c" kindref="member">message</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>16<sp/>-<sp/>22</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_res_wolf_1_1___wall_token" kindref="compound">WallToken</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3<sp/>Words</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Size<sp/>24</highlight></codeline>
+<codeline lineno="36" refid="struct_res_wolf_1_1___entity_token" refkind="compound"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_res_wolf_1_1___entity_token" kindref="compound">_EntityToken</ref></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>1<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>entityId;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0,<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>x;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2,<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>y;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4,<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>2<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>reserved[10];<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>6,<sp/>7;<sp/>8<sp/>-<sp/>15<sp/><sp/><sp/><sp/><sp/>//<sp/>Reserved<sp/>for<sp/>future<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>3<sp/>---</highlight></codeline>
+<codeline lineno="46" refid="struct_res_wolf_1_1___entity_token_1acad555f3e9630e3defff5015b291861e" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="struct_res_wolf_1_1___entity_token_1acad555f3e9630e3defff5015b291861e" kindref="member">config</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>16<sp/>-<sp/>23<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_res_wolf_1_1___entity_token" kindref="compound">EntityToken</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>7<sp/>Words</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Size<sp/>56</highlight></codeline>
+<codeline lineno="53" refid="struct_res_wolf_1_1___level_token" refkind="compound"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_res_wolf_1_1___level_token" kindref="compound">_LevelToken</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>1<sp/>---</highlight></codeline>
+<codeline lineno="57" refid="struct_res_wolf_1_1___level_token_1acd0e771e58dcd07d9e87e6b691b389ea" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_res_wolf_1_1___level_token_1acd0e771e58dcd07d9e87e6b691b389ea" kindref="member">waterMark</ref>[3];<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0,<sp/>1,<sp/>2<sp/><sp/>//<sp/>Always<sp/>&quot;FUK&quot;</highlight></codeline>
+<codeline lineno="59" refid="struct_res_wolf_1_1___level_token_1a27454f03a8e560c309b767f1191fa90f" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_res_wolf_1_1___level_token_1a27454f03a8e560c309b767f1191fa90f" kindref="member">version</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3</highlight></codeline>
+<codeline lineno="61" refid="struct_res_wolf_1_1___level_token_1af003fc1c9bf4d2169bd8d67fc7b603f0" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_res_wolf_1_1___level_token_1af003fc1c9bf4d2169bd8d67fc7b603f0" kindref="member">width</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>4,<sp/>5</highlight></codeline>
+<codeline lineno="63" refid="struct_res_wolf_1_1___level_token_1a88ef8d4cb32a9c05093a58be3b66867c" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="struct_res_wolf_1_1___level_token_1a88ef8d4cb32a9c05093a58be3b66867c" kindref="member">height</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>6,<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>2<sp/>---</highlight></codeline>
+<codeline lineno="67" refid="struct_res_wolf_1_1___level_token_1a8c3dd2469ba4d5785e6283666f44c576" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="struct_res_wolf_1_1___level_token_1a8c3dd2469ba4d5785e6283666f44c576" kindref="member">totalEntities</ref>;<sp/></highlight><highlight class="comment">//<sp/>8<sp/><sp/>-<sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>3<sp/>---</highlight></codeline>
+<codeline lineno="71" refid="struct_res_wolf_1_1___level_token_1a73270119d84d54379a68bae295e2b07a" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_res_wolf_1_1___wall_token" kindref="compound">WallToken</ref>*<sp/><ref refid="struct_res_wolf_1_1___level_token_1a73270119d84d54379a68bae295e2b07a" kindref="member">walls</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>16<sp/>-<sp/>23</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Word<sp/>4<sp/>---</highlight></codeline>
+<codeline lineno="75" refid="struct_res_wolf_1_1___level_token_1af72e4b079e3776d0b3d1f0d61eb34794" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_res_wolf_1_1___entity_token" kindref="compound">EntityToken</ref>*<sp/><ref refid="struct_res_wolf_1_1___level_token_1af72e4b079e3776d0b3d1f0d61eb34794" kindref="member">entities</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>24<sp/>-<sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>Words<sp/>5<sp/>-<sp/>7<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>reserved[24];<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>32<sp/>-<sp/>55<sp/><sp/>//<sp/>Reserved<sp/>for<sp/>future<sp/>use<sp/>//<sp/>TODO:<sp/>Put<sp/>player<sp/>position<sp/>here.<sp/>Only<sp/>need<sp/>3<sp/>bytes<sp/>(x,<sp/>y,<sp/>look)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_res_wolf_1_1___level_token" kindref="compound">LevelToken</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="LevelTokens.h"/>
+  </compounddef>
+</doxygen>

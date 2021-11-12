@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_graphics_manager_8h" kind="file" language="C++">
+    <compoundname>GraphicsManager.h</compoundname>
+    <includes local="yes">Windows.h</includes>
+    <includes local="yes">glad/glad.h</includes>
+    <includes local="yes">GLFW/glfw3.h</includes>
+    <includes local="yes">GL/gl.h</includes>
+    <includes refid="_shader_8h" local="yes">Shader.h</includes>
+    <includes refid="_model_8h" local="yes">Model.h</includes>
+    <includes refid="_camera_8h" local="yes">Camera.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">map</includes>
+    <includes local="no">memory</includes>
+    <includedby refid="_entity_8cpp" local="yes">Entity.cpp</includedby>
+    <includedby refid="_game_manager_8cpp" local="yes">GameManager.cpp</includedby>
+    <includedby refid="_graphics_manager_8cpp" local="yes">GraphicsManager.cpp</includedby>
+    <includedby refid="_level_8cpp" local="yes">Level.cpp</includedby>
+    <includedby refid="_main_8cpp" local="yes">Main.cpp</includedby>
+    <includedby refid="_main_menu_8cpp" local="yes">MainMenu.cpp</includedby>
+    <includedby refid="_texture_8cpp" local="yes">Texture.cpp</includedby>
+    <includedby refid="_u_i_manager_8cpp" local="yes">UIManager.cpp</includedby>
+    <includedby refid="_wall_8cpp" local="yes">Wall.cpp</includedby>
+    <incdepgraph>
+      <node id="8">
+        <label>windows.h</label>
+      </node>
+      <node id="2">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>Shader.h</label>
+        <link refid="_shader_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="10">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>GraphicsManager.h</label>
+        <link refid="_graphics_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Camera.h</label>
+        <link refid="_camera_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>glad/glad.h</label>
+      </node>
+      <node id="5">
+        <label>GL/gl.h</label>
+      </node>
+      <node id="13">
+        <label>memory</label>
+      </node>
+      <node id="9">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_res_wolf_1_1_graphics_manager" prot="public">ResWolf::GraphicsManager</innerclass>
+    <innernamespace refid="namespace_res_wolf">ResWolf</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_graphics_manager_8h_1a36c5995036907afe534f70b04cb1d360" prot="public" static="no">
+        <name>GRAPHICS</name>
+        <initializer>(GraphicsManager::instance)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="17" column="9" bodyfile="GraphicsManager.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_graphics_manager_8h_1aad07c21c86be3874ec7ab79f2e0c932a" prot="public" static="no">
+        <name>TEX_TL</name>
+        <initializer>0, 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="19" column="9" bodyfile="GraphicsManager.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_graphics_manager_8h_1a90309d329339cf0aa2260af12619d9a7" prot="public" static="no">
+        <name>TEX_TR</name>
+        <initializer>1, 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="20" column="9" bodyfile="GraphicsManager.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_graphics_manager_8h_1a7b4747e5ba2e2e31e6d10c0321479e13" prot="public" static="no">
+        <name>TEX_BL</name>
+        <initializer>0, 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="21" column="9" bodyfile="GraphicsManager.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_graphics_manager_8h_1a586cecfc8287554b1d64bace6de9fca6" prot="public" static="no">
+        <name>TEX_BR</name>
+        <initializer>1, 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="GraphicsManager.h" line="22" column="9" bodyfile="GraphicsManager.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Windows.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glad/glad.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GLFW/glfw3.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GL/gl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Shader.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Model.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Camera.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//shortcut<sp/>to<sp/>the<sp/>singleton</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GRAPHICS<sp/>(GraphicsManager::instance)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEX_TL<sp/>0,<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEX_TR<sp/>1,<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEX_BL<sp/>0,<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEX_BR<sp/>1,<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">ResWolf<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-----forward<sp/>declarations------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Texture;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>GraphicsError<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OK,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLFW_WINDOW_FAILED,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GL_FAILED,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLAD_FAILED,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SHADERS_FAILED,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VERTICES_FAILED</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>GraphicsErrorMessage(GraphicsError<sp/>error);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_res_wolf_1_1_graphics_manager" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_res_wolf_1_1_graphics_manager" kindref="compound">GraphicsManager</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="class_res_wolf_1_1_graphics_manager_1ac463c9d86b9b66c824014b2d7b4204dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;GraphicsManager&gt;<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1ac463c9d86b9b66c824014b2d7b4204dd" kindref="member">instance</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>GraphicsError<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1ab9f06ff41f7b71ec425fbf83dda2fd8b" kindref="member">init</ref>(</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_In_<sp/>uint16_t<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a968c8265c743c7aaa62e9fc7f3ee3c12" kindref="member">width</ref>,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_In_<sp/>uint16_t<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a7c7ac94a1d20f53e1a65deb7fb60c24f" kindref="member">height</ref>,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_In_<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fov</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="class_res_wolf_1_1_graphics_manager_1a6a218c7c5c67c4780e4cf26962c64aad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_camera" kindref="compound">Camera</ref>*<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a6a218c7c5c67c4780e4cf26962c64aad" kindref="member">camera</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="class_res_wolf_1_1_graphics_manager_1ac6addf986ab1523fb9c8350490e1163b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>Model*&gt;<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1ac6addf986ab1523fb9c8350490e1163b" kindref="member">vertices</ref>;</highlight></codeline>
+<codeline lineno="60" refid="class_res_wolf_1_1_graphics_manager_1afc2683619348ad5dd6f7d6daae6eb894" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>Shader*&gt;<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1afc2683619348ad5dd6f7d6daae6eb894" kindref="member">shaders</ref>;</highlight></codeline>
+<codeline lineno="62" refid="class_res_wolf_1_1_graphics_manager_1a38aec125b7133bc702b10c954156049b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>Texture*&gt;<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a38aec125b7133bc702b10c954156049b" kindref="member">textures</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="class_res_wolf_1_1_graphics_manager_1a8b7e7314c9c4d946024e4880f641c974" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GraphicsError<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a8b7e7314c9c4d946024e4880f641c974" kindref="member">status</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="class_res_wolf_1_1_graphics_manager_1a172fad00e21b05ad821d2e3ee13ce01a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLFWwindow*<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a172fad00e21b05ad821d2e3ee13ce01a" kindref="member">window</ref>;</highlight></codeline>
+<codeline lineno="70" refid="class_res_wolf_1_1_graphics_manager_1a968c8265c743c7aaa62e9fc7f3ee3c12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a968c8265c743c7aaa62e9fc7f3ee3c12" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="72" refid="class_res_wolf_1_1_graphics_manager_1a7c7ac94a1d20f53e1a65deb7fb60c24f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a7c7ac94a1d20f53e1a65deb7fb60c24f" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a6dc9681344ce46beb7cb221e098b5b7f" kindref="member">GraphicsManager</ref>(</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_In_<sp/>uint16_t<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a968c8265c743c7aaa62e9fc7f3ee3c12" kindref="member">width</ref>,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_In_<sp/>uint16_t<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a7c7ac94a1d20f53e1a65deb7fb60c24f" kindref="member">height</ref>,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_In_<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fov</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="class_res_wolf_1_1_graphics_manager" kindref="compound">GraphicsManager</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_res_wolf_1_1_graphics_manager_1ada0bf9f3b669d3e162637db84aa21170" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref>*<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1ada0bf9f3b669d3e162637db84aa21170" kindref="member">notFound</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_Success_(</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref>*<sp/>createTexture(_In_<sp/>std::string<sp/>path,<sp/>_In_<sp/>std::string<sp/>alias);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_Success_(</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GLuint<sp/>uploadTexture(_In_<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>path,<sp/>_Out_opt_<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>w,<sp/>_Out_opt_<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>h);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/>assignNamedVertices(_In_<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name,<sp/>_In_<sp/>const<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>data,<sp/>_In_<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a3277abb27dc97dcb6db834007f8912cd" kindref="member">uploadVertices</ref>(_In_<sp/>const<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>data,<sp/>_In_<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1adecc8e9b998f9c2d5285209a576f072e" kindref="member">scrnX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a92ed6b23646fa61f7d7643bf1f277357" kindref="member">scrnY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1aa350bfb0a0a701d8a02a8718d821ce8b" kindref="member">scrnW</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a7e4b756a06c06d0b577aa74bb3dd0ea5" kindref="member">scrnH</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>Move<sp/>GLFW<sp/>event<sp/>polling<sp/>to<sp/>update</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_graphics_manager_1a1fe6f2223cb8aca74986028dc31e6d69" kindref="member">draw</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>private:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GraphicsError<sp/>initGLFW();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GraphicsError<sp/>initGL();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GraphicsError<sp/>initGLAD();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GraphicsError<sp/>initShaders();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GraphicsError<sp/>initVertices();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="GraphicsManager.h"/>
+  </compounddef>
+</doxygen>

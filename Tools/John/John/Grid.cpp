@@ -405,6 +405,10 @@ void Grid::placeTile(int x, int y)
 		return;
 	if (y < 0 || y >= 512)
 		return;
+	if (x >= maxX)
+		maxX = x + 1;
+	if (y >= maxY)
+		maxY = y + 1;
 	if (getCurrentLayer() != LAYER_GRID)
 	{
 		map[x][y].set(getCurrentLayer(), APP->selectedTile, APP->selectedTileTexture);
@@ -418,7 +422,7 @@ void Grid::placeTile(int x, int y)
 
 void Grid::floodFill(int x, int y)
 {
-	if (x < 0 || x >= 512 || y < 0 || y >= 512)
+	if (x < 0 || x >= 512 || y < 0 || y >= 512 || x > maxX || y > maxY)
 		return;
 	int floodType = -1;
 	switch (getCurrentLayer())
@@ -466,7 +470,7 @@ void Grid::floodFill(int x, int y)
 
 bool Grid::floodable(int x, int y, int floodType, int floodToken)
 {
-	if (x < 0 || x >= 512 || y < 0 || y >= 512)
+	if (x < 0 || x >= 512 || y < 0 || y >= 512 || x > maxX || y > maxY)
 		return false;
 
 	if (map[x][y].floodToken == floodToken)
@@ -492,9 +496,10 @@ void Grid::removeTile(int x, int y, bool all)
 		return;
 	if (y < 0 || y >= 512)
 		return;
+
 	if (all)
 	{
-		for (int i = 0; i < 0; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			map[x][y].set(i, 0, nullptr);
 		}
@@ -503,6 +508,40 @@ void Grid::removeTile(int x, int y, bool all)
 	{
 		map[x][y].set(getCurrentLayer(), 0, nullptr);
 	}
+
+	int _maxX = 0, _maxY = 0;
+	for (int i = 0; i < maxX; i++) {
+		// check far right line
+		for (int j = 0; j < maxY; j++) {
+			auto tile = &(map[i][j]);
+			if (!(tile->token.ceiling == 0 && tile->token.floor == 0 && tile->token.wallType == 0 && tile->entityToken == nullptr)) {
+				if (i > _maxX) {
+					_maxX = i;
+				}
+				if (j > _maxY) {
+					_maxY = j;
+				}
+			}
+		}
+	}
+	_maxX += 1;
+	_maxY += 1;
+
+	if (_maxX < 10) {
+		_maxX = 10;
+	}
+
+	if (_maxY < 10) {
+		_maxY = 10;
+	}
+
+	if (_maxX < maxX) {
+		maxX = _maxX;
+	}
+	if (_maxY < maxY) {
+		maxY = _maxY;
+	}
+
 	lastTilePlaced = { x, y };
 }
 
@@ -518,6 +557,12 @@ void Grid::placeEntity(int x, int y)
 	map[x][y].entityToken->x = x;
 	map[x][y].entityToken->y = y;
 	map[x][y].entityTexture = APP->selectedEntity->entTexture;
+	if (x >= maxX) {
+		maxX = x + 1;
+	}
+	if (y >= maxY) {
+		maxY = y + 1;
+	}
 }
 
 void Grid::removeEntity(int x, int y)
@@ -632,8 +677,8 @@ char* Grid::mapStringPool(_Out_ size_t* stringPoolSize)
 		}
 	}
 
-	char* stringPool = (char*) calloc(*stringPoolSize, sizeof(char));
-	uint64_t poolCursor = 0;
+	char* stringPool = (char*) calloc(*stringPoolSize + 2, sizeof(char));
+	uint64_t poolCursor = 1; // 0 initialize to null
 
 	for (int y = 0; y < maxY; y++)
 	{
@@ -642,9 +687,13 @@ char* Grid::mapStringPool(_Out_ size_t* stringPoolSize)
 			std::string config = map[x][y].tileConfig;
 			if (!config.empty())
 			{
-				memcpy(stringPool + poolCursor, config.c_str(), config.length());
+				const char* c = config.c_str();
+				memcpy(stringPool + poolCursor, c, config.length());
 				map[x][y].token.message = (char*)poolCursor; // these will have to be remapped later
 				poolCursor += config.length() + 1;
+			}
+			else {
+				map[x][y].token.message = NULL;
 			}
 
 			std::string entConfig = map[x][y].entityConfig;
@@ -653,6 +702,9 @@ char* Grid::mapStringPool(_Out_ size_t* stringPoolSize)
 				memcpy(stringPool + poolCursor, entConfig.c_str(), entConfig.length());
 				map[x][y].entityToken->config = (char*)poolCursor; // these will have to be remapped later
 				poolCursor += config.length() + 1;
+			}
+			else if(map[x][y].entityToken != NULL) {
+				map[x][y].entityToken->config = NULL;
 			}
 		}
 	}
@@ -687,6 +739,7 @@ uint8_t* Grid::concatenateMap(
 	mapCursor += sizeof(LevelToken);
 	uint64_t stringOffLocal = (uint64_t)(sizeof(LevelToken) + wallSize + entSize);
 	// copy
+	WallToken* wallPointer = (WallToken*)mapCursor;
 	memcpy(mapCursor, walls, wallSize);
 	for (WallToken* wall = (WallToken*)mapCursor; wall < (WallToken*)(mapCursor + wallSize); wall++)
 	{
@@ -699,6 +752,7 @@ uint8_t* Grid::concatenateMap(
 	mapCursor += wallSize;
 	// These can be null. Walls can never be null	
 
+	EntityToken* entityPointer = (EntityToken*) mapCursor;
 	if (entSize != 0)
 	{
 		memcpy(mapCursor, entities, entSize);
@@ -720,7 +774,6 @@ uint8_t* Grid::concatenateMap(
 		mapCursor += stringPoolSize;
 	}
 	
-
 	// free
 	free(walls);
 	// These can be null. Walls can never be null

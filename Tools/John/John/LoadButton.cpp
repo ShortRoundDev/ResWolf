@@ -1,6 +1,7 @@
 #include "LoadButton.h"
 
-#include "Windows.h"
+#include "FileHandling.h"
+#include "MapLoader.h"
 
 LoadButton::LoadButton() : UIButton(
 	{
@@ -16,6 +17,10 @@ LoadButton::LoadButton() : UIButton(
 bool LoadButton::onMouseUp(const SDL_Event& e)
 {
 	UIButton::onMouseUp(e);
-	MessageBoxA(NULL, "Load", NULL, MB_OK);
+
+	auto path = getOpenFilePath();
+	MapLoader* loader = new MapLoader;
+	loader->loadMap(path);
+
 	return true;
 }

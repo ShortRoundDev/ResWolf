@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_application_settings" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::ApplicationSettings</compoundname>
+    <includes refid="_application_settings_8h" local="no">ApplicationSettings.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1acdf3acc30ccf170baff114788aa8809d" prot="public" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_res_wolf_1_1_application_settings" kindref="compound">ApplicationSettings</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; ApplicationSettings &gt; ApplicationSettings::instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="32" column="24" bodyfile="ApplicationSettings.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a8101395286d099c6d882507a69128bd9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::ApplicationSettings::gameVolume</definition>
+        <argsstring></argsstring>
+        <name>gameVolume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[0, 1], volume of sound effects. Serialized as an integer from 0 - 10. Default 1.0f </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="41" column="7" bodyfile="ApplicationSettings.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1ac9bff5d3558c93b67c086fcb8279e480" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::ApplicationSettings::brightness</definition>
+        <argsstring></argsstring>
+        <name>brightness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[0, 1] multiplier of light in the game. Serialized as an integer from 0 - 10. Default 0.5f </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="43" column="7" bodyfile="ApplicationSettings.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1ab104120b6f420ae551d0953e441f74a1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::ApplicationSettings::mouseSensitivity</definition>
+        <argsstring></argsstring>
+        <name>mouseSensitivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[0, 1] mutliplier of mouse sensitivity in the game. Serialized as an integer from 0 - 10. Default 0.5f </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="45" column="7" bodyfile="ApplicationSettings.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a5dc54997bc4f652b5eb2c13a6cd0371a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::ApplicationSettings::fov</definition>
+        <argsstring></argsstring>
+        <name>fov</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[45, 180]. Default 45.0f </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="47" column="7" bodyfile="ApplicationSettings.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a49bb3b222c0bb996eb306500de41e320" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ResWolf::ApplicationSettings::debugMode</definition>
+        <argsstring></argsstring>
+        <name>debugMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>true/false. Enables certain features for debugging the game. Default false </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="50" column="6" bodyfile="ApplicationSettings.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1ac9a531fd995827b73027dec25af94b39" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::ApplicationSettings::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the window. serialized as an integer. Default 1024 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="53" column="10" bodyfile="ApplicationSettings.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a04b0f112983a09888a25af1e66b31987" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::ApplicationSettings::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Height of the window. serialized as an integer. Default 768 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="55" column="10" bodyfile="ApplicationSettings.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1aba5669af0ea37cb5a40070544df64760" prot="public" static="no" mutable="no">
+        <type>AppWindowMode</type>
+        <definition>AppWindowMode ResWolf::ApplicationSettings::appWindowMode</definition>
+        <argsstring></argsstring>
+        <name>appWindowMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Window mode of the application. Serialized as an integer corresponding to the AppWindowMode enum. Default WINDOWED </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="57" column="15" bodyfile="ApplicationSettings.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a0fcb16ee554c2d1596550ce2b737c69b" prot="public" static="no" mutable="no">
+        <type>InputMode</type>
+        <definition>InputMode ResWolf::ApplicationSettings::inputMode</definition>
+        <argsstring></argsstring>
+        <name>inputMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Input (control) mode of the application. Serialized as an integer corresponding to the InputMode enum. Default MODERN </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="59" column="11" bodyfile="ApplicationSettings.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1ab71810f29e144a1df531533a822058e7" prot="private" static="no" mutable="no">
+        <type>_Out_ float *</type>
+        <definition>_Out_ float* ResWolf::ApplicationSettings::gameVolume</definition>
+        <argsstring></argsstring>
+        <name>gameVolume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="66" column="23" bodyfile="ApplicationSettings.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a172fcca9da6224232cac8467c6417561" prot="private" static="no" mutable="no">
+        <type>_Out_ float *</type>
+        <definition>_Out_ float* ResWolf::ApplicationSettings::brightness</definition>
+        <argsstring></argsstring>
+        <name>brightness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="69" column="23" bodyfile="ApplicationSettings.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a50790e82d71d8d6d5e908a5a2612b0fe" prot="private" static="no" mutable="no">
+        <type>_Out_ float *</type>
+        <definition>_Out_ float* ResWolf::ApplicationSettings::mouseSensitivity</definition>
+        <argsstring></argsstring>
+        <name>mouseSensitivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="72" column="23" bodyfile="ApplicationSettings.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1aeeac9424281fac42695a0ccca3e9b3c2" prot="private" static="no" mutable="no">
+        <type>_Out_ float *</type>
+        <definition>_Out_ float* ResWolf::ApplicationSettings::fov</definition>
+        <argsstring></argsstring>
+        <name>fov</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="75" column="23" bodyfile="ApplicationSettings.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a5891e1b75bde022d8a4e6165b8973566" prot="private" static="no" mutable="no">
+        <type>_Out_ bool *</type>
+        <definition>_Out_ bool* ResWolf::ApplicationSettings::debugMode</definition>
+        <argsstring></argsstring>
+        <name>debugMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="78" column="22" bodyfile="ApplicationSettings.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1aeed0409cc2fbfc6935b6f02cc35c9183" prot="private" static="no" mutable="no">
+        <type>_Out_ uint16_t *</type>
+        <definition>_Out_ uint16_t* ResWolf::ApplicationSettings::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="81" column="26" bodyfile="ApplicationSettings.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a67f62cad78234f11ae484b502a331c3b" prot="private" static="no" mutable="no">
+        <type>_Out_ uint16_t *</type>
+        <definition>_Out_ uint16_t* ResWolf::ApplicationSettings::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="84" column="26" bodyfile="ApplicationSettings.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a4291ebb37b5d7b48422c37db39c6b94a" prot="private" static="no" mutable="no">
+        <type>_Out_ AppWindowMode *</type>
+        <definition>_Out_ AppWindowMode* ResWolf::ApplicationSettings::appWindowMode</definition>
+        <argsstring></argsstring>
+        <name>appWindowMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="87" column="31" bodyfile="ApplicationSettings.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_application_settings_1a1ba6cab7eed65efba5b639fc637ac55b" prot="private" static="no" mutable="no">
+        <type>_Out_ InputMode *</type>
+        <definition>_Out_ InputMode* ResWolf::ApplicationSettings::inputMode</definition>
+        <argsstring></argsstring>
+        <name>inputMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="90" column="28" bodyfile="ApplicationSettings.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1ace6b38478278ec2336d377432d6c97b4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ApplicationSettings::init</definition>
+        <argsstring>(std::string path)</argsstring>
+        <name>init</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates and assigns the singleton </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="34" column="13" bodyfile="ApplicationSettings.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a38ad6434c0b46c41c590236ae7b15a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ApplicationSettings::ApplicationSettings</definition>
+        <argsstring>(std::string path)</argsstring>
+        <name>ApplicationSettings</name>
+        <param>
+          <type>std::string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs and loads the application settings object from the given conf file </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="37" column="1" bodyfile="ApplicationSettings.cpp" bodystart="21" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a1d466d9081e1e93d6bebb4ca7136c9ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ApplicationSettings::~ApplicationSettings</definition>
+        <argsstring>()</argsstring>
+        <name>~ApplicationSettings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="38" column="1" bodyfile="ApplicationSettings.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a9f80e7010d98da2eea8019f9de53f48e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ApplicationSettings::parseAppConfig</definition>
+        <argsstring>(_In_ const char *str)</argsstring>
+        <name>parseAppConfig</name>
+        <param>
+          <type>_In_ const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="61" column="6" bodyfile="ApplicationSettings.cpp" bodystart="52" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1accbdd981a88923563bc554deb7f77d7c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseGameVolume(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1ac5a191d05143abf0c2f3f2cdce80836f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseBrightness(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a19ff4ee24421490f907b764a9ab9c2d0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseMouseSensitivity(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1acbb2c936c336fc49369fd529b45dbc9b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseFov(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1aae3d15716fad890918ac1fa2a658be30" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseDebugMode(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a1ce11a165ba55dd43ba7288ce512e9e4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseWidth(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a685610149b95c31e2e414a3b7f548814" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseHeight(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1a31d969de640677ed94cf3e54c438b4e1" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseAppWindowMode(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_application_settings_1aa9225c8d67a76d90c0dc1535799392e3" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResWolf::ApplicationSettings::_Success_</definition>
+        <argsstring>(return==true) bool parseInputMode(_In_ const char *str</argsstring>
+        <name>_Success_</name>
+        <param>
+          <type>return</type>
+          <defval>=true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ApplicationSettings.h" line="89" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Settings across the entire application. Defined in the settings.conf file or command line override </para>
+    </detaileddescription>
+    <location file="ApplicationSettings.h" line="27" column="1" bodyfile="ApplicationSettings.h" bodystart="28" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_application_settings_1accbdd981a88923563bc554deb7f77d7c" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1ac5a191d05143abf0c2f3f2cdce80836f" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a19ff4ee24421490f907b764a9ab9c2d0" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1acbb2c936c336fc49369fd529b45dbc9b" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1aae3d15716fad890918ac1fa2a658be30" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a1ce11a165ba55dd43ba7288ce512e9e4" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a685610149b95c31e2e414a3b7f548814" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a31d969de640677ed94cf3e54c438b4e1" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1aa9225c8d67a76d90c0dc1535799392e3" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>_Success_</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a38ad6434c0b46c41c590236ae7b15a7e" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>ApplicationSettings</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1aba5669af0ea37cb5a40070544df64760" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>appWindowMode</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a4291ebb37b5d7b48422c37db39c6b94a" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>appWindowMode</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1ac9bff5d3558c93b67c086fcb8279e480" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>brightness</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a172fcca9da6224232cac8467c6417561" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>brightness</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a49bb3b222c0bb996eb306500de41e320" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>debugMode</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a5891e1b75bde022d8a4e6165b8973566" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>debugMode</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a5dc54997bc4f652b5eb2c13a6cd0371a" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>fov</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1aeeac9424281fac42695a0ccca3e9b3c2" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>fov</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a8101395286d099c6d882507a69128bd9" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>gameVolume</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1ab71810f29e144a1df531533a822058e7" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>gameVolume</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a04b0f112983a09888a25af1e66b31987" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>height</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a67f62cad78234f11ae484b502a331c3b" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>height</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1ace6b38478278ec2336d377432d6c97b4" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a0fcb16ee554c2d1596550ce2b737c69b" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>inputMode</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a1ba6cab7eed65efba5b639fc637ac55b" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>inputMode</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1acdf3acc30ccf170baff114788aa8809d" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>instance</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1ab104120b6f420ae551d0953e441f74a1" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>mouseSensitivity</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a50790e82d71d8d6d5e908a5a2612b0fe" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>mouseSensitivity</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a9f80e7010d98da2eea8019f9de53f48e" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>parseAppConfig</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1ac9a531fd995827b73027dec25af94b39" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>width</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1aeed0409cc2fbfc6935b6f02cc35c9183" prot="private" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>width</name></member>
+      <member refid="class_res_wolf_1_1_application_settings_1a1d466d9081e1e93d6bebb4ca7136c9ad" prot="public" virt="non-virtual"><scope>ResWolf::ApplicationSettings</scope><name>~ApplicationSettings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

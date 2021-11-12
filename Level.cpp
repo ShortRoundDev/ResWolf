@@ -120,9 +120,9 @@ void Level::draw()
 	for (uint64_t i = 0; i < totalEntities; i++)
 	{
 		entities[i]->draw();
-		
-	}
 
+	}
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	UI_MGR->drawText("CameraPos: " + vec3ToString(GRAPHICS->camera->cameraPos), 16, 64, 128, 128);
 }
 

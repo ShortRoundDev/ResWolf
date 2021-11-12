@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_entity" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Entity</compoundname>
+    <derivedcompoundref refid="class_res_wolf_1_1_small_health_pack" prot="public" virt="non-virtual">ResWolf::SmallHealthPack</derivedcompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1a9137952983ebccd9ae6bd72a006840e9" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref> *</type>
+        <definition>Model * Entity::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="13" column="14" bodyfile="Entity.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1ad14b36d3dc0152043b699d6ffeefe77c" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref> *</type>
+        <definition>Shader * Entity::shader</definition>
+        <argsstring></argsstring>
+        <name>shader</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="14" column="15" bodyfile="Entity.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1a8856b5d7f70f9e798512f1963ceb6648" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Entity::pos</definition>
+        <argsstring></argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="20" column="11" bodyfile="Entity.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1ae8fcecea2bc0d1d0aab80afef7464392" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Entity::direction</definition>
+        <argsstring></argsstring>
+        <name>direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="21" column="11" bodyfile="Entity.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1a00bbc4451eeb8d0e320e3fe53d595196" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Entity::velocity</definition>
+        <argsstring></argsstring>
+        <name>velocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="22" column="11" bodyfile="Entity.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1a996bf0aae6b3bc831a2b5dac32d29ba4" prot="public" static="no" mutable="no">
+        <type>glm::vec2</type>
+        <definition>glm::vec2 ResWolf::Entity::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="23" column="11" bodyfile="Entity.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1a0ee482260130c720b251b4327b2153c4" prot="public" static="no" mutable="no">
+        <type><ref refid="class_res_wolf_1_1_texture" kindref="compound">Texture</ref> *</type>
+        <definition>Texture* ResWolf::Entity::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="28" column="9" bodyfile="Entity.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_entity_1a4763b23420dae25f1a5e622f577b3460" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* ResWolf::Entity::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="29" column="6" bodyfile="Entity.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_entity_1a93bfb0b92c06297c207fad4164810fed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Entity::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="15" column="13" bodyfile="Entity.cpp" bodystart="10" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_entity_1a0de43cd95a2b7d258e26b7b25600fa8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Entity::Entity</definition>
+        <argsstring>(int entityNumber, std::string texturePath, char *config, uint16_t x, uint16_t y, float w, float h)</argsstring>
+        <name>Entity</name>
+        <param>
+          <type>int</type>
+          <declname>entityNumber</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>texturePath</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="16" column="1" bodyfile="Entity.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_entity_1a15b704ab023b1d009d455261e0be3a22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Entity::Entity</definition>
+        <argsstring>(int entityNumber, std::string texturePath, char *config, glm::vec3 pos, glm::vec2 scale)</argsstring>
+        <name>Entity</name>
+        <param>
+          <type>int</type>
+          <declname>entityNumber</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>texturePath</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>glm::vec3</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>glm::vec2</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="17" column="1" bodyfile="Entity.cpp" bodystart="32" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_entity_1adf6d3f7cb1b2ba029b6b048a395cc8ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Entity::~Entity</definition>
+        <argsstring>()</argsstring>
+        <name>~Entity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="18" column="1" bodyfile="Entity.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_entity_1a7666f416dd0d1fce0f1133f78df44476" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Entity::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="25" column="14" bodyfile="Entity.cpp" bodystart="48" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_entity_1a00b6eeaf99b35c8f8b10b5fbfc1baf4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Entity::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Entity.h" line="26" column="14" bodyfile="Entity.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ResWolf::SmallHealthPack</label>
+        <link refid="class_res_wolf_1_1_small_health_pack"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ResWolf::Entity</label>
+        <link refid="class_res_wolf_1_1_entity"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ResWolf::Model</label>
+        <link refid="class_res_wolf_1_1_model"/>
+      </node>
+      <node id="3">
+        <label>ResWolf::Shader</label>
+        <link refid="class_res_wolf_1_1_shader"/>
+      </node>
+      <node id="4">
+        <label>ResWolf::Texture</label>
+        <link refid="class_res_wolf_1_1_texture"/>
+      </node>
+      <node id="1">
+        <label>ResWolf::Entity</label>
+        <link refid="class_res_wolf_1_1_entity"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>rect</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Entity.h" line="10" column="1" bodyfile="Entity.h" bodystart="11" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_entity_1a4763b23420dae25f1a5e622f577b3460" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>config</name></member>
+      <member refid="class_res_wolf_1_1_entity_1ae8fcecea2bc0d1d0aab80afef7464392" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>direction</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a7666f416dd0d1fce0f1133f78df44476" prot="public" virt="virtual"><scope>ResWolf::Entity</scope><name>draw</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a0de43cd95a2b7d258e26b7b25600fa8d" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>Entity</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a15b704ab023b1d009d455261e0be3a22" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>Entity</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a93bfb0b92c06297c207fad4164810fed" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>init</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a8856b5d7f70f9e798512f1963ceb6648" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>pos</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a9137952983ebccd9ae6bd72a006840e9" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>rect</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a996bf0aae6b3bc831a2b5dac32d29ba4" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>scale</name></member>
+      <member refid="class_res_wolf_1_1_entity_1ad14b36d3dc0152043b699d6ffeefe77c" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>shader</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a0ee482260130c720b251b4327b2153c4" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>texture</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a00b6eeaf99b35c8f8b10b5fbfc1baf4f" prot="public" virt="virtual"><scope>ResWolf::Entity</scope><name>update</name></member>
+      <member refid="class_res_wolf_1_1_entity_1a00bbc4451eeb8d0e320e3fe53d595196" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>velocity</name></member>
+      <member refid="class_res_wolf_1_1_entity_1adf6d3f7cb1b2ba029b6b048a395cc8ae" prot="public" virt="non-virtual"><scope>ResWolf::Entity</scope><name>~Entity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

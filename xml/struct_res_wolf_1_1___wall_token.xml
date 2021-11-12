@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="struct_res_wolf_1_1___wall_token" kind="struct" language="C++" prot="public">
+    <compoundname>ResWolf::_WallToken</compoundname>
+    <includes refid="_level_tokens_8h" local="no">LevelTokens.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1a9fe5b5a224f8ab1df3eed9e2c822ad8f" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_WallToken::wallType</definition>
+        <argsstring></argsstring>
+        <name>wallType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Tile/Texture # of the wall </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="13" column="10" bodyfile="LevelTokens.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1a6c4bd7bf3ad8ae316fbc4f7c0b8c6109" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_WallToken::isDoor</definition>
+        <argsstring></argsstring>
+        <name>isDoor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Is the wall an openable door? </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="15" column="9" bodyfile="LevelTokens.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1a4490f09fdb0f0c992b148c1f65dfe104" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_WallToken::lockType</definition>
+        <argsstring></argsstring>
+        <name>lockType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If this is a door, what type of lock? 0 = unlocked door </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="17" column="9" bodyfile="LevelTokens.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1ad24f1ce3cb11674d66006d7f9873a3db" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_WallToken::floor</definition>
+        <argsstring></argsstring>
+        <name>floor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Tile/Texture # of the floor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="19" column="10" bodyfile="LevelTokens.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1a8bfda40b0551610dcf6bd001d70d28c5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t ResWolf::_WallToken::ceiling</definition>
+        <argsstring></argsstring>
+        <name>ceiling</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Tile/Texture # of the ceiling </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="21" column="10" bodyfile="LevelTokens.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1a8edaad295657ac1d9cc69ec5b7f24ed8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_WallToken::grid</definition>
+        <argsstring></argsstring>
+        <name>grid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The Grid # of the tile. Used for some AI stuff. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="24" column="9" bodyfile="LevelTokens.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1ac8e2db5b6fd9361c28e8c9e6f31f2e9f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ResWolf::_WallToken::reserved[7]</definition>
+        <argsstring>[7]</argsstring>
+        <name>reserved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="25" column="9" bodyfile="LevelTokens.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_res_wolf_1_1___wall_token_1a3c532e48e75dd953c44750ed82ef3e8c" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* ResWolf::_WallToken::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Messages use is defined by the specific tile. Can be any text. Usually just used for showing a message in the HUD </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="LevelTokens.h" line="29" column="6" bodyfile="LevelTokens.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A token representing a wall. These variables are used to construct the wall. </para>
+    </detaileddescription>
+    <location file="LevelTokens.h" line="9" column="1" bodyfile="LevelTokens.h" bodystart="10" bodyend="30"/>
+    <listofallmembers>
+      <member refid="struct_res_wolf_1_1___wall_token_1a8bfda40b0551610dcf6bd001d70d28c5" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>ceiling</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1ad24f1ce3cb11674d66006d7f9873a3db" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>floor</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1a8edaad295657ac1d9cc69ec5b7f24ed8" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>grid</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1a6c4bd7bf3ad8ae316fbc4f7c0b8c6109" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>isDoor</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1a4490f09fdb0f0c992b148c1f65dfe104" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>lockType</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1a3c532e48e75dd953c44750ed82ef3e8c" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>message</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1ac8e2db5b6fd9361c28e8c9e6f31f2e9f" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>reserved</name></member>
+      <member refid="struct_res_wolf_1_1___wall_token_1a9fe5b5a224f8ab1df3eed9e2c822ad8f" prot="public" virt="non-virtual"><scope>ResWolf::_WallToken</scope><name>wallType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

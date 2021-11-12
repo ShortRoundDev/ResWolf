@@ -9,7 +9,7 @@
 
 HMODULE NTHand = LoadLibrary(L"NTDDLL.DLL");
 
-LONG ResWolfUnhandledExceptionFilter(_In_ PEXCEPTION_POINTERS ExceptionInfo)
+LONG WINAPI ResWolfUnhandledExceptionFilter(_In_ PEXCEPTION_POINTERS ExceptionInfo)
 {
 	char errHex[128];
 	ZeroMemory(errHex, 128);

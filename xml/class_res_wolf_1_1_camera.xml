@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="class_res_wolf_1_1_camera" kind="class" language="C++" prot="public">
+    <compoundname>ResWolf::Camera</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1af4936d798db982796e965b84b5a497b5" prot="public" static="no" mutable="no">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 ResWolf::Camera::view</definition>
+        <argsstring></argsstring>
+        <name>view</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="21" column="19" bodyfile="Camera.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a43bafc7ff31adf0caed6a177211f35b3" prot="public" static="no" mutable="no">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 ResWolf::Camera::projection</definition>
+        <argsstring></argsstring>
+        <name>projection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="22" column="19" bodyfile="Camera.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a24e8edeaf0e6322b492dfc497da4d59b" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Camera::cameraPos</definition>
+        <argsstring></argsstring>
+        <name>cameraPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="23" column="19" bodyfile="Camera.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a93f2a0a71765e0303d9aaadcc01b06d8" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Camera::cameraFront</definition>
+        <argsstring></argsstring>
+        <name>cameraFront</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="24" column="19" bodyfile="Camera.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a0fb07bca9df22c6279bdefe525cbb249" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 ResWolf::Camera::cameraUp</definition>
+        <argsstring></argsstring>
+        <name>cameraUp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="25" column="19" bodyfile="Camera.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a163b0a3e150f518a20e8bb42bd06c343" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::Camera::fov</definition>
+        <argsstring></argsstring>
+        <name>fov</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="27" column="15" bodyfile="Camera.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a14231e60b722e719bcb108fe80d697aa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::Camera::yaw</definition>
+        <argsstring></argsstring>
+        <name>yaw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="28" column="15" bodyfile="Camera.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_res_wolf_1_1_camera_1a94d64e2c1354a72b2ca958697755264a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ResWolf::Camera::pitch</definition>
+        <argsstring></argsstring>
+        <name>pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="29" column="15" bodyfile="Camera.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_res_wolf_1_1_camera_1aea56bd422696dcb29d3a3576ef2b0f70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::Camera</definition>
+        <argsstring>(const uint16_t width, const uint16_t height, const float fov)</argsstring>
+        <name>Camera</name>
+        <param>
+          <type>const uint16_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const uint16_t</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>fov</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a camrea&apos;s projection, view, pos, front, and up variables </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="12" column="9" bodyfile="Camera.cpp" bodystart="9" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_camera_1ad1897942d0ccf91052386388a497349f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Camera::~Camera</definition>
+        <argsstring>()</argsstring>
+        <name>~Camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="13" column="9" bodyfile="Camera.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_camera_1a42cda7239981a5618660d04bd5893556" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>recalculates the view matrix from the pos, front, and up vectors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="16" column="14" bodyfile="Camera.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_res_wolf_1_1_camera_1a15ec68f199342bd5e41c7d20c212670c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Camera::moveTo</definition>
+        <argsstring>(const glm::vec3 &amp;position)</argsstring>
+        <name>moveTo</name>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Translates the camera </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Camera.h" line="19" column="14" bodyfile="Camera.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Camera.h" line="7" column="5" bodyfile="Camera.h" bodystart="8" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_res_wolf_1_1_camera_1aea56bd422696dcb29d3a3576ef2b0f70" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>Camera</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a93f2a0a71765e0303d9aaadcc01b06d8" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>cameraFront</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a24e8edeaf0e6322b492dfc497da4d59b" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>cameraPos</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a0fb07bca9df22c6279bdefe525cbb249" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>cameraUp</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a163b0a3e150f518a20e8bb42bd06c343" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>fov</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a15ec68f199342bd5e41c7d20c212670c" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>moveTo</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a94d64e2c1354a72b2ca958697755264a" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>pitch</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a43bafc7ff31adf0caed6a177211f35b3" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>projection</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a42cda7239981a5618660d04bd5893556" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>update</name></member>
+      <member refid="class_res_wolf_1_1_camera_1af4936d798db982796e965b84b5a497b5" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>view</name></member>
+      <member refid="class_res_wolf_1_1_camera_1a14231e60b722e719bcb108fe80d697aa" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>yaw</name></member>
+      <member refid="class_res_wolf_1_1_camera_1ad1897942d0ccf91052386388a497349f" prot="public" virt="non-virtual"><scope>ResWolf::Camera</scope><name>~Camera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -71,9 +71,6 @@ int init(int argc, char** argv)
 		GAME->loadLevel(std::string(argv[1]));
 	}
 
-	IndexedWaveModel mdl;
-	auto status = WAVE->loadIndexed("Resources/Maps/Obj/House.obj", &mdl);
-
 	return 0;
 }
 

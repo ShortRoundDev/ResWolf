@@ -36,6 +36,7 @@ public:
 	SDL_Renderer* renderer;
 
 	std::map<std::string, Texture*> textures;
+	std::map<uint16_t, std::string> idTextureMapping;
 	std::map<SDL_Scancode, bool> keymap;
 
 	Texture* numbers;

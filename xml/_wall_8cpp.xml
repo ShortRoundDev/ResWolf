@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_wall_8cpp" kind="file" language="C++">
+    <compoundname>Wall.cpp</compoundname>
+    <includes refid="_wall_8h" local="yes">Wall.h</includes>
+    <includes refid="_graphics_manager_8h" local="yes">GraphicsManager.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>windows.h</label>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>Windows.h</label>
+      </node>
+      <node id="6">
+        <label>Shader.h</label>
+        <link refid="_shader_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>map</label>
+      </node>
+      <node id="14">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="10">
+        <label>Texture.h</label>
+        <link refid="_texture_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Model.h</label>
+        <link refid="_model_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>GraphicsManager.h</label>
+        <link refid="_graphics_manager_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Camera.h</label>
+        <link refid="_camera_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Wall.h</label>
+        <link refid="_wall_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>glad/glad.h</label>
+      </node>
+      <node id="15">
+        <label>GL/gl.h</label>
+      </node>
+      <node id="1">
+        <label>Wall.cpp</label>
+        <link refid="_wall_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>memory</label>
+      </node>
+      <node id="9">
+        <label>glm/glm.hpp</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Wall.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GraphicsManager.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">ResWolf;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="class_res_wolf_1_1_shader" kindref="compound">Shader</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">Wall::shader</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" kindref="member">Wall::model</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" kindref="member">Wall::ceilingPlane</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="class_res_wolf_1_1_model" kindref="compound">Model</ref>*<sp/><ref refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" kindref="member">Wall::floorPlane</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_res_wolf_1_1_wall_1a66375124438a8e33b6b5561f2924f40a" kindref="member">Wall::init</ref>()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref><sp/>=<sp/>GRAPHICS-&gt;shaders[</highlight><highlight class="stringliteral">&quot;wall&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>box[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Front<sp/>Face<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>TEX_TR,<sp/>0,<sp/>0,<sp/>-1,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/>TEX_TL,<sp/>0,<sp/>0,<sp/>-1,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/>TEX_BR,<sp/>0,<sp/>0,<sp/>-1,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/>TEX_TL,<sp/>0,<sp/>0,<sp/>-1,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>TEX_BL,<sp/>0,<sp/>0,<sp/>-1,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/>TEX_BR,<sp/>0,<sp/>0,<sp/>-1,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Right<sp/>Face<sp/><sp/><sp/><sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/>TEX_TR,<sp/>1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/>TEX_TL,<sp/>1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>TEX_BR,<sp/>1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/>TEX_TL,<sp/>1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>1,<sp/>TEX_BL,<sp/>1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>TEX_BR,<sp/>1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Back<sp/>Face<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/>TEX_TR,<sp/>0,<sp/>0,<sp/>1,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>1,<sp/>TEX_TL,<sp/>0,<sp/>0,<sp/>1,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>1,<sp/>TEX_BR,<sp/>0,<sp/>0,<sp/>1,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>1,<sp/>TEX_TL,<sp/>0,<sp/>0,<sp/>1,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>1,<sp/>TEX_BL,<sp/>0,<sp/>0,<sp/>1,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>1,<sp/>TEX_BR,<sp/>0,<sp/>0,<sp/>1,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Left<sp/>Face<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>TEX_TL,<sp/>-1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/>TEX_BL,<sp/>-1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>1,<sp/>TEX_BR,<sp/>-1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>TEX_TL,<sp/>-1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>1,<sp/>TEX_BR,<sp/>-1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>1,<sp/>TEX_TR,<sp/>-1,<sp/>0,<sp/>0,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Top<sp/>Face<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/>TEX_TL,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>TEX_BR,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>1,<sp/>TEX_TR,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/>TEX_TL,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/>TEX_BL,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>TEX_BR,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bottom<sp/>Face<sp/><sp/><sp/><sp/><sp/><sp/>30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>1,<sp/>TEX_TR,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>1,<sp/>TEX_TL,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>TEX_BR,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>1,<sp/>TEX_TL,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/>TEX_BL,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>TEX_BR,<sp/>0,<sp/>-1,<sp/>0</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" kindref="member">model</ref><sp/>=<sp/>GRAPHICS-&gt;assignNamedVertices(</highlight><highlight class="stringliteral">&quot;Box&quot;</highlight><highlight class="normal">,<sp/>box,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(box));</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ceilingPlaneMdl[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>1,<sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>-1,<sp/>0,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>1,<sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/>-1,<sp/>0</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" kindref="member">ceilingPlane</ref><sp/>=<sp/>GRAPHICS-&gt;assignNamedVertices(</highlight><highlight class="stringliteral">&quot;CeilingPlane&quot;</highlight><highlight class="normal">,<sp/>ceilingPlaneMdl,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ceilingPlaneMdl));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>floorPlaneMdl[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>1,<sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>0,<sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>1,<sp/><sp/><sp/><sp/>1,<sp/>1,<sp/>0,<sp/>1,<sp/>0,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>1,<sp/><sp/><sp/><sp/>0,<sp/>1,<sp/>0,<sp/>1,<sp/>0</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" kindref="member">floorPlane</ref><sp/>=<sp/>GRAPHICS-&gt;assignNamedVertices(</highlight><highlight class="stringliteral">&quot;FloorPlane&quot;</highlight><highlight class="normal">,<sp/>floorPlaneMdl,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(floorPlaneMdl));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="class_res_wolf_1_1_wall_1aace9851f6de0d3d9bc900a3b8eb66be4" kindref="member">Wall::Wall</ref>(uint16_t<sp/>x,<sp/>uint16_t<sp/>y,<sp/>uint16_t<sp/>floorCode,<sp/>uint16_t<sp/>wallCode,<sp/>uint16_t<sp/>ceilingCode,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDoor,<sp/>uint8_t<sp/>lockType,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>message,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>solid)<sp/>:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>pos((float)x,<sp/>0,<sp/>float(y)),</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>floorTexture(GRAPHICS-&gt;createTexture(</highlight><highlight class="stringliteral">&quot;Resources/Texture/Tiles/&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(floorCode)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">,<sp/>std::to_string(floorCode))),</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>floorCode(floorCode),</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>wallTexture(GRAPHICS-&gt;createTexture(</highlight><highlight class="stringliteral">&quot;Resources/Texture/Tiles/&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(wallCode)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">,<sp/>std::to_string(wallCode))),</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>wallCode(wallCode),</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>ceilingTexture(GRAPHICS-&gt;createTexture(</highlight><highlight class="stringliteral">&quot;Resources/Texture/Tiles/&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(ceilingCode)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.png&quot;</highlight><highlight class="normal">,<sp/>std::to_string(ceilingCode))),</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>ceilingCode(ceilingCode),</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>isDoor(isDoor),</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>lockType(lockType),</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>message(message),</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>solid(solid),</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>isOpen(false),</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>openProgress(0.0f)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Wall::draw()</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Level<sp/>must<sp/>call<sp/>shader-&gt;use()<sp/>for<sp/>the<sp/>wall<sp/>shader<sp/>before<sp/>this<sp/>point,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>as<sp/>well<sp/>as<sp/>set<sp/>the<sp/>view<sp/>and<sp/>project<sp/>matrices</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Draw<sp/>wall</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1a9cac95f8d3370bdd09ba5894ebc134c3" kindref="member">setVec3</ref>(</highlight><highlight class="stringliteral">&quot;offset&quot;</highlight><highlight class="normal">,<sp/><ref refid="class_res_wolf_1_1_wall_1a27ef6952e28df16d229ed0f6dfd05a2a" kindref="member">pos</ref><sp/>+<sp/>glm::vec3(-<ref refid="class_res_wolf_1_1_wall_1afb3d1ee492a365254020993426f58d09" kindref="member">openProgress</ref>,<sp/>0,<sp/>0));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1a9cac95f8d3370bdd09ba5894ebc134c3" kindref="member">setVec3</ref>(</highlight><highlight class="stringliteral">&quot;scale&quot;</highlight><highlight class="normal">,<sp/>glm::vec3(1));</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(wallCode<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1abcb2ccc2202939d6e08af46fb6ea9745" kindref="member">setModel</ref>(<ref refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" kindref="member">model</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1a2a00e3e4e5dd6c5a26422158c08c5ba3" kindref="member">setTex</ref>(<ref refid="class_res_wolf_1_1_wall_1ae139839c972fbf0904762e0692296328" kindref="member">wallTexture</ref>-&gt;<ref refid="class_res_wolf_1_1_texture_1ab6eb807322f47a56023b2633410e2fd3" kindref="member">image</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glDrawArrays(GL_TRIANGLES,<sp/>0,<sp/>(GLsizei)<ref refid="class_res_wolf_1_1_wall_1aa82edcf4c94fdd1c7cfe6762632becfd" kindref="member">model</ref>-&gt;<ref refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Draw<sp/>ceiling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1abcb2ccc2202939d6e08af46fb6ea9745" kindref="member">setModel</ref>(<ref refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" kindref="member">ceilingPlane</ref>);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1a2a00e3e4e5dd6c5a26422158c08c5ba3" kindref="member">setTex</ref>(<ref refid="class_res_wolf_1_1_wall_1a8b412e7842bb1a6bd78c640b0f0b7012" kindref="member">ceilingTexture</ref>-&gt;<ref refid="class_res_wolf_1_1_texture_1ab6eb807322f47a56023b2633410e2fd3" kindref="member">image</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>glDrawArrays(GL_TRIANGLES,<sp/>0,<sp/>(GLsizei)<ref refid="class_res_wolf_1_1_wall_1aff522e116bdf414fbecd4acae6763039" kindref="member">ceilingPlane</ref>-&gt;<ref refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1abcb2ccc2202939d6e08af46fb6ea9745" kindref="member">setModel</ref>(<ref refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" kindref="member">floorPlane</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_res_wolf_1_1_wall_1aa713eb2f4811aedd72bf3d057d1f6162" kindref="member">shader</ref>-&gt;<ref refid="class_res_wolf_1_1_shader_1a2a00e3e4e5dd6c5a26422158c08c5ba3" kindref="member">setTex</ref>(<ref refid="class_res_wolf_1_1_wall_1a9d5a400a91c2df1cf65313b105726e3a" kindref="member">floorTexture</ref>-&gt;<ref refid="class_res_wolf_1_1_texture_1ab6eb807322f47a56023b2633410e2fd3" kindref="member">image</ref>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>glDrawArrays(GL_TRIANGLES,<sp/>0,<sp/>(GLsizei)<ref refid="class_res_wolf_1_1_wall_1a026439077f1661a50d6bf085921b8b63" kindref="member">floorPlane</ref>-&gt;<ref refid="class_res_wolf_1_1_model_1a98980f30dd217ab40cc44e5643a55477" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">Wall::~Wall()</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Wall.cpp"/>
+  </compounddef>
+</doxygen>
