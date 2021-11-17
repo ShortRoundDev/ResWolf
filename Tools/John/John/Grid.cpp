@@ -573,7 +573,8 @@ void Grid::removeEntity(int x, int y)
 		return;
 	if (map[x][y].entityToken == nullptr)
 		return;
-	delete map[x][y].entityToken;		// delete all the data
+#pragma message ("WARNING: Potential memory leak in RemoveEntity. Need to distinguish between a file-loaded entity and a malloc'd entity!!!")
+	//delete map[x][y].entityToken;		// 
 	map[x][y].entityToken = nullptr;
 	map[x][y].entityTexture = nullptr;	// lose the reference, but the texture should probably still live
 }
