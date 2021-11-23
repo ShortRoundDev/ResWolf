@@ -703,7 +703,7 @@ char* Grid::mapStringPool(_Out_ size_t* stringPoolSize)
 			{
 				memcpy(stringPool + poolCursor, entConfig.c_str(), entConfig.length());
 				map[x][y].entityToken->config = (char*)poolCursor; // these will have to be remapped later
-				poolCursor += config.length() + 1;
+				poolCursor += entConfig.length() + 1;
 			}
 			else if(map[x][y].entityToken != NULL) {
 				map[x][y].entityToken->config = NULL;
