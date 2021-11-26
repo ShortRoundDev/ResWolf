@@ -37,6 +37,8 @@ public:
 	void drawTiles(const SDL_Rect& container);
 	void drawCursor(const SDL_Rect& container);
 	void drawGrid(const SDL_Rect& container);
+	void printGridNumb();
+	void printLayerName();
 
 	virtual bool onKeyDown(const SDL_Event& e);
 	virtual bool onMouseDown(const SDL_Event& e);
@@ -45,6 +47,7 @@ public:
 
 
 	SDL_Point tileFromMouse(const SDL_Event& e);
+	SDL_Point tileFromMouse();
 
 	SDL_Point position;
 	SDL_Point lastTilePlaced = { 0, 0 };

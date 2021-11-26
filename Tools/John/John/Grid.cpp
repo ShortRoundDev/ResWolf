@@ -48,11 +48,41 @@ void Grid::draw(const SDL_Rect& container)
 	drawGrid(container);
 
 	UINode::draw(container); // draw children
+	printGridNumb();
+	printLayerName();
 }
 
 void Grid::drawTiles(const SDL_Rect& container)
 {
+	//if floor is active, draw transparent walls
+	if (getCurrentLayer() == 0) {
+		for (int y = position.y / 64; y < (position.y + APP->height) / 64 && y < 256; y++)
+		{
+			for (int x = position.x / 64; x < (position.x + APP->width) / 64 && x < 256; x++)
+			{
+				auto tile = this->map[x][y];
 
+				int l2 = 1;
+				int opacity = 128;
+
+				int _x = (x * 64) - position.x;
+				int _y = (y * 64) - position.y + 34;
+
+				SDL_Rect dst = {
+					_x, _y,
+					64, 64
+				};
+				if (tile.texture[1] != nullptr)
+				{
+					auto tex = tile.texture[1]->texture;
+					SDL_SetTextureBlendMode(tex, SDL_BLENDMODE_BLEND);
+					SDL_SetTextureAlphaMod(tex, opacity);
+					SDL_RenderCopy(APP->renderer, tex, &tile.texture[1]->src, &dst);
+					SDL_SetTextureAlphaMod(tex, 255);
+				}
+			}
+		}
+	}
 	// draw tiles
 	for (int y = position.y / 64; y < (position.y + APP->height) / 64 && y < 256; y++)
 	{
@@ -61,6 +91,9 @@ void Grid::drawTiles(const SDL_Rect& container)
 			for (int l = 0; l <= getCurrentLayer(); l++)
 			{
 				auto tile = this->map[x][y];
+				// l = 2 -> Ceiling
+				// CurrentLayer = 3 -> Zones
+				// Do not draw ceiling if zone layer is current
 				if (!(l == 2 && getCurrentLayer() == 3) && l != 3)
 				{
 					int l2 = l;
@@ -92,6 +125,7 @@ void Grid::drawTiles(const SDL_Rect& container)
 						SDL_SetTextureAlphaMod(tile.entityTexture->texture, 255);
 					}
 				}
+				// Draw zone selectors
 				else if (l == 3 && tile.token.zone > 0)
 				{
 
@@ -228,6 +262,34 @@ void Grid::drawGrid(const SDL_Rect& container)
 		}
 	}
 }
+
+void Grid::printGridNumb()
+{
+	auto pos = tileFromMouse();
+	APP->drawText(0, APP->height - 20, (std::to_string(pos.x) + ", " + std::to_string(pos.y)).c_str());
+}
+
+void Grid::printLayerName()
+{
+	std::string layerName = "";
+	switch (getCurrentLayer()) {
+	case 0:
+		layerName = "Floor";
+		break;
+	case 1:
+		layerName = "Walls";
+		break;
+	case 2:
+		layerName = "Ceiling";
+		break;
+	case 3:
+		layerName = "Zones";
+		break;
+	}
+	APP->drawText(0, 48, layerName.c_str());
+}
+
+
 
 bool Grid::onKeyDown(const SDL_Event& e)
 {
@@ -367,6 +429,23 @@ SDL_Point Grid::tileFromMouse(const SDL_Event& e)
 
 	mouse.x = ((mouse.x + position.x) / 64);
 	mouse.y = (mouse.y - 34 + position.y) / 64;
+
+	return mouse;
+}
+
+SDL_Point Grid::tileFromMouse()
+{
+	int x, y;
+
+	SDL_GetMouseState(&x, &y);
+	
+	SDL_Point mouse = {
+		x,
+		y
+	};
+
+	mouse.x = ((mouse.x + position.x) / 64);
+	mouse.y = ((mouse.y - 34 + position.y) / 64);
 
 	return mouse;
 }
