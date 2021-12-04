@@ -197,6 +197,13 @@
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UINode.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entities.conf" />
+    <None Include="Resources\tiles.conf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\Todo.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
