@@ -809,7 +809,7 @@ uint8_t* Grid::concatenateMap(
 	
 	*header = {
 		{'H', 'A', 'M'}, // Watermark
-		1,	//version #
+		2,	//version #
 		(uint16_t)maxX,	// width
 		(uint16_t)maxY,	// height
 		entSize/sizeof(EntityToken), // total Entities
